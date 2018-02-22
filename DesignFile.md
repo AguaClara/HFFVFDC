@@ -2,33 +2,54 @@
 from aide_design.play import*
 from aide_design.physchem import*
 Q_Plant=20*u.L/u.s
+Temp_Plant=20*u.degC
+RatioVCOrifice=.62
+Nu=viscosity_kinematic(Temp_Plant)
+print(Nu)
+Max_Num_Holes=72
+Q_Per_Hole=Q_Plant/Max_Num_Holes
+print(Q_Per_Hole)
 Avail_Head_High_Est=2*u.m
 Avail_Head_Low_Est=1*u.m
 
-OutletDiam=8*u.inch
-FVDiam=6*u.inch
+FS_Diam=8*u.inch
+Area_Outlet=((FS_Diam/2)**2)*u.pi/4
+#SS_Diam=4*u.inch     SS - Small scale
+FS_FV_Diam=6*u.inch
+#SS_FV_Diam=3*u.inch     SS- Small Scale
 SliderPipeLength=.762*u.m
-Slider_Pipe_Hole_Diam=.5*u.inch
+Slider_Hole_Diam=1.5*u.inch
+Area_Slider_Hole=(((Slider_Hole_Diam/2)**2)*u.pi/4)
+print(Area_Slider_Hole.to(u.m**2))
+V_Outlet=Q_Plant/((FS_Diam/2)**2)*u.pi/4
+print(V_Outlet.to(u.m/u.s))
+
+V_Hole=(Q_Per_Hole/Area_Slider_Hole)
+print(V_Hole.to(u.m/u.s))
+Reynolds=re_pipe(Q_Per_Hole, Slider_Hole_Diam, Nu)
+print(Reynolds)
 Range_Slider=1.2*u.m
 Z_Top_Hole=1.343*u.m
 Z_Bot_Hole=.368*u.m
-
+Z_Bot_Hole
 
 def K_Minor_Calc(D1,D2):
   K_L=(1-D1**2/D2**2)**2
   return(K_L)
-
-  ##From left to right D1->D2
-K_Minor_Inlet=K_Minor_Calc(OutletDiam,FVDiam) ##K minor value for first contraction
+K_Minor_Calc(8*u.inch,6*u.inch)
+  ##From left to right D1->D2,
+K_Minor_Inlet=K_Minor_Calc(FS_Diam,FS_FV_Diam)
+ ##K minor value for first contraction
 print(K_Minor_Inlet)
-K_Minor_Slider_Holes=K_Minor_Calc(FVDiam,SliderPipeLength) ##K minor value for sliderp ipe holes
-print(K_Minor_Slider_Holes)
 
-HL_Inlet=headloss_exp(Q_Plant, OutletDiam, K_Minor_Inlet)
+HL_Inlet=headloss_exp(Q_Plant, FS_FV_Diam, K_Minor_Inlet)
 print(HL_Inlet)
 
-HL_Slider_Pipe=headloss_exp(Q_Plant, Slider_Pipe_Hole_Diam, K_Minor_Slider_Holes)
-print(HL_Slider_Pipe)
+HL_Slider_Hole=head_orifice(Slider_Hole_Diam, RatioVCOrifice, Q_Per_Hole)
+print(HL_Slider_Hole)
+Total_HL=HL_Slider_Hole*Max_Num_Holes+HL_Inlet
+print(Total_HL)
 
 ```
+
 Range_Slider is not for sure...
