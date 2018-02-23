@@ -50,6 +50,12 @@ print(HL_Slider_Hole)
 Total_HL=HL_Slider_Hole*Max_Num_Holes+HL_Inlet
 print(Total_HL)
 
+
+flow_orifice_1= flow_orifice(Slider_Hole_Diam, 1*u.m, RatioVCOrifice)
+print(flow_orifice_1*Max_Num_Holes)
+flow_orifice_2= flow_orifice(Slider_Hole_Diam, 2*u.m, RatioVCOrifice)
+print(flow_orifice_2*Max_Num_Holes)
+
 ```
 
 Range_Slider is not for sure...
