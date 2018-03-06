@@ -20,10 +20,24 @@ The goal of this section is to provide all of the guidance that would be necessa
 
 
 ####Procedure
-The High Flow Float Valve team is planning to assemble a model float valve of smaller dimensions in order to test the functionality of it before switching to the larger, necessary size. The team started by cutting a piece of 1.5" pipe to 41cm using the table clamp and the reciprocating saw. The team then used the bandsaw and the angle alignment tool to produce two cuts in the top of the pipe to form a notch as shown below.  This notch will be used to secure the buoy to the pipe later.
+The High Flow Float Valve team is planning to assemble a model float valve of smaller dimensions in order to test the functionality of it before switching to the larger, necessary size. The team started by cutting a piece of 1.5" pipe to 41cm using the table clamp and the reciprocating saw. The team then used the bandsaw and the angle alignment tool to produce two cuts in the top of the pipe to form a notch as shown below.  This notch will be used to secure the buoy to the pipe with a hose clamp later.
 
-<img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/IMG_7813.jpg?raw=true"  height = 1000>
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/TopOfSliderPipe.png?raw=true"  height = 300></center>
 
+\
+Next, the team cut each of the PVC bushings to 1" in height using the band saw.
+
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Bushings%20with%20marked%20cuts.jpg?raw=true" height=300> <img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Bushing%20about%20to%20be%20cut.jpg?raw=true"  height = 300></center>
+
+\
+The team then created a handmade sanding tool. This tool was made from an arbitrarily long 1" PVC pipe with a thick piece of sandpaper PVC-glued to around its circumference.
+
+ <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Sander.JPG?raw=true" height=300></center>
+
+\
+The team then used this tool to sand down the inside of the bushings so that the 1.5" pipe could slide easily through.
+
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Sander.JPG?raw=true" height=300></center>
 
 
 Include any information related to the fabrication of equipment, experimental apparatuses, or technologies. Include the purpose of each step and the fabrication methods used. Reference appropriate safety precautions.
