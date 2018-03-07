@@ -3,8 +3,6 @@
 ###Introduction
 The High Flow Float Valve will serve to control the flow rate of water into the distribution tank. To avoid the tank overflowing, the float valve will decrease the flow rate as the tank fills up. The float valve consists of a slider pipe, a tee connected to the distribution tank inlet pipe, a float on top of the slider pipe, and bushings inside the tee that the slider pipe will slide through. The slider pipe has an increasing number of holes from bottom to top. The water entering the distribution tank will go through the tee and through the hole in the slider pipe that are within the tee. The more holes exposed, the higher the flow rate. As the tank fills up, the float will cause the slider pipe to rise, which will decrease the number of holes exposed within the tee. When the tank is full, no holes will be exposed within the tee and the flow will stop.
 
-The goal of this section is to provide all of the guidance that would be necessary for a future team to pick up your work where you left off. Please try to be thorough and put yourselves in the shoes of a newcomer to the project. Below are some recommended sections, but the manual will likely take a slightly different form for each team.
-
 
 ###Fabrication Details
 ####Material List
@@ -35,12 +33,9 @@ The team then created a handmade sanding tool. This tool was made from an arbitr
  <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Sander.JPG?raw=true" height=300></center>
 
 \
-The team then used this tool to sand down the inside of the bushings so that the 1.5" pipe could slide easily through.
+The team then used this tool, as well as a handheld file, to sand down the inside of the bushings so that the 1.5" pipe could slide easily through.
 
-<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Sander.JPG?raw=true" height=300></center>
-
-
-Include any information related to the fabrication of equipment, experimental apparatuses, or technologies. Include the purpose of each step and the fabrication methods used. Reference appropriate safety precautions.
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/SandingPipe.png?raw=true" height=300></center>
 
 
 
