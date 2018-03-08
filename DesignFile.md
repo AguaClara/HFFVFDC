@@ -34,7 +34,7 @@ print(Reynolds)
 Range_Slider=1.2*u.m
 Z_Top_Hole=1.343*u.m
 Z_Bot_Hole=.368*u.m
-Z_Bot_Hole
+Z_Bot_Holef
 
 def K_Minor_Calc(D1,D2):
   K_L=(1-D1**2/D2**2)**2
