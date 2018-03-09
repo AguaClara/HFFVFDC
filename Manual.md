@@ -49,7 +49,9 @@ The team then used this tool, as well as a handheld file, to sand down the insid
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/SandingPipe.png?raw=true" height=300></center>
 
+The team then used a template created from the Fusion design to accurately drill the holes in the slider pipe. The team printed the template and  punctured small holes through the hole indications. The team then laid this template around the slider pipe and drew a mark on the slider pipe through the small holes to indicate where to drill.
 
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/HolePattern2.png?raw=true" height=300></center>
 
 ###Special Components
 If your subteam uses a particular part that is unique and you could foresee a future subteam needing to order it or learn more about it, please include basic information like the vendor where it was purchased, catalog/item number, and a link to any documentation.
