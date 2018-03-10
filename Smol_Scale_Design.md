@@ -29,13 +29,15 @@ V_Hole=(Q_Per_Hole/Area_Slider_Hole)
 print(V_Hole.to(u.m/u.s))
 Reynolds=re_pipe(Q_Per_Hole, Slider_Hole_Diam, Nu)
 print(Reynolds)
+overall_length=40.5 *u.cm
 tee_height=5.25*u.inch  
 bushing_lip=.21875*u.inch   
 bushing_height=1*u.inch   
 tee_exposed=tee_height-2*bushing_height+bushing_lip
 top_space=1.75*u.inch
 bottom_space=bushing_height+tee_exposed+Slider_Hole_Diam/2
-L_active=SliderPipeLength-top_space-bottom_space
+L_active=overall_length-top_space-bottom_space
+print(L_active)
 hole_rows=7
 rows_exposed=3
 row_spacing=tee_exposed/rows_exposed
@@ -49,7 +51,7 @@ K_Minor_Inlet=K_Minor_Calc(Outlet_Diam,Slider_Pipe_ID)
  ##K minor value for first contraction
 print(K_Minor_Inlet)
 
-HL_Inlet=headloss_exp(Q_Plant, Slider_Pipe_ID, K_Minor_Inlet)
+HL_Inlet=headloss_exp(Q_Plant, Outlet_Diam, K_Minor_Inlet)
 print(HL_Inlet)
 
 HL_Slider_Hole=head_orifice(Slider_Hole_Diam, RatioVCOrifice, Q_Per_Hole)
@@ -57,11 +59,24 @@ print(HL_Slider_Hole)
 
 
 flow_orifice_1= flow_orifice(Slider_Hole_Diam, 1*u.m, RatioVCOrifice)
-print((flow_orifice_1*Max_Num_Holes).to(u.L/u.s))
+print(flow_orifice_1.to(u.L/u.s))
 flow_orifice_2= flow_orifice(Slider_Hole_Diam, 2*u.m, RatioVCOrifice)
 print(flow_orifice_2.to(u.L/u.s))
 
+
+##End headloss and general parameters
 ```
 
-Range_Slider is not for sure...
-Check if this commits and pushes
+```python
+##Float ideas
+from aide_design.play import*
+from aide_design.physchem import*
+import math
+Temp_Plant=20*u.degC
+Weight_Slider_Pipe=.3192*u.kg
+Volume_Float=Weight_Slider_Pipe/density_water(Temp_Plant)
+print(Volume_Float)
+Area_Float=1*u.inch**2*math.pi
+L_Float=Volume_Float/Area_Float
+print(L_Float.to(u.inch))
+```
