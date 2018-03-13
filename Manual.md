@@ -7,23 +7,39 @@ Please do not delete my comments from the report. Just address them and next tim
 
 ## Manual
 ###Introduction
-The High Flow Float Valve will serve to control the flow rate of water into the distribution tank. To avoid the tank overflowing, the float valve will decrease the flow rate as the tank fills up. The float valve consists of a slider pipe, a tee connected to the distribution tank inlet pipe, a float on top of the slider pipe, and bushings inside the tee that the slider pipe will slide through. The slider pipe has an increasing number of holes from bottom to top. The water entering the distribution tank will go through the tee and through the hole in the slider pipe that are within the tee. The more holes exposed, the higher the flow rate. As the tank fills up, the float will cause the slider pipe to rise, which will decrease the number of holes exposed within the tee. When the tank is full, no holes will be exposed within the tee and the flow will stop.
+The high flow float valve will control the flow rate of water into the distribution tank. The distribution tank is the storage tank for clean water exiting the treatment plant before it is distributed to the community, and overflows when the tank is full. Overflow happens mainly during off-peak hours from midnight to dawn when demand is low. Avoiding overflow is desirable because the excess treated drinking water is wasted. To avoid the tank overflowing , the float valve will decrease the flow rate as the tank fills up.
+
+The float valve consists of a slider pipe, a tee connected to the distribution tank inlet pipe, a float on top of the slider pipe, and bushings inside the tee that the slider pipe will slide through. The slider pipe has an increasing number of holes from bottom to top. The water entering the distribution tank will go through the tee and through the hole in the slider pipe that are within the tee. The more holes exposed, the higher the flow rate. As the tank fills up, the float will cause the slider pipe to rise, which will decrease the number of holes exposed within the tee. When the tank is full, no holes will be exposed within the tee and the flow will stop.
 
 <div class="alert alert-block alert-danger">
 In the first sectence, consider lower case "high flow float valve" as it is not a proper noun here. Also consider "The high flow float valve will control" rather than "serve to control." Also what is the "distribution tank," and when does it overflow? Distribution tank to me means the final tank after the full treatment train, but before going out to the community. Explanation in the final three sentences is very good. Not enough connection as to why is it bad is the distribution tank overflows.
+
+addresed - felix
 </div>
 
 ###Fabrication Details
 ####Material List
-| Part                    | Quantity/Size  |
-|:----------------------- |:--------------:|
-| 2" PVC Tee              |       1        |
-| 2" PVC Pipe             | 10 centimeters |
-| 1.5" PVC Pipe           |     41 cm      |
-| 1" PVC Pipe             |     30 cm      |
-| 2" to 1.5" PVC Bushings |       2        |
-| Hose Clamp              |       1        |
-| 1.5" Pipe Cap           |       1        |
+| Part                    | Quantity/Size  | Price at the time |
+|:----------------------- |:--------------:|:----------------: |
+| 2" PVC Tee              |       1        | |
+| 2" PVC Pipe             | 10 centimeters | |
+| 1.5" PVC Pipe           |     41 cm      | |
+| 1" PVC Pipe             |     30 cm      | |
+| 2" to 1.5" PVC Bushings |       2        ||
+| Hose Clamp              |       1        ||
+| 1.5" Pipe Cap           |       1        ||
+All parts were bought from McMaster Carr
+###Tools needed
+* bandsaw
+* Hackzall
+* Drill Press or Cordless Drill
+* Measuring tools like measuring tape and Calipers
+* PVC Primer
+* PVC glue
+* sandpaper
+
+###Design Details
+
 
 <div class="alert alert-block alert-danger">
 Please include source (i.e. McMaster Carr) and the approximate unit price in the table. Consider adding a table of tools needed for fabrication as described in your procedure. (Include the sandpaper, saws, extra pvc for sanding tool etc.)
