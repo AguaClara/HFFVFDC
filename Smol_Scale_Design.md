@@ -77,6 +77,7 @@ Weight_Slider_Pipe=.3192*u.kg
 Volume_Float=Weight_Slider_Pipe/density_water(Temp_Plant)
 print(Volume_Float)
 Area_Float=1*u.inch**2*math.pi
+print(Area_Float.to(u.inch**2))
 L_Float=Volume_Float/Area_Float
 print(L_Float.to(u.inch))
 
@@ -95,6 +96,7 @@ Delta_X=45.93*u.mm
 Mass=1.0763*u.kg
 W=Mass*u.gravity
 k=W/Delta_X
+print(k.to(u.N/u.m))
 print(W.to(u.N))
 Static_Friction_Force=17.67*u.N   
 Original_Length=33.13*u.mm
