@@ -31,9 +31,9 @@ V_Hole=(Q_Per_Hole/Area_Slider_Hole)
 print(V_Hole.to(u.m/u.s))
 Reynolds=re_pipe(Q_Per_Hole, Slider_Hole_Diam, Nu)
 print(Reynolds)
-Range_Slider=1.2*u.m
-Z_Top_Hole=1.343*u.m
-Z_Bot_Hole=.368*u.m
+Range_Slider=1.2*u.m ## needs to be updated
+Z_Top_Hole=1.343*u.m ## and here
+Z_Bot_Hole=.368*u.m ## same here
 
 def K_Minor_Calc(D1,D2):
   K_L=(1-D1**2/D2**2)**2
