@@ -6,7 +6,7 @@ Temp_Plant=20*u.degC
 RatioVCOrifice=.62
 Nu=viscosity_kinematic(Temp_Plant)
 print(Nu)
-Max_Num_Holes=19
+Max_Num_Holes=10
 Q_Per_Hole=Q_Plant/Max_Num_Holes
 print(Q_Per_Hole)
 #Rows_Per_T_Active_Area= 1 or 2
@@ -21,7 +21,7 @@ Area_Outlet=((FS_Diam/2)**2)*u.pi/4
 FS_FV_Diam=6*u.inch
 #SS_FV_Diam=3*u.inch     SS- Small Scale
 SliderPipeLength=.762*u.m
-Slider_Hole_Diam=.75*u.inch
+Slider_Hole_Diam=1*u.inch
 Area_Slider_Hole=(((Slider_Hole_Diam/2)**2)*u.pi/4)
 print(Area_Slider_Hole.to(u.m**2))
 V_Outlet=Q_Plant/((FS_Diam/2)**2)*u.pi/4
@@ -34,7 +34,6 @@ print(Reynolds)
 Range_Slider=1.2*u.m
 Z_Top_Hole=1.343*u.m
 Z_Bot_Hole=.368*u.m
-Z_Bot_Holef
 
 def K_Minor_Calc(D1,D2):
   K_L=(1-D1**2/D2**2)**2
