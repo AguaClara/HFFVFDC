@@ -12,11 +12,9 @@ The high flow float valve will control the flow rate of water into the distribut
 The float valve consists of a slider pipe, a tee connected to the distribution tank inlet pipe, a float on top of the slider pipe, and bushings inside the tee that the slider pipe will slide through. The slider pipe has an increasing number of holes from bottom to top. The water entering the distribution tank will go through the tee and through the hole in the slider pipe that are within the tee. The more holes exposed, the higher the flow rate. As the tank fills up, the float will cause the slider pipe to rise, which will decrease the number of holes exposed within the tee. When the tank is full, no holes will be exposed within the tee and the flow will stop.
 
 <div class="alert alert-block alert-danger">
+In the first sentence, consider lower case "high flow float valve" as it is not a proper noun here. Also consider "The high flow float valve will control" rather than "serve to control." Also what is the "distribution tank," and when does it overflow? Distribution tank to me means the final tank after the full treatment train, but before going out to the community. Explanation in the final three sentences is very good. Not enough connection as to why is it bad is the distribution tank overflows.
 
-In the first sectence, consider lower case "high flow float valve" as it is not a proper noun here. Also consider "The high flow float valve will control" rather than "serve to control." Also what is the "distribution tank," and when does it overflow? Distribution tank to me means the final tank after the full treatment train, but before going out to the community. Explanation in the final three sentences is very good. Not enough connection as to why is it bad is the distribution tank overflows.
-
-addresed - felix
-
+addressed - felix
 </div>
 
 ###Fabrication Details
@@ -64,10 +62,27 @@ Where pi is the vena contract coefficient, A is the slider hole area that is bei
 * Height of distribution tank - 70 cm
 * Flow Rate = 1 L/s
 * Pipe Diameter - 2 inch
-The above value for height was used because that was the height of a large capacity bucket found in the lab and flow rate. Pipe diameter was determined to be 2 inch because that size piping is very available in the lab. Using the above parameters hole size was determined to be 1/4" inch.
+The above value for height was used because that was the height of a large capacity bucket found in the lab and flow rate. Pipe diameter was determined to be 2 inch because that size piping is very available in the lab. Using the above parameters hole size was determined to be 1/4" inch. These calculations can be found in the design file.
 
 The next step was to determine the spacing and pattern of the holes on the slider pipe. To determine the hole pattern, the team used python to calculate the flow rate through the holes given the amount of head and flow rate available in the lab. The team found that the flow rate through one 1/4" hole is approximately 1/10th of the total flow rate into the float valve. Since the float valve should have full flow when the tee is at the highest level, the team created a pattern that had 10 holes exposed at this level. The team also decided to have 3 rows of holes exposed in the tee at one time to allow for a gradual increase in flow and to also best fit the height of the slider pipe. The spacing between each row was found by dividing the length that would be exposed in the tee by the number of rows exposed at one time. This way, once one row leaves the tee, a new row enters.
 
+####Float size
+The float size was determined by testing the friction force between the slider pipe and tee. First the spring constant k was determined by hanging a weight off the spring and measuring the change in length from it's origination orientation.
+
+$$ F=k*\Delta(x) $$
+$$k= \frac{F}{\Delta(x)} $$
+$$ k =229.8 N/m $$
+
+Then the spring was held in one end of the pipe and pulled until the pipe moved and the change in distance of the spring was measured. Finally the friction force was measured by multiplying the k determined in the previous step and the change in distance recorded. Now that the friction force is determined it has to be converted into mass by dividing by gravity.
+
+$$ F=k*\Delta(x)= 229.8N/m * .03313m= 17.67 N $$
+$$ Mass_{Float}=\frac{F}{9.81 m/s^2} = 1.76 kg$$
+
+The buoyant force has to overcome the friction force in order for the float to move up and down smoothly. The volume of the float was determined by dividing the mass of the float by density of water then dividing that volume by the surface are of the desired pipe to get length.
+
+$$Volume_{Float}=\frac{Mass_{Float}}{\rho_{water}}=\frac{1.76kg}{1000kg/m^3}=.00176m^3   $$
+$$L_{Float}= Volume_{Float}/Area_{Float}=\frac{.00176m^3}{3.142 in^2}=35.05)$$
+From here the length of 36 inches was used in total because 35 inches was the bare minimum to overcome the friction force.
 ###Procedure
 
 The High Flow Float Valve team is planning to assemble a small-scale float valve in order to test the model's functionality before switching to the larger, realistic size. The full scale size will have an 8" diameter inlet pipe and tee and a 6" diameter slider pipe. For now, the team is just fabricating a small-scale model which is 1/4th in scale and has a 2" diameter tee and 1.5" diameter slider pipe. The procedure involved the construction of three distinct parts: the slider pipe, the tee, and the float. HFFV will only be fabricating and testing the small scale design as the original intention of the team was only to test the feasibility of fabricating such a device.
@@ -176,6 +191,22 @@ For the next submission, add in a section about future/anticipated steps. This w
 </div>
 
 ####Float
+To create the tee, the team cut 1" PVC pipe into 3 13" pieces using the bandsaw and hackzall and glued a strip of PVC sheet that was cut using the bandsaw to either end of all three pipes, with 2 cm spacing between each pipe. The team used this design because after calculating the required length of the float had it been just one pipe, it was clear that it would be too long for proper function both in the tank the team is using for testing and in the distribution tank itself. By using three pipes instead of one, the team was able to decrease the overall length of the float by three, which better accommodates the testing tank.
+
+The team originally found that a float of just one 1" pipe would have to be 35.05" long. To get the length for the three-pipe float the team simply divided by three to get approximately 12" and decided to round up to 13" account for any errors made in finding the required buoyant force. Since a larger float provides the potential for more buoyant force but will still only provide what is needed, it was not an issue to round up.
+
+The spacing between the pipes was required because the center float pipe will be hose clamped to the top of the slider pipe and part of the notch at the top of the slider pipe would block the other two pipes had there not been space between them.
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Float.png" height= 300></center>
+
+###Experimental Setup
+####Bulkhead Fitting
+After constructing the water inlet system, the team had to create a distribution tank in order to test the apparatus. The team located a large container and built the slider pipe according to the height of this container. In order to provide the slider pipe with the most active length, the inlet should be positioned in the middle of the container. However, the team decided to position the pipe slightly below the halfway point. This was done in order to fit the given design constraint that the last 10% of the container needs to fill solely due to slider pipe leakage and must occur over the course of 8 hours. This time was determined because the tank normally has 8 hours to fill overnight. Because of these considerations, the team drilled the hole for the inlet pipe at **[input height of inlet]**. The team cut a hole for a 2" bulkhead fitting using a drill fitted with a 3.5" hole saw attachment. A hole saw this large was necessary due to the size of the bulkhead fitting. The team then tightened the bulkhead fitting through the hole.
+
+####Slider Pipe Assembly
+After attaching the bulkhead fitting through the hole, the
+After attaching the bulkhead fitting, the team cut a piece of 2" PVC pipe to **[insert length of PVC pipe]**. This length was necessary to position the slider pipe far enough away from the edge of the distribution tank to avoid interference between the two.
+
+####Water Flow
 
 
 ###Special Components
