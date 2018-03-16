@@ -196,12 +196,15 @@ To create the tee, the team cut 1" PVC pipe into 3 13" pieces using the bandsaw 
 The team originally found that a float of just one 1" pipe would have to be 35.05" long. To get the length for the three-pipe float the team simply divided by three to get approximately 12" and decided to round up to 13" account for any errors made in finding the required buoyant force. Since a larger float provides the potential for more buoyant force but will still only provide what is needed, it was not an issue to round up.
 
 The spacing between the pipes was required because the center float pipe will be hose clamped to the top of the slider pipe and part of the notch at the top of the slider pipe would block the other two pipes had there not been space between them.
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Float.png" height= 300></center>
 
 ###Experimental Setup
 ####Bulkhead Fitting
 After constructing the water inlet system, the team had to create a distribution tank in order to test the apparatus. The team located a large container and built the slider pipe according to the height of this container. In order to provide the slider pipe with the most active length, the inlet should be positioned in the middle of the container. However, the team decided to position the pipe slightly below the halfway point. This was done in order to fit the given design constraint that the last 10% of the container needs to fill solely due to slider pipe leakage and must occur over the course of 8 hours. This time was determined because the tank normally has 8 hours to fill overnight. Because of these considerations, the team drilled the hole for the inlet pipe at **[input height of inlet]**. The team cut a hole for a 2" bulkhead fitting using a drill fitted with a 3.5" hole saw attachment. A hole saw this large was necessary due to the size of the bulkhead fitting. The team then tightened the bulkhead fitting through the hole.
+
 ####Slider Pipe Assembly
 After attaching the bulkhead fitting through the hole, the
+After attaching the bulkhead fitting, the team cut a piece of 2" PVC pipe to **[insert length of PVC pipe]**. This length was necessary to position the slider pipe far enough away from the edge of the distribution tank to avoid interference between the two.
 
 ####Water Flow
 
