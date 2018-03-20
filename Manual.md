@@ -28,15 +28,15 @@ addressed - felix
 | 2" to 1.5" PVC Bushings |       2       |       $1.74       |
 | 5/8" Hose Clamp         |       1       |       $8.34       |
 
-All parts were bought from McMaster Carr
+All parts were bought from McMaster Carr.
 ###Tools needed
-* bandsaw
+* Bandsaw
 * Hackzall
 * Drill Press or Cordless Drill
 * Measuring tools like measuring tape and Calipers
 * PVC Primer
 * PVC glue
-* sandpaper
+* Sandpaper
 
 <div class="alert alert-block alert-danger">
 Please include source (i.e. McMaster Carr) and the approximate unit price in the table. Consider adding a table of tools needed for fabrication as described in your procedure. (Include the sandpaper, saws, extra PVC for sanding tool etc.)
@@ -202,11 +202,15 @@ The spacing between the pipes was required because the center float pipe will be
 ####Bulkhead Fitting
 After constructing the water inlet system, the team had to create a distribution tank in order to test the apparatus. The team located a large container and built the slider pipe according to the height of this container. In order to provide the slider pipe with the most active length, the inlet should be positioned in the middle of the container. However, the team decided to position the pipe slightly below the halfway point. This was done in order to fit the given design constraint that the last 10% of the container needs to fill solely due to slider pipe leakage and must occur over the course of 8 hours. This time was determined because the tank normally has 8 hours to fill overnight. Because of these considerations, the team drilled the hole for the inlet pipe at **[input height of inlet]**. The team cut a hole for a 2" bulkhead fitting using a drill fitted with a 3.5" hole saw attachment. A hole saw this large was necessary due to the size of the bulkhead fitting. The team then tightened the bulkhead fitting through the hole.
 
+**[insert photo of bulkhead fitting]**
+
 ####Slider Pipe Assembly
-After attaching the bulkhead fitting through the hole, the
-After attaching the bulkhead fitting, the team cut a piece of 2" PVC pipe to **[insert length of PVC pipe]**. This length was necessary to position the slider pipe far enough away from the edge of the distribution tank to avoid interference between the two.
+After attaching the bulkhead fitting through the hole, the team cut a piece of 2" diameter PVC pipe to **[insert length of PVC pipe]**. This length was necessary to position the slider pipe far enough away from the edge of the distribution tank to avoid interference between the two. The 2" diameter pipe was then glued to the bulkhead fitting on one end and the slider pipe on the other end.
+
+**[insert photo of slider pipe assembly]**
 
 ####Water Flow
+In order to check the flow of the water out of the sink, 
 
 
 ###Special Components
