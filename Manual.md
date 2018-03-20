@@ -196,7 +196,7 @@ To create the tee, the team cut 1" PVC pipe into 3 13" pieces using the bandsaw 
 The team originally found that a float of just one 1" pipe would have to be 35.05" long. To get the length for the three-pipe float the team simply divided by three to get approximately 12" and decided to round up to 13" account for any errors made in finding the required buoyant force. Since a larger float provides the potential for more buoyant force but will still only provide what is needed, it was not an issue to round up.
 
 The spacing between the pipes was required because the center float pipe will be hose clamped to the top of the slider pipe and part of the notch at the top of the slider pipe would block the other two pipes had there not been space between them.
-<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Float.png" height= 300></center>
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Float.png?raw=true" height= 300></center>
 
 ###Experimental Setup
 ####Bulkhead Fitting
