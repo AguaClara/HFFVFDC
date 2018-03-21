@@ -205,9 +205,25 @@ The team originally found that a float of just one 1" pipe would have to be 35.0
 The spacing between the pipes was required because the center float pipe will be hose clamped to the top of the slider pipe and part of the notch at the top of the slider pipe would block the other two pipes had there not been space between them.
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Float.png?raw=true" height= 300></center>
 
+####Final assembly
+After putting the float, slider pipe and tee together the experimental setup was determined. Below is a picture of the complete assembly.
+<center><img src="https://raw.githubusercontent.com/AguaClara/float_valve/master/Pictures/complete.jpg" height= 300></center>
+
+
 ###Experimental Setup
+Our experimental setup consisted of three main parts: the water flow setup, the bulkhead fitting, and the slider pipe assembly.
+
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/HFFV%20setup.png?raw=true" height= 300></center>
+
+####Water Flow
+In order to check the flow of the water out of the sink, the team had test the time it took for a flow to fill a bucket. After adjusting the sink valves and running several trials, a steady 1L/s flow rate was obtained.
+
+The team then took a piece of 1" diameter flexible tubing and used a hose clamp to secure it to the faucet. This flexible tubing led to a barbed fitting on a raised platform on the counter of the lab bench. The team did this in order to ensure more head upon entering the distribution tank. At the top of this platform, the team inserted a 1" tee, leaving the middle portion of the tee open to the air. This exposed the water to atmospheric pressure to eliminate pressure head. The pipe was then expanded by the introduction of a 1" diameter to 2" diameter coupling. The team then cut a small piece of 2" diameter PVC to connect the coupling to the bulkhead fitting.
+
+**[insert picture of water setup]**
+
 ####Bulkhead Fitting
-After constructing the water inlet system, the team had to create a distribution tank in order to test the apparatus. The team located a large container and built the slider pipe according to the height of this container. In order to provide the slider pipe with the most active length, the inlet should be positioned in the middle of the container. However, the team decided to position the pipe slightly below the halfway point. This was done in order to fit the given design constraint that the last 10% of the container needs to fill solely due to slider pipe leakage and must occur over the course of 8 hours. This time was determined because the tank normally has 8 hours to fill overnight. Because of these considerations, the team drilled the hole for the inlet pipe at **[input height of inlet]**. The team cut a hole for a 2" bulkhead fitting using a drill fitted with a 3.5" hole saw attachment. A hole saw this large was necessary due to the size of the bulkhead fitting. The team then tightened the bulkhead fitting through the hole.
+After constructing the water inlet system, the team found a small scale distribution tank in order to test the float valve. The team found a large container and built the slider pipe according to the height of this container. In order to provide the slider pipe with the most active length, the inlet should be positioned in the middle of the container. However, the team decided to position the pipe slightly below the halfway point. This was done in order to fit the given design constraint that the last 3% (see design details). Because of these considerations, the team drilled the hole for the inlet pipe at **[input height of inlet]**. The team cut a hole for a 2" bulkhead fitting using a drill fitted with a 3.5" hole saw attachment. A hole saw this large was necessary due to the size of the bulkhead fitting. The team then tightened the bulkhead fitting through the hole.
 
 **[insert photo of bulkhead fitting]**
 
@@ -216,12 +232,6 @@ After attaching the bulkhead fitting through the hole, the team cut a piece of 2
 
 **[insert photo of slider pipe assembly]**
 
-####Water Flow
-In order to check the flow of the water out of the sink, the team had to run a time trial measuring the flow into a bucket over a given period of time. After adjusting the sink valves and running several trials, a steady 1L/s flow rate was obtained.
-
-The team then took a piece of 1" diameter flexible tubing and used a hose clamp to secure it to the faucet. This flexible tubing led to a barbed fitting on a raised platform on the counter of the lab bench. The team did this in order to ensure more head upon entering the distribution tank. At the top of this platform, the team inserted a 1" tee, leaving the middle portion of the tee open to the air. This exposed the water to atmospheric pressure to eliminate pressure head. The pipe was then expanded by the introduction of a 1" diameter to 2" diameter coupling. The team then cut a small piece of 2" diameter PVC to connect the coupling to the bulkhead fitting.
-
-**[insert picture of water setup]**
 
 ###Special Components
 If your sub-team uses a particular part that is unique and you could foresee a future sub-team needing to order it or learn more about it, please include basic information like the vendor where it was purchased, catalog/item number, and a link to any documentation.
