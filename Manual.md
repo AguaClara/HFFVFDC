@@ -66,6 +66,13 @@ The above value for height was used because that was the height of a large capac
 
 The next step was to determine the spacing and pattern of the holes on the slider pipe. To determine the hole pattern, the team used python to calculate the flow rate through the holes given the amount of head and flow rate available in the lab. The team found that the flow rate through one 1/4" hole is approximately 1/10th of the total flow rate into the float valve. Since the float valve should have full flow when the tee is at the highest level, the team created a pattern that had 10 holes exposed at this level. The team also decided to have 3 rows of holes exposed in the tee at one time to allow for a gradual increase in flow and to also best fit the height of the slider pipe. The spacing between each row was found by dividing the length that would be exposed in the tee by the number of rows exposed at one time. This way, once one row leaves the tee, a new row enters.
 
+####Rate of Leakage
+$$ {Q_{\mathrm{leak}} \over Q_{\mathrm{plant}}} = {{\Delta h \over \Delta t} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
+
+$$Q_{\mathrm{leak}} = 20 L/s*.03 = .6 L/s$$
+$$Q_{\mathrm{leak - Small Scale}} = 1 L/s*.03 = .03 L/s$$
+This ratio was derived from wanting the last 3% of the tank to fill up during off-peak hours which has a duration of 8 hours from midnight to 8 am. Using this ratio the target Q_leak is determined to be .6 L/s in the full scale design.
+
 ####Float size
 The float size was determined by testing the friction force between the slider pipe and tee. First the spring constant k was determined by hanging a weight off the spring and measuring the change in length from it's origination orientation.
 
@@ -76,12 +83,12 @@ $$ k =229.8 N/m $$
 Then the spring was held in one end of the pipe and pulled until the pipe moved and the change in distance of the spring was measured. Finally the friction force was measured by multiplying the k determined in the previous step and the change in distance recorded. Now that the friction force is determined it has to be converted into mass by dividing by gravity.
 
 $$ F=k*\Delta(x)= 229.8N/m * .03313m= 17.67 N $$
-$$ Mass_{Float}=\frac{F}{9.81 m/s^2} = 1.76 kg$$
+$$ \mathrm{Mass}_{\mathrm{Float}}=\frac{F}{9.81 m/s^2} = 1.76 kg$$
 
 The buoyant force has to overcome the friction force in order for the float to move up and down smoothly. The volume of the float was determined by dividing the mass of the float by density of water then dividing that volume by the surface are of the desired pipe to get length.
 
-$$Volume_{Float}=\frac{Mass_{Float}}{\rho_{water}}=\frac{1.76kg}{1000kg/m^3}=.00176m^3   $$
-$$L_{Float}= Volume_{Float}/Area_{Float}=\frac{.00176m^3}{3.142 in^2}=35.05)$$
+$$\mathrm{Volume}_{\mathrm{Float}}=\frac{\mathrm{Mass}_{\mathrm{Float}}}{\rho_{\mathrm{water}}}=\frac{1.76kg}{1000kg/m^3}=.00176m^3   $$
+$$L_{\mathrm{Float}}= \mathrm{Volume}_{\mathrm{Float}}/\mathrm{Area}_{\mathrm{Float}}=\frac{.00176m^3}{3.142 in^2}=35.05$$
 From here the length of 36 inches was used in total because 35 inches was the bare minimum to overcome the friction force.
 ###Procedure
 
@@ -210,8 +217,11 @@ After attaching the bulkhead fitting through the hole, the team cut a piece of 2
 **[insert photo of slider pipe assembly]**
 
 ####Water Flow
-In order to check the flow of the water out of the sink, 
+In order to check the flow of the water out of the sink, the team had to run a time trial measuring the flow into a bucket over a given period of time. After adjusting the sink valves and running several trials, a steady 1L/s flow rate was obtained.
 
+The team then took a piece of 1" diameter flexible tubing and used a hose clamp to secure it to the faucet. This flexible tubing led to a barbed fitting on a raised platform on the counter of the lab bench. The team did this in order to ensure more head upon entering the distribution tank. At the top of this platform, the team inserted a 1" tee, leaving the middle portion of the tee open to the air. This exposed the water to atmospheric pressure to eliminate pressure head. The pipe was then expanded by the introduction of a 1" diameter to 2" diameter coupling. The team then cut a small piece of 2" diameter PVC to connect the coupling to the bulkhead fitting.
+
+**[insert picture of water setup]**
 
 ###Special Components
-If your subteam uses a particular part that is unique and you could foresee a future subteam needing to order it or learn more about it, please include basic information like the vendor where it was purchased, catalog/item number, and a link to any documentation.
+If your sub-team uses a particular part that is unique and you could foresee a future sub-team needing to order it or learn more about it, please include basic information like the vendor where it was purchased, catalog/item number, and a link to any documentation.
