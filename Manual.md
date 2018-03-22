@@ -213,6 +213,18 @@ After putting the float, slider pipe and tee together the experimental setup was
 ###Experimental Setup
 Our experimental setup consisted of three main parts: the water flow setup, the bulkhead fitting, and the slider pipe assembly.
 
+####Materials List **[edit for new set up]**
+| Part                            | Quantity |       Size        |
+|:------------------------------- |:--------:|:-----------------:|
+| Flexible Tubing                 |   5 ft   |    1" diameter    |
+| Hose clamp                      |    1     |    2" diameter    |
+| Barbed PVC Fitting NPT Male End |    1     |    1" diameter    |
+| PVC Pipe                        |   1 ft   |    1" diameter    |
+| PVC Tee                         |    1     |    1" diameter    |
+| PVC Elbow                       |    2     |    1" diameter    |
+| PVC Reducer                     |    1     | 2" to 1" diameter |
+| PVC Coupling                    |          |    2" diameter    |
+
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/HFFV%20setup.png?raw=true" height= 300></center>
 
 ####Water Flow
