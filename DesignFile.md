@@ -59,6 +59,12 @@ print(flow_orifice_1*Max_Num_Holes)
 flow_orifice_2= flow_orifice(Slider_Hole_Diam, 2*u.m, RatioVCOrifice)
 print(flow_orifice_2.to(u.L/u.s))
 
+
+def Float_Length(r, fricForce, temp):
+  floatLength = fricForce/(density_water(temp) * math.pi * r^2 * (1/2))
+  return floatLength
+Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
+
 ```
 
 Range_Slider is not for sure...
