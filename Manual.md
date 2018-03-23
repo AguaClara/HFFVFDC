@@ -1,4 +1,4 @@
-circumference#**High Flow Float Valve**
+#**High Flow Float Valve**
 ###Alycia Storch, Julia Timko, Felix Yang
 
 <div class="alert alert-block alert-danger">
