@@ -64,7 +64,7 @@ def Float_Length(r, fricForce, temp):
   floatLength = fricForce/(density_water(temp) * math.pi * r^2 * (1/2))
   return floatLength
 Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
-
+  ##The the float was designed in relation to the frictional force so that when the float is in the plant, it will sit half submerged in the water.
 ```
 
 Range_Slider is not for sure...
