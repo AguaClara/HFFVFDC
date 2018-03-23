@@ -147,7 +147,7 @@ addressed - Aly and Julia (some in design details)
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/HolePattern2.png?raw=true" height=300></center>
 
-The team then a cut holes according to the markings on the pipe using the drill press fitted with a 1/4 in drill bit as determined by the caluclations in the "Design Details" section.
+The team then a cut holes according to the markings on the pipe using the drill press fitted with a 1/4 in drill bit as determined by the calculations in the "Design Details" section.
 
 <div class="alert alert-block alert-danger">
 BIG ONE: How big are the holes supposed to be? And how did you get that value? Again root it in the theory and maths.
@@ -200,7 +200,8 @@ For the next submission, add in a section about future/anticipated steps. This w
 ####Float
 To create the tee, the team cut 1" PVC pipe into 3 13" pieces using the bandsaw and hackzall and glued a strip of PVC sheet that was cut using the bandsaw to either end of all three pipes, with 2 cm spacing between each pipe. The team used this design because after calculating the required length of the float had it been just one pipe, it was clear that it would be too long for proper function both in the tank the team is using for testing and in the distribution tank itself. By using three pipes instead of one, the team was able to decrease the overall length of the float by three, which better accommodates the testing tank.
 
-The team originally found that a float of just one 1" pipe would have to be 35.05" long. To get the length for the three-pipe float the team simply divided by three to get approximately 12" and decided to round up to 13" account for any errors made in finding the required buoyant force. Since a larger float provides the potential for more buoyant force but will still only provide what is needed, it was not an issue to round up.
+**[adjust numbers in this paragraph to our current calculations]**
+The team originally found that a float of just one 1" diameter pipe would have to be **35.05" long**. To get the length for the three-pipe float the team simply divided by three to get approximately 12" and decided to round up to 13" account for any errors made in finding the required buoyant force. Since a larger float provides the potential for more buoyant force but will still only provide what is needed, it was not an issue to round up.
 
 The spacing between the pipes was required because the center float pipe will be hose clamped to the top of the slider pipe and part of the notch at the top of the slider pipe would block the other two pipes had there not been space between them.
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Float.png?raw=true" height= 300></center>
