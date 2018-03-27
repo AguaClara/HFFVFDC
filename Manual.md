@@ -85,7 +85,7 @@ Then the spring was held in one end of the pipe and pulled until the pipe moved 
 $$ F=k*\Delta(x)= 229.8N/m * .03313m= 17.67 N $$
 $$ \mathrm{Mass}_{\mathrm{Float}}=\frac{F}{9.81 m/s^2} = 1.76 kg$$
 
-The buoyant force has to overcome the friction force in order for the float to move up and down smoothly. The volume of the float was determined by dividing the mass of the float by density of water then dividing that volume by the surface are of the desired pipe to get length.
+The buoyant force has to overcome the friction force in order for the float to move up and down smoothly. The volume of the float was determined by dividing the mass of the float by density of water then dividing that volume by the cross-sectional area of the desired pipe to get length.
 
 $$\mathrm{Volume}_{\mathrm{Float}}=\frac{\mathrm{Mass}_{\mathrm{Float}}}{\rho_{\mathrm{water}}}=\frac{1.76kg}{1000kg/m^3}=.00176m^3   $$
 $$L_{\mathrm{Float}}= \mathrm{Volume}_{\mathrm{Float}}/\mathrm{Area}_{\mathrm{Float}}=\frac{.00176m^3}{3.142 in^2}=35.05$$
@@ -192,19 +192,26 @@ Great photos! This step by step is easy to follow and clear.
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/SandingPipe.png?raw=true" height=300> <img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/SliderPipeNoHoles.JPG?raw=true" height = 300></center>
 
-
 <div class="alert alert-block alert-danger">
 For the next submission, add in a section about future/anticipated steps. This will give me an opportunity to read through and get a greater understanding. It also allows more of an opportunity to give you feedback on writing style and format.
 </div>
 
 ####Float
-To create the tee, the team cut 1" PVC pipe into 3 13" pieces using the bandsaw and hackzall and glued a strip of PVC sheet that was cut using the bandsaw to either end of all three pipes, with 2 cm spacing between each pipe. The team used this design because after calculating the required length of the float had it been just one pipe, it was clear that it would be too long for proper function both in the tank the team is using for testing and in the distribution tank itself. By using three pipes instead of one, the team was able to decrease the overall length of the float by three, which better accommodates the testing tank.
+**The float that was sized wrongly**
+Originally, the team incorrectly calculated the dimensions for a smaller sized float. The friction force that the smaller size float supported was 13.25 N while the measured friction force was 17.67 N. The first set of instructions were kept so that, given a better sanded tee with a smaller friction force, a procedure for fabrication is available.
+
+#####Smaller Float
+
+To create the 1" float, the team cut 1" PVC pipe into 3 13" pieces using the bandsaw and hackzall and glued a strip of PVC sheet that was cut using the bandsaw to either end of all three pipes, with 2 cm spacing between each pipe. The team used this design because after calculating the required length of the float had it been just one pipe, it was clear that it would be too long for proper function both in the tank the team is using for testing and in the distribution tank itself. By using three pipes instead of one, the team was able to decrease the overall length of the float by three, which better accommodates the testing tank.
 
 **[adjust numbers in this paragraph to our current calculations]**
 The team originally found that a float of just one 1" diameter pipe would have to be **35.05" long**. To get the length for the three-pipe float the team simply divided by three to get approximately 12" and decided to round up to 13" account for any errors made in finding the required buoyant force. Since a larger float provides the potential for more buoyant force but will still only provide what is needed, it was not an issue to round up.
 
-The spacing between the pipes was required because the center float pipe will be hose clamped to the top of the slider pipe and part of the notch at the top of the slider pipe would block the other two pipes had there not been space between them.
-<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Float.png?raw=true" height= 300></center>
+The spacing between the pipes was required because the center float pipe will be hose clamped to the top of the slider pipe and part of the notch at the top of the slider pipe would block the other two pipes had there not been space between them. In the 2" float spacing between pipes will not be required as seen in the pictures.
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/1%20inch%20float%20vs%202%20inch%20float.jpg?raw=true" height=300>
+#####Correctly sized Float
+
+To create the 2" float, a similar procedure was used to cut them to length, requiring the team to cut 2" PVC pipe into 3 13" pieces using a bandsaw and hackzall. However, because of the larger size spacing between the float was not required because the lip was no longer in the way for the 2" size. For the 2" caps, the team used a 2 1/2" hole saw in the drill press to cut six circular pieces out of PVC sheet. These pieces were glued to either end of each pipe to seal them for use as a float.
 
 ####Final assembly
 After putting the float, slider pipe and tee together the experimental setup was determined. Below is a picture of the complete assembly.
@@ -224,7 +231,7 @@ Our experimental setup consisted of three main parts: the water flow setup, the 
 | PVC Tee                         |    1     |    1" diameter    |
 | PVC Elbow                       |    2     |    1" diameter    |
 | PVC Reducer                     |    1     | 2" to 1" diameter |
-| PVC Coupling                    |          |    2" diameter    |
+| PVC Coupling                    |     1     |    2" diameter    |
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/HFFV%20setup.png?raw=true" height= 300></center>
 
