@@ -1,6 +1,7 @@
 ```python
 from aide_design.play import*
 from aide_design.physchem import*
+import math
 Q_Plant=20*u.L/u.s
 Temp_Plant=20*u.degC
 RatioVCOrifice=.62
@@ -59,11 +60,13 @@ print(flow_orifice_1*Max_Num_Holes)
 flow_orifice_2= flow_orifice(Slider_Hole_Diam, 2*u.m, RatioVCOrifice)
 print(flow_orifice_2.to(u.L/u.s))
 
-
+print(17.68*u.N/density_water(Temp_Plant)*math.pi*(1/2*u.inch)**2)
 def Float_Length(r, fricForce, temp):
-  floatLength = fricForce/(density_water(temp) * math.pi * r^2 * (1/2))
-  return floatLength
+  floatLength = fricForce/(density_water(temp) * math.pi * r**2 * (.5))/u.gravity
+  return floatLength.to(u.m)
 Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
+
+
   ##The the float was designed in relation to the frictional force so that when the float is in the plant, it will sit half submerged in the water.
 ```
 
