@@ -74,14 +74,10 @@ from aide_design.physchem import*
 import math
 Temp_Plant=20*u.degC
 Weight_Slider_Pipe=.3192*u.kg
-Volume_Float=Weight_Slider_Pipe/density_water(Temp_Plant)
-print(Volume_Float)
-Area_Float=1*u.inch**2*math.pi
-print(Area_Float.to(u.inch**2))
-L_Float=Volume_Float/Area_Float
-print(L_Float.to(u.inch))
+
 
 Float_ID=1*u.inch   
+Area_Float=Float_ID**2*math.pi
 Float_OD=3.47*u.cm  
 print((Float_OD/2).to(u.inch))
 Spacing=2*u.cm
@@ -111,4 +107,13 @@ print(Mass_Float)
 Volume_Float_Spring=Mass_Float/density_water(Temp_Plant)
 L_Float_Spring=Volume_Float_Spring/Area_Float
 print(L_Float_Spring.to(u.inch))
+```
+```python
+##What friction force does the smaller float's buoyant force support?
+Smol_Float_ID=.5*u.inch
+Area_Smol_Float=Smol_Float_ID**2*math.pi
+Volume_Smol_Float=3*Area_Smol_Float*L_Float_Spring
+Mass_Smol_Float=Volume_Smol_Float*density_water(Temp_Plant)
+F_Smol_Float=(Mass_Smol_Float*u.gravity).to(u.N)
+print(F_Smol_Float)
 ```
