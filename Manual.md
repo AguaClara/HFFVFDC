@@ -53,11 +53,12 @@ The team was constrained by a couple of parameters including available head, hei
 * Flow rate - 20 L/s
 * Pipe Diameter - 8 inch
 
-The goal was to use a diameter that would give us about 2 L/s or 1/10th of the flow rate of the plant: The flow_orifice equation was used by finding the amount of flow coming out of each hole.
+The goal was to use a diameter that would give us about 2 L/s or 1/10th of the flow rate of the plant: The flow_orifice equation was used by finding the amount of flow coming out of each hole.  
 
-$$ Q=\pi*A*\sqrt{2gh}
+$$ Q=\pi*A*\sqrt{2gh}=\frac{\pi d^2\sqrt{2gh}}{4}
 $$
-Where pi is the vena contract coefficient, A is the slider hole area that is being considered and h was the amount of head available. The hole sizing that was closest to the target flow rate per hole was 1" inch. These calculations were made again in the small scale design file with the following parameters given
+$$ d= (\frac{4Q}{\pi \sqrt{2gh}})^.5 $$
+Where pi is the vena contract coefficient, Q is the target flow rate which is 1/10th the plant's flow rate, A is the slider hole area that is being considered and h was the amount of head available. The hole sizing was determined to be closest to the target flow rate per hole at 1" inch. These calculations were made again in the small scale design file with the following parameters given
 * Available head = 1m - 2m
 * Height of distribution tank - 70 cm
 * Flow Rate = 1 L/s
@@ -68,10 +69,11 @@ The next step was to determine the spacing and pattern of the holes on the slide
 
 ####Rate of Leakage
 $$ {Q_{\mathrm{leak}} \over Q_{\mathrm{plant}}} = {{\Delta h \over \Delta t} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
-
+$$ Q_{\mathrm{leak}} = Q_{\mathrm{plant}}{{.03Height_{}\over 8hrs} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
 $$Q_{\mathrm{leak}} = 20 L/s*.03 = .6 L/s$$
 $$Q_{\mathrm{leak - Small Scale}} = 1 L/s*.03 = .03 L/s$$
-This ratio was derived from wanting the last 3% of the tank to fill up during off-peak hours which has a duration of 8 hours from midnight to 8 am. Using this ratio the target Q_leak is determined to be .6 L/s in the full scale design.
+
+This ratio was derived from wanting the last 3% of the height of the tank to fill up during off-peak hours which has a duration of 8 hours derived from midnight to 8 am. The amount of time it takes to fill up the whole height of the tank was used in the bottom fraction, determined to be 8 hrs. Using this ratio the target Q_leak is determined to be .6 L/s in the full scale design.
 
 ####Float size
 The float size was determined by testing the friction force between the slider pipe and tee. First the spring constant k was determined by hanging a weight off the spring and measuring the change in length from it's origination orientation.
@@ -164,13 +166,15 @@ Sometimes there are spaces after the photos before the text and sometimes not. C
 ####Tee
 
 \
-Next, the team cut each of the PVC bushings to 1" in height using the band saw.
+Next, the team cut each of the PVC bushings to 1" in height using the band saw. These were cut because it made more space available in the tee for exposure to holes.  
 
 <div class="alert alert-block alert-danger">
 Consider overlaying your photos with arrows/labels. For example pointing out the bushings in the photo on the left below. (I am not very fabrication driven so I don't know what a bushing is, so incoming freshmen may not know as well. Remember that the audience here is a new member of AguaClara). Great visuals used.
+Bushing labeled
 </div>
 
-<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Bushings%20with%20marked%20cuts.jpg?raw=true" height=300> <img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Bushing%20about%20to%20be%20cut.jpg?raw=true"  height = 300></center>
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Bushings%20with%20marked%20cuts.jpg?raw=true" height=300><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Bushing%20about%20to%20be%20cut.jpg?raw=true"  height = 300> </center>
+<center> Bushings are shown on the left with marks drawn on them as a guide for bandsaw cuts.</center>
 
 \
 The team then created a handmade sanding tool. This tool was made from an arbitrarily long 1" PVC pipe with a thick piece of sandpaper PVC-glued to around its circumference.
@@ -197,21 +201,21 @@ For the next submission, add in a section about future/anticipated steps. This w
 </div>
 
 ####Float
-**The float that was sized wrongly**
 Originally, the team incorrectly calculated the dimensions for a smaller sized float. The friction force that the smaller size float supported was 13.25 N while the measured friction force was 17.67 N. The first set of instructions were kept so that, given a better sanded tee with a smaller friction force, a procedure for fabrication is available.
 
 #####Smaller Float
 
 To create the 1" float, the team cut 1" PVC pipe into 3 13" pieces using the bandsaw and hackzall and glued a strip of PVC sheet that was cut using the bandsaw to either end of all three pipes, with 2 cm spacing between each pipe. The team used this design because after calculating the required length of the float had it been just one pipe, it was clear that it would be too long for proper function both in the tank the team is using for testing and in the distribution tank itself. By using three pipes instead of one, the team was able to decrease the overall length of the float by three, which better accommodates the testing tank.
 
-**[adjust numbers in this paragraph to our current calculations]**
-The team originally found that a float of just one 1" diameter pipe would have to be **35.05" long**. To get the length for the three-pipe float the team simply divided by three to get approximately 12" and decided to round up to 13" account for any errors made in finding the required buoyant force. Since a larger float provides the potential for more buoyant force but will still only provide what is needed, it was not an issue to round up.
+The team originally found that a float of just one 1" diameter pipe would have to be 35.05" long. To get the length for the three-pipe float the team simply divided by three to get approximately 12" and decided to round up to 13" account for any errors made in finding the required buoyant force. Since a larger float provides the potential for more buoyant force but will still only provide what is needed, it was not an issue to round up.
 
 The spacing between the pipes was required because the center float pipe will be hose clamped to the top of the slider pipe and part of the notch at the top of the slider pipe would block the other two pipes had there not been space between them. In the 2" float spacing between pipes will not be required as seen in the pictures.
-<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/1%20inch%20float%20vs%202%20inch%20float.jpg?raw=true" height=300>
+
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/1%20inch%20float%20vs%202%20inch%20float.jpg?raw=true" height=300></center>
+
 #####Correctly sized Float
 
-To create the 2" float, a similar procedure was used to cut them to length, requiring the team to cut 2" PVC pipe into 3 13" pieces using a bandsaw and hackzall. However, because of the larger size spacing between the float was not required because the lip was no longer in the way for the 2" size. For the 2" caps, the team used a 2 1/2" hole saw in the drill press to cut six circular pieces out of PVC sheet. These pieces were glued to either end of each pipe to seal them for use as a float.
+To create the 2" float, a similar procedure was used to cut them to the same length, requiring the team to cut 2" PVC pipe into 3 13" pieces using a bandsaw and hackzall. However, because of the larger size spacing between the float was not required because the lip was no longer in the way for the 2" size. For the 2" caps, the team used a 2 1/2" hole saw in the drill press to cut six circular pieces out of PVC sheet. These pieces were glued to both ends of each pipe to seal them for use as floats.
 
 ####Final assembly
 After putting the float, slider pipe and tee together the experimental setup was determined. Below is a picture of the complete assembly.
@@ -219,7 +223,7 @@ After putting the float, slider pipe and tee together the experimental setup was
 
 
 ###Experimental Setup
-Our experimental setup consisted of three main parts: the water flow setup, the bulkhead fitting, and the slider pipe assembly.
+Our experimental setup consisted of the water flow setup and the slider pipe assembly.
 
 ####Materials List **[edit for new set up]**
 | Part                            | Quantity |       Size        |
@@ -227,30 +231,25 @@ Our experimental setup consisted of three main parts: the water flow setup, the 
 | Flexible Tubing                 |   5 ft   |    1" diameter    |
 | Hose clamp                      |    1     |    2" diameter    |
 | Barbed PVC Fitting NPT Male End |    1     |    1" diameter    |
-| PVC Pipe                        |   1 ft   |    1" diameter    |
 | PVC Tee                         |    1     |    1" diameter    |
-| PVC Elbow                       |    2     |    1" diameter    |
-| PVC Reducer                     |    1     | 2" to 1" diameter |
-| PVC Coupling                    |     1     |    2" diameter    |
+| PVC Elbow                       |    1     |    1" diameter    |
+| PVC Elbow                       |    1     |    2" diameter    |
+| PVC Bushing                     |    1     | 2" to 1" diameter |
+| PVC Coupling                    |    1     |    2" diameter    |
+| PVC Pipe                        |  3" x3   |    2" diameter    |
+| PVC Pipe                        |   4 ft   |    1" diameter    |
+| PVC Coupling                    |    1     |    1" diameter    |
+| Fernco                          |    1     |    2" diameter    |
+
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/HFFV%20setup.png?raw=true" height= 300></center>
 
 ####Water Flow
-In order to check the flow of the water out of the sink, the team had test the time it took for a flow to fill a bucket. After adjusting the sink valves and running several trials, a steady 1L/s flow rate was obtained.
+In order to check the flow of the water out of the sink, the team had to test the time it took for a flow to fill a bucket. The bucket was marked with the level of 3 liters so the team found the right position of the faucet that would fill up to the 3 liter mark in 3 seconds in order to have a flow rate of 1L/s.
 
-The team then took a piece of 1" diameter flexible tubing and used a hose clamp to secure it to the faucet. This flexible tubing led to a barbed fitting on a raised platform on the counter of the lab bench. The team did this in order to ensure more head upon entering the distribution tank. At the top of this platform, the team inserted a 1" tee, leaving the middle portion of the tee open to the air. This exposed the water to atmospheric pressure to eliminate pressure head. The pipe was then expanded by the introduction of a 1" diameter to 2" diameter coupling. The team then cut a small piece of 2" diameter PVC to connect the coupling to the bulkhead fitting.
-
+####Water Route
+The team then took a piece of 1" diameter flexible tubing and used a hose clamp to secure it to the faucet. This flexible tubing led to a barbed fitting on a raised platform on the counter of the lab bench. The team did this in order to ensure more head upon entering the distribution tank. At the top of this platform, the team inserted a 1" tee, inserting 1 ft long 1" pipe in the middle portion. This exposed the water to atmospheric pressure to eliminate pressure head while still preventing water from spilling out. The tee then led into a 1" elbow that diverted the water down into a 3-foot long 1" pipe that went into the container that the team used as a small scale distribution tank. The pipe was then expanded by the introduction of a 1" diameter to 2" diameter bushing because the inlet of the high flow float valve tee is 2" in diameter. The team then used a 2" elbow to get the water to flow horizontally into the float valve tee. Between the elbow and the tee were two small pieces of 2" diameter PVC which were connected by a fernco. One end was glued into the elbow while the other was glued into the tee of the float valve. The team used a fernco so that the float valve would not be permanently attached to the experimental setup. The float valve is positioned roughly in the center of the tank both vertically and horizontally. It is centered vertically because this allows for the largest range of motion of the slider pipe. It is also centered horizontally within the tank so that the float does not hit the sides of the tank.
 **[insert picture of water setup]**
-
-####Bulkhead Fitting
-After constructing the water inlet system, the team found a small scale distribution tank in order to test the float valve. The team found a large container and built the slider pipe according to the height of this container. In order to provide the slider pipe with the most active length, the inlet should be positioned in the middle of the container. However, the team decided to position the pipe slightly below the halfway point. This was done in order to fit the given design constraint that the last 3% (see design details). Because of these considerations, the team drilled the hole for the inlet pipe at **[input height of inlet]**. The team cut a hole for a 2" bulkhead fitting using a drill fitted with a 3.5" hole saw attachment. A hole saw this large was necessary due to the size of the bulkhead fitting. The team then tightened the bulkhead fitting through the hole.
-
-**[insert photo of bulkhead fitting]**
-
-####Slider Pipe Assembly
-After attaching the bulkhead fitting through the hole, the team cut a piece of 2" diameter PVC pipe to **[insert length of PVC pipe]**. This length was necessary to position the slider pipe far enough away from the edge of the distribution tank to avoid interference between the two. The 2" diameter pipe was then glued to the bulkhead fitting on one end and the slider pipe on the other end.
-
-**[insert photo of slider pipe assembly]**
 
 
 ###Special Components
