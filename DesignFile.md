@@ -60,9 +60,14 @@ print(flow_orifice_1*Max_Num_Holes)
 flow_orifice_2= flow_orifice(Slider_Hole_Diam, 2*u.m, RatioVCOrifice)
 print(flow_orifice_2.to(u.L/u.s))
 
-print(17.68*u.N/density_water(Temp_Plant)*math.pi*(1/2*u.inch)**2)
+#Function to solve for slider hole diameter
+def Slider_Diam(FlowRate,Headloss_Avail):
+  Diameter=((4*FlowRate)/(math.pi*(2*u.gravity*Headloss_Avail)**.5))**.5
+  return(Diameter)
+  
+# Functino to solve for Float length
 def Float_Length(r, fricForce, temp):
-  floatLength = fricForce/(density_water(temp) * math.pi * r**2 * (.5))/u.gravity
+  floatLength = (fricForce/u.gravity)/(density_water(temp) * math.pi * r**2 * (.5))
   return floatLength.to(u.m)
 Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
 
