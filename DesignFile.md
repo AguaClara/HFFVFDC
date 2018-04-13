@@ -64,7 +64,7 @@ print(flow_orifice_2.to(u.L/u.s))
 def Slider_Diam(FlowRate,Headloss_Avail):
   Diameter=((4*FlowRate)/(math.pi*(2*u.gravity*Headloss_Avail)**.5))**.5
   return(Diameter)
-  
+
 # Functino to solve for Float length
 def Float_Length(r, fricForce, temp):
   floatLength = (fricForce/u.gravity)/(density_water(temp) * math.pi * r**2 * (.5))
