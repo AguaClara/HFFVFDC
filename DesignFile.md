@@ -65,11 +65,27 @@ def Slider_Diam(FlowRate,Headloss_Avail):
   Diameter=((4*FlowRate)/(math.pi*(2*u.gravity*Headloss_Avail)**.5))**.5
   return(Diameter)
 
-# Functino to solve for Float length
-def Float_Length(r, fricForce, temp):
-  floatLength = (fricForce/u.gravity)/(density_water(temp) * math.pi * r**2 * (.5))
+# Function to solve for Float length
+# def Float_Length(r, fricForce, temp):
+  # floatLength = (fricForce/u.gravity)/(density_water(temp) * math.pi * r**2 * (.5))
+  # return floatLength.to(u.m)
+# Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
+
+# Alternate function to solve for float length assuming negligible frictional force
+# In this function "S" is used to denote "Slider Pipe" and "F" is used to denote "Float"
+import math
+OD_Slider_Pipe = 1.9 * (u.inch)
+ID_Slider_Pipe = 1.610 * (u.inch)
+OD_Float = 2.375 * (u.inch)
+Length_Slider_Pipe = 16 * (u.inch)
+Assembly_Weight = .5 * (u.kg)
+Density = density_water(20)
+def Float_Length (Total_Weight, dens, OD_F, Length_S, OD_S, ID_S):
+  # floatLength = (2)* (4 * Total_Weight - (dens * math.pi)*(Length_S * (OD_S**2 - ID_S**2) + ((.25 * u.inch) * OD_F**2)))/ (OD_F**2 * dens * math.pi)
+  floatLength = ( 8 * Total_Weight / (OD_F**2 * dens * math.pi)) - (2 * Length_S * (OD_S**2 - ID_S**2)/ OD_F**2) - (1/2 * u.inch)
   return floatLength.to(u.m)
-Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
+Float_Length(Assembly_Weight, Density, OD_Float, Length_Slider_Pipe, OD_Slider_Pipe, ID_Slider_Pipe)
+
 
 
   ##The the float was designed in relation to the frictional force so that when the float is in the plant, it will sit half submerged in the water.
