@@ -74,7 +74,10 @@ Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
 
   ##The the float was designed in relation to the frictional force so that when the float is in the plant, it will sit half submerged in the water.
 ```python
-def HFFV(FlowRate,Head):
+from aide_design.play import*
+from aide_design.physchem import*
+import math
+def HFFV(FlowRate,Head): ##Given flowrate and head this will tell you the parameters to use for your HFFV system but doesn't include float size and slider pipe length.
   if (FlowRate>=(1*u.L/u.s)) and (FlowRate<=(6*u.L/u.s)):
     Slider_Pipe_Diam=1.5*u.inch
     Tee_Diam=2*u.inch
@@ -84,7 +87,7 @@ def HFFV(FlowRate,Head):
     print('Slider pipe diameter is '+str(Slider_Pipe_Diam))
     print('Tee diameter is ' +str(Tee_Diam))
     print('Hole Diameter is ' +str(Hole_Diam))
-    print('Number of holes required is '+str(Number_Holes))
+    print('Max number of holes required is '+str(Number_Holes))
 
   elif (FlowRate>=(6*u.L/u.s)) and (FlowRate<=(25*u.L/u.s)):
     Slider_Pipe_Diam=3*u.inch
@@ -95,7 +98,7 @@ def HFFV(FlowRate,Head):
     print('Slider pipe diameter is '+str(Slider_Pipe_Diam))
     print('Tee diameter is ' +str(Tee_Diam))
     print('Hole Diameter is ' +str(Hole_Diam))
-    print('Number of holes required is '+str(Number_Holes))
+    print('Max number of holes required is '+str(Number_Holes))
   elif (FlowRate>=(25*u.L/u.s)) and (FlowRate<=(100*u.L/u.s)):
     Slider_Pipe_Diam=6*u.inch
     Tee_Diam=8*u.inch
@@ -105,7 +108,28 @@ def HFFV(FlowRate,Head):
     print('Slider pipe diameter is '+str(Slider_Pipe_Diam))
     print('Tee diameter is ' +str(Tee_Diam))
     print('Hole Diameter is ' +str(Hole_Diam))
-    print('Number of holes required is '+str(Number_Holes))
+    print('Max number of holes required is '+str(Number_Holes))
 
   return
-  ```
+
+def Slider_Pipe_Length(Height_Distribution_Tank,Plug_Diam,Slider_Pipe_Diam,Tee_Diam):
+  Tee_Height=Tee_Length(Tee_Diam)
+  Bot_Extra_Material=Plug_Diam/2+.5*u.inch ##Standard plug diam is half inch diameter
+  Top_Extra_Material=Float_Diameter*(1+2**(.5))+Plug_Diam/2+.5*u.inch
+  Active_Length=(Height_Distribution_Tank-Bot_Extra_Material-Top_Extra_Material-Tee_Height/2)+Tee_Height
+  SP_Length=Active_Length+Top_Extra_Material+Bot_Extra_Material+Slider_Pipe_Diam/2
+  print('Slider pipe length is '+str(Slider_Pipe_Length))
+
+def Tee_Length(Tee_Diam):
+  if Tee_Diam==2*u.inch:
+    Length=5.25*u.inch
+    return(Length)
+  elif Tee_Diam==4*u.inch:
+    Length=8.675*u.inch
+    Return(Length)
+  elif Tee_Diam==8*u.inch:
+    Length=18*u.inch    
+    Return(Length)
+Tee_Length(2*u.inch)
+
+```
