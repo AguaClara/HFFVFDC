@@ -73,7 +73,39 @@ Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
 
 
   ##The the float was designed in relation to the frictional force so that when the float is in the plant, it will sit half submerged in the water.
-```
+```python
+def HFFV(FlowRate,Head):
+  if (FlowRate>=(1*u.L/u.s)) and (FlowRate<=(6*u.L/u.s)):
+    Slider_Pipe_Diam=1.5*u.inch
+    Tee_Diam=2*u.inch
+    Hole_Diam=.25*u.inch
+    Flow_orifice= flow_orifice(Hole_Diam, Head, RatioVCOrifice)
+    Number_Holes=round((FlowRate/Flow_orifice.to(u.L/u.s)),1)
+    print('Slider pipe diameter is '+str(Slider_Pipe_Diam))
+    print('Tee diameter is ' +str(Tee_Diam))
+    print('Hole Diameter is ' +str(Hole_Diam))
+    print('Number of holes required is '+str(Number_Holes))
 
-Range_Slider is not for sure...
-Check if this commits and pushes
+  elif (FlowRate>=(6*u.L/u.s)) and (FlowRate<=(25*u.L/u.s)):
+    Slider_Pipe_Diam=3*u.inch
+    Tee_Diam=4*u.inch
+    Hole_Diam=.5*u.inch
+    Flow_orifice= flow_orifice(Hole_Diam, Head, RatioVCOrifice)
+    Number_Holes=round((FlowRate/Flow_orifice.to(u.L/u.s)),1)
+    print('Slider pipe diameter is '+str(Slider_Pipe_Diam))
+    print('Tee diameter is ' +str(Tee_Diam))
+    print('Hole Diameter is ' +str(Hole_Diam))
+    print('Number of holes required is '+str(Number_Holes))
+  elif (FlowRate>=(25*u.L/u.s)) and (FlowRate<=(100*u.L/u.s)):
+    Slider_Pipe_Diam=6*u.inch
+    Tee_Diam=8*u.inch
+    Hole_Diam=1*u.inch
+    Flow_orifice= flow_orifice(Hole_Diam, Head, RatioVCOrifice)
+    Number_Holes=round((FlowRate/Flow_orifice.to(u.L/u.s)),1)
+    print('Slider pipe diameter is '+str(Slider_Pipe_Diam))
+    print('Tee diameter is ' +str(Tee_Diam))
+    print('Hole Diameter is ' +str(Hole_Diam))
+    print('Number of holes required is '+str(Number_Holes))
+
+  return
+  ```
