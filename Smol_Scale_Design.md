@@ -1,7 +1,7 @@
 ```python
 from aide_design.play import*
 from aide_design.physchem import*
-Q_Plant=20*u.L/u.s
+Q_Plant=1*u.L/u.s
 Temp_Plant=20*u.degC
 RatioVCOrifice=.62
 Nu=viscosity_kinematic(Temp_Plant)
@@ -42,15 +42,6 @@ hole_rows=7
 rows_exposed=3
 row_spacing=tee_exposed/rows_exposed
 
-def K_Minor_Calc(D1,D2):
-  K_L=(1-D1**2/D2**2)**2
-  return(K_L)
-K_Minor_Calc(8*u.inch,6*u.inch)
-  ##From left to right D1->D2,
-K_Minor_Inlet=K_Minor_Calc(Outlet_Diam,Slider_Pipe_ID)
- ##K minor value for first contraction
-print(K_Minor_Inlet)
-
 HL_Inlet=headloss_exp(Q_Plant, Outlet_Diam, K_Minor_Inlet)
 print(HL_Inlet)
 
@@ -58,8 +49,9 @@ HL_Slider_Hole=head_orifice(Slider_Hole_Diam, RatioVCOrifice, Q_Per_Hole)
 print(HL_Slider_Hole)
 
 
-flow_orifice_1= flow_orifice(Slider_Hole_Diam, 1*u.m, RatioVCOrifice)
-print(flow_orifice_1.to(u.L/u.s))
+flow_orifice_1= flow_orifice(Slider_Hole_Diam, 1*u.m, RatioVCOrifice).to(u.L/u.s)
+print(90*flow_orifice_1)##Given 1 meter of head, slider pipe diam can handle an excess of 7 L/s which is more than what the 2 inch tee can handle, 6.4 L/s
+Two_inch_HFFV_Max_Holes=(6*u.L/u.s)/flow_orifice_1 ##69 holes
 flow_orifice_2= flow_orifice(Slider_Hole_Diam, 2*u.m, RatioVCOrifice)
 print(flow_orifice_2.to(u.L/u.s))
 
@@ -107,8 +99,8 @@ print(Mass_Float)
 Volume_Float_Spring=Mass_Float/density_water(Temp_Plant)
 L_Float_Spring=Volume_Float_Spring/Area_Float
 print(L_Float_Spring.to(u.inch))
-```
-```python
+
+import math
 ##What friction force does the smaller float's buoyant force support?
 Smol_Float_ID=.5*u.inch
 Area_Smol_Float=Smol_Float_ID**2*math.pi
@@ -116,4 +108,28 @@ Volume_Smol_Float=3*Area_Smol_Float*L_Float_Spring
 Mass_Smol_Float=Volume_Smol_Float*density_water(Temp_Plant)
 F_Smol_Float=(Mass_Smol_Float*u.gravity).to(u.N)
 print(F_Smol_Float)
+
+
+```
+```python
+def K_Minor_Calc(D1,D2):
+  K_L=(1-D1**2/D2**2)**2
+  return(K_L)
+V=(1*u.m*9.81*u.m/u.s**2)**.5
+print(V)
+A=((1*u.inch)**2)/4*math.pi
+Q=V*A
+Q.to(u.L/u.s)
+#In this system we are bottlenecked by our 1 inch piping but in real plants it will be bottlenecked by the tee as the piping going into the tee will be the same pipe sizing.
+#Headloss calculation in experimental setup
+Q_HFFV=1*u.L/u.s  
+Pipe_Roughness=0.0015*u.mm
+Pipe_in=1*u.inch   
+Pipe_Tee=2*u.inch  
+Length_Sys=6*u.inch
+K_adapter=K_Minor_Calc(Pipe_in,Pipe_Tee)
+K_elbows=.5*2
+K=K_adapter+K_elbows
+headloss_exp(Q_HFFV,Pipe_Tee,K)
+headloss_fric(Q_HFFV, Pipe_Tee, Length_Sys, Nu,Pipe_Roughness)
 ```
