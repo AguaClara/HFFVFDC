@@ -101,7 +101,7 @@ The High Flow Float Valve team is planning to assemble 2 inch float valve in ord
 ####Slider Pipe
 
 
-The slider pipe requires a notch at the top of the tank to fit a float, holes in the active length portion of the pipe (where the pipe will slideTo form the slider pipe, the team started by cutting a piece of 1.5" diameter pipe to 41cm using the table clamp and the reciprocating saw. This length was calculated by the following equation, allotting an extra 3.5cm as an arbitrary buffer to allow space for additions at the top of the pipe, including the float and plugs:
+The slider pipe requires a notch at the top of the pipe to fit a float, holes in the active length portion of the pipe (the range of the slider pipe where it can be exposed to the tee) to allow water to pass, and holes for a hose clamp to secure the float and for plugs to constrain the active length. The team started fabricating by cutting a piece of 1.5" diameter pipe to 41cm using the table clamp and the reciprocating saw. This length was calculated by the following equation, allotting an extra 3.5cm as an arbitrary buffer to allow space for additions at the top of the pipe, including the float and 1/4 inch plugs:
 
 $$ L_{\mathrm{Pipe}} = {1 \over 2} \times H_{\mathrm{DistributionTank}} + 3.5\mathrm{cm} $$
 
@@ -175,7 +175,7 @@ Consider overlaying your photos with arrows/labels. For example pointing out the
 Bushing labeled
 </div>
 
-<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Bushings%20with%20labels.png" height=300><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Bushing%20about%20to%20be%20cut.jpg?raw=true"  height = 300> </center>
+<center><img src="" height=300><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Bushing%20about%20to%20be%20cut.jpg?raw=true"  height = 300> </center>
 <center> Bushings are shown on the left with marks drawn on them as a guide for bandsaw cuts.</center>
 
 \
@@ -245,7 +245,7 @@ Our experimental setup consisted of the water flow setup and the slider pipe ass
 | Clear PVC Pipe                  |   2 ft   |    2" diameter    |
 
 
-<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/HFFV%20setup.png?raw=true" height= 300></center>
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/setup2.png?raw=true" height= 300></center>
 
 ####Water Flow
 In order to check the flow of the water out of the sink, the team had to test the time it took for a flow to fill a bucket. The bucket was marked with the level of 3 liters so the team found the right position of the faucet knob that would fill up to the 3 liter mark in 3 seconds in order to have a flow rate of 1L/s.
