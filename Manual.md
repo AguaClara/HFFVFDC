@@ -107,6 +107,8 @@ $$ L_{\mathrm{Pipe}} = {1 \over 2} \times H_{\mathrm{DistributionTank}} + 3.5\ma
 
 $$ L_{\mathrm{Pipe}} = {1 \over 2} (75\mathrm{cm}) + 3.5\mathrm{cm} = 41.0 \mathrm{cm}  $$
 
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/active%20length.jpg?raw=true"  height = 300></center>
+
 The team then used the bandsaw and the angle alignment tool to produce two cuts in the top of the pipe to form a notch as shown below.  This notch will be used to secure the float to the pipe with a hose clamp later. The angles used cut were close to 45 degrees. However, it was not necessary that this measurement be extremely precise, because the notch simply serves as a holding space for the float.
 
 <div class="alert alert-block alert-danger">
