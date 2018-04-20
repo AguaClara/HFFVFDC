@@ -45,8 +45,9 @@ addressed - Aly
 </div>
 
 ###Design Details
-#### Design scale flow rate ranges
-The HFFV was designed to accommodate three different scales for three ranges of flow rates. The team determined these designs by using the minor headloss equation to find the maximum flow rate that different tee sizes could handle. First velocity on the left side was solved for then Q was solved for given the area of a tee. Headloss available was assumed to be 1m.
+#### Design Scale Flow Rate Ranges
+The HFFV was designed to accommodate three different scales for three ranges of flow rates. The team determined these designs by using the minor headloss equation to find the maximum flow rate that different tee sizes could handle. First, the team solved for velocity given the available head. Then, the team found the flow rate Q as a result of the given area of the tee. The available headloss available was assumed to be 1m.
+
 $$\frac{V^2}{2g}=Head_{Availible}$$
 $$V=\sqrt{2gHead_{Availible}}=3.132 m/s$$
 $$Q=VA_{Tee}$$
@@ -54,65 +55,76 @@ $$Q_{2 in}=VA_{2in}=3.132m/s*.02m^2=6.34 L/s\approx6L/s$$
 $$Q_{4 in}=VA_{4in}=3.132m/s*.08m^2=25.4 L/s\approx25L/s$$
 $$Q_{8 in}=VA_{8in}=3.132m/s*.32m^2=101.6 L/s\approx100L/s$$
 
-Using these max flow rates the team determined that there would be three different scales: between 1L/s and 6 L/s, 6L/s and 25L/s, and 25L/s and 100 L/s. If additional head were available the ranges for each of the scales would be larger.
+Using these max flow rates, the team determined the ranges for three different sizes of pipe: 1L/s to 6 L/s, 6L/s to 25L/s, and 25L/s to 100 L/s. If additional head were available, the ranges for each of the scales would be larger due to the higher velocity of water running through the tee.
+
+
 ####Slider Pipe Length
-The slider pipe length is determined by summing the active length and the lengths needed below and above the active length.
+The slider pipe length depends on the height of the distribution tank and the tee used in the apparatus. It is the sum of the length of the tee and the space free for the pipe to move below the tee.
 
 #####Active Length
 The active length is the portion of the slider pipe that slides through the tee, from the bottom plugs to the top plugs. The active length is
-$$ActiveLength=\frac{Height_{tank}-TopExtraMaterial-BottomExtraMaterial+Height_{tee}}{2}$$
-where $Height_{tank}$ is the height of the distribution tank, TopExtraMaterial is the length from the top plugs to the top of the float, and BottomExtraMaterial is the length from the bottom plugs to the bottom of the float. This is the active length because the slider pipe should be able to span the length from a distance of BottomExtraMaterial from the bottom of the tank to a distance of TopExtraMaterial from the top of the tank and the height of the tee is added because the maximum height of the bottom plugs is $Height_{tee}/2$ down from the center and the minimum height of the top plugs is $Height_{tee}/2$ up from the center.
+
+$$ActiveLength=\frac{Height_{tank}-TopExtraMaterial-BottomExtraMaterial}{2} +{Height_{tee} \over 2}$$
+
+
+where $Height_{tank}$ is the height of the distribution tank, $TopExtraMaterial$ is the length from the top plugs to the top of the float, and $BottomExtraMaterial$ is the length from the bottom plugs to the bottom of the float. This is the active length because the slider pipe should be able to span the length from a distance of $BottomExtraMaterial$ from the bottom of the tank to a distance of $TopExtraMaterial$ from the top of the tank. Half the height of the tee is added because there must always be pipe within the tee, so the length of the tee is part of the pipe length when the valve is both open and closed.
+
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/diagram%20of%20float%20attached%20to%20pipe.jpg?raw=true"  height = 300></center>
 
 The value of TopExtraMaterial is
 $$TopExtraMaterial= OuterDiameter_{float}*(1+\sqrt{2})+PlugClearance$$
-where PlugClearance is the amount of space left between the center of the plug and the edge of the pipe. The team decided to leave half an inch of space between the bottom of the bottom plugs and the bottom of the slider pipe as well as the top of the top plug and the top of the slider pipe directly above the plugs. With 0.5" diameter plugs, this gives a PlugClearance of 0.75". To find TopExtraMaterial, the distance from the top plugs to the top of the float is needed. From the top plugs to the bottom of the notch in the top of the slider pipe is the PlugClearance. Using the fact that the angle of the notch is 45º, from the bottom of the notch to the center of the float is $\sqrt{2}\frac{OuterDiameter_{float}}{2}$ and from the center of the float to the top of the float is $\frac{OuterDiameter_{float}}{2}$.
+where $PlugClearance$ is the amount of space left between the center of the plug and the edge of the pipe. The team decided to leave half an inch of space between the bottom of the bottom plugs and the bottom of the slider pipe, as well as the top of the top plug and the top of the slider pipe directly above the plugs. With 0.5" diameter plugs, this gives a $PlugClearance$ of 0.75". To find $TopExtraMaterial$, the distance from the top plugs to the top of the float is needed. From the top plugs to the bottom of the notch in the top of the slider pipe is the $PlugClearance$. Using the fact that the angle of the notch is 45º, from the bottom of the notch to the center of the float is $\sqrt{2}\frac{OuterDiameter_{float}}{2}$ and from the center of the float to the top of the float is $\frac{OuterDiameter_{float}}{2}$.
 
-The value of BottomExtraMaterial is the distance from the bottom plugs to the bottom of the slider pipe which is equal to PlugClearance.
+The value of $BottomExtraMaterial$ is the distance from the bottom plugs to the bottom of the slider pipe which is equal to $PlugClearance$.
 
 #####Total Length
-The total Slider Pipe Length is
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/diagram%20of%20full%20pipe.jpg?raw=true"  height = 300></center>
+
+The total slider pipe length is
 $$PipeLength= ActiveLength+BottomExtraMaterial+PlugClearance+\frac{OuterDiameter_{slider pipe}}{2}
 $$
-because from the bottom to the bottom plugs is BottomExtraMaterial, then from the bottom plugs to the top plugs is ActiveLength, from the top plugs to the bottom of the notch is PlugClearance and from the bottom of the notch to the top of the notch is equal to the outer radius of the slider pipe by geometry.
+because from the bottom to the bottom plugs is $BottomExtraMaterial$, then from the bottom plugs to the top plugs is $ActiveLength$, from the top plugs to the bottom of the notch is $PlugClearance$, and from the bottom of the notch to the top of the notch is equal to the outer radius of the slider pipe by geometry.
+
 
 ####Slider Pipe Hole Size and Pattern
-The team was constrained by a couple of parameters including available head, height of the distribution tank, flow rate. The number and size of exposed holes is dependent on the flow rate as higher flow rates require a bigger number and size of holes. The goal was to solve for  slider pipe hole diameter and number of holes given the following parameters of the plant in Honduras.
+The team was constrained by a couple of parameters including available head, height of the distribution tank, and flow rate. The number and size of exposed holes is dependent on the flow rate, as higher flow rates require more, larger holes. The goal was to solve for  slider pipe hole diameter and number of holes given the following parameters of the plant in Honduras.
 
-* Available Head - 1m - 2m
-* Height of distribution tank - 1.83 m or 6 ft
-* Flow rate - 20 L/s
+* Available Head: 1m - 2m
+* Height of distribution tank: 1.83 m or 6 ft
+* Flow rate: 20 L/s
 
-As the HFFV scales up hole diameter size increases. These sizes were determined by testing how much flow would come out of an orifice and capping the maximum number of holes exposed to the tee at 75 holes. This maximum number of holes was chosen because having too many holes would make fabrication difficult and risks not having enough space in the tee to fit every hole. The flow orifice equation shown below was used.
+As the HFFV scales up, hole diameter size increases. These sizes were determined by testing how much flow would come out of an orifice and capping the maximum number of holes exposed to the tee at 75 holes. The team capped this as the maximum number of holes, because having too many holes would make fabrication difficult and would risk not having enough space in the tee to fit all holes. The team used the flow orifice equation shown below.
 
 $$ Q=\pi*A*\sqrt{2gh}=\frac{\pi_{vc} d^2\pi\sqrt{2gh}}{4}$$
-Where pi underscore vc is the vena contract coefficient (typically .62), Q is the target flow rate which is 1/10th the plant's flow rate, A is the slider hole area that is being considered and h was the amount of head available.
+
+where $\pi_{vc}$ is the vena contract coefficient (typically .62), $Q$ is the target flow rate which is $1\over 10$th the plant's flow rate, $A$ is the slider hole area that is being considered and $h$ is the amount of head available.
 $$ Q_{1/4in} = 0.08696 liter / second$$
-This means that out of one orifice approximately .09 L/s can flow from a 1/4" orifice. Dividing the ranges of plant flow rates in the 2 inch HFFV system gives the following:
+This means that out of one 1/4"orifice, approximately .09 L/s can flow. Dividing the ranges of plant flow rates in the 2 inch HFFV system gives the following:
 $$ Number Holes_{Max}=\frac{6L/s}{Q_{1/4in}}=69$$
 $$ Number Holes_{Min}=\frac{1L/s}{Q_{1/4in}}=11.5$$
 This fulfills our constraint that maximum number of holes has to be below 75. Similar calculations were done for .5" and 1" holes.
 
-$$ Q_{1/2in} = 0.35 liter / second$$
+$$ Q_{1/2in} = 0.35 L/s$$
 
-This means that out of one orifice approximately .35 L/s can flow from a 1/2" orifice. Dividing the ranges of plant flow rates in the 4 inch HFFV system gives the following:
+This means that out of one 1/2" orifice approximately .35 L/s can flow. Dividing the ranges of plant flow rates in the 4 inch HFFV system gives the following:
 $$ Number Holes_{Max}=\frac{25L/s}{Q_{1/2in}}=72$$
 $$ Number Holes_{Min}=\frac{L/s}{Q_{1/2in}}=17$$
 
-Thus for the 4 inch HFFV systems 1/2" holes will be used in the slider pipe.
+Thus, for the 4 inch HFFV systems, 1/2" holes will be used in the slider pipe.
 
 $$ Q_{1in} = 1.391 liter / second$$
-This means that out of one orifice approximately 1.391 L/s can flow from a 1" orifice. Dividing the ranges of plant flow rates in the 8 inch HFFV system gives the following:
+This means that out of one 1" orifice, approximately 1.391 L/s can flow. Dividing the ranges of plant flow rates in the 8 inch HFFV system gives the following:
 $$ Number Holes_{Max}=\frac{100L/s}{Q_{1in}}=72$$
 $$ Number Holes_{Min}=\frac{25L/s}{Q_{1in}}=18$$
 Thus for the 8 inch HFFV systems 1" holes will be used in the slider pipe.
 
 These calculations were made again in the small scale design file with the following parameters given.
-* Available head = 1m - 2m
-* Flow Rate = 1 L/s
-* Pipe Diameter - 2"
-The above value for height was used because that was the height of a large capacity bucket found in the lab and flow rate. Pipe diameter was determined to be 2" because that size piping is very available in the lab. Using the above parameters hole size was determined to be 1/4". These calculations can be found in the design file.
+* Available head: 1m - 2m
+* Flow Rate: 1 L/s
+* Pipe Diameter: 2"
+The above value for height was used because that was the height of a large capacity bucket found in the lab and flow rate. The team picked 2" piping because that size is commonly available in the lab. Using the above parameters, the team determined the appropriate hole size to be 1/4". These calculations can be found in the design file.
 
-The next step was to determine the spacing and pattern of the holes on the slider pipe. To determine the hole pattern, the team used python to calculate the flow rate through the holes given the amount of head and flow rate available in the lab. The team found that the flow rate through one 1/4" hole given 1m of head is approximately 1/10th of the total flow rate into the float valve. Since the float valve should have full flow when the tee is at the highest level, the team created a pattern that had 10 holes exposed at this level. The team also decided to have 3 rows of holes exposed in the tee at one time to allow for a gradual increase in flow and to also best fit the height of the slider pipe. The spacing between each row was found by dividing the length that would be exposed in the tee by the number of rows exposed at one time. This way, once one row leaves the tee, a new row enters.
+The next step was to determine the spacing and pattern of the holes on the slider pipe. To determine the hole pattern, the team used python to calculate the flow rate through the holes given the amount of head and flow rate available in the lab. The team found that the flow rate through one 1/4" hole given 1m of head is approximately 1/10th of the total flow rate into the float valve. Since the float valve should have full flow when the tee is at the highest level, the team created a pattern that had 10 holes exposed at this level. The team also decided to have 3 rows of holes exposed in the tee at one time to allow for a gradual increase in flow and to also best fit the height of the slider pipe. The team found the spacing between each row by dividing the exposed space within the tee by the number of rows exposed at one time. This way, once one row leaves the tee, a new row enters.
 
 ####Rate of Leakage
 $$ {Q_{\mathrm{leak}} \over Q_{\mathrm{plant}}} = {{\Delta h \over \Delta t} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
@@ -120,25 +132,25 @@ $$ Q_{\mathrm{leak}} = Q_{\mathrm{plant}}{{.03Height_{}\over 8hrs} \over {\mathr
 $$Q_{\mathrm{leak}} = 20 L/s*.03 = .6 L/s$$
 $$Q_{\mathrm{leak - Small Scale}} = 1 L/s*.03 = .03 L/s$$
 
-This ratio was derived from wanting the last 3% of the height of the tank to fill up during off-peak hours which has a duration of 8 hours derived from midnight to 8 am. The amount of time it takes to fill up the whole height of the tank was used in the bottom fraction, determined to be 8 hrs. Using this ratio the target Q_leak is determined to be .6 L/s in the full scale design.
+The team derived this ratio aiming for the last 3% of the height of the tank to fill up during off-peak hours which has a duration of 8 hours from midnight to 8 am. The amount of time it takes to fill up the whole height of the tank was used in the bottom fraction. Using this ratio, the team deterimed the target $Q_leak$ to be .6 L/s in the full scale design.
 
 ####Float size
-The float size was determined by testing the friction force between the slider pipe and tee. First the spring constant k was determined by hanging a weight off the spring and measuring the change in length from it's origination orientation.
+The team determined the float size by testing the friction force between the slider pipe and tee. First, the team found the sprink constant $k$ by hanging a weight off the spring and measuring the change in length from it's origination orientation.
 
 $$ F=k*\Delta(x) $$
 $$k= \frac{F}{\Delta(x)} $$
 $$ k =229.8 N/m $$
 
-Then the spring was held in one end of the pipe and pulled until the pipe moved and the change in distance of the spring was measured. Finally the friction force was measured by multiplying the k determined in the previous step and the change in distance recorded. Now that the friction force is determined it has to be converted into mass by dividing by gravity.
+Then the spring was held in one end of the pipe and pulled, and the change in distance of the spring was measured. Finally, the team measured the friction force by multiplying the $k$ determined in the previous step and the change in distance recorded. The team converted this force to the mass of the float by dividing by the force of gravity.
 
 $$ F=k*\Delta(x)= 229.8N/m * .03313m= 17.67 N $$
 $$ \mathrm{Mass}_{\mathrm{Float}}=\frac{F}{9.81 m/s^2} = 1.76 kg$$
 
-The buoyant force has to overcome the friction force in order for the float to move up and down smoothly. The volume of the float was determined by dividing the mass of the float by density of water then dividing that volume by the cross-sectional area of the desired pipe to get length.
+The buoyant force has to overcome the friction force in order for the float to move up and down smoothly. The team found the volume of the float by dividing the mass of the float by density of water, then dividing that volume by the cross-sectional area of the desired pipe to get length.
 
 $$\mathrm{Volume}_{\mathrm{Float}}=\frac{\mathrm{Mass}_{\mathrm{Float}}}{\rho_{\mathrm{water}}}=\frac{1.76kg}{1000kg/m^3}=.00176m^3   $$
 $$L_{\mathrm{Float}}= \mathrm{Volume}_{\mathrm{Float}}/\mathrm{Area}_{\mathrm{Float}}=\frac{.00176m^3}{3.142 in^2}=35.05$$
-From here the length of 36" was used in total because 35" was the bare minimum to overcome the friction force.
+From here, the length of 36" was used, because 35" was the bare minimum to overcome the friction force.
 ###Procedure
 
 The High Flow Float Valve team is planning to assemble 2" float valve in order to test the model's functionality and ease of fabrication. In the future there will be 3 different size HFFV models, (2 in, 4in, and 8in) each requiring the same fabriation methods but at larger scales. For now, the team is just fabricating the smallest scale HFFV which is has a 2" diameter tee and 1.5" diameter slider pipe. The procedure involved the construction of three distinct parts: the slider pipe, the tee, and the float. HFFV will only be fabricating and testing the small scale design as the original intention of the team was only to test the feasibility of fabricating such a device.
