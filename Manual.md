@@ -85,6 +85,7 @@ The team was constrained by a couple of parameters including available head, hei
 As the HFFV scales up hole diameter size increases. These sizes were determined by testing how much flow would come out of an orifice and capping the maximum number of holes exposed to the tee at 75 holes. This maximum number of holes was chosen because having too many holes would make fabrication difficult and risks not having enough space in the tee to fit every hole. The flow orifice equation shown below was used.
 
 $$ Q=\pi*A*\sqrt{2gh}=\frac{\pi_{vc} d^2\pi\sqrt{2gh}}{4}$$
+Where pi underscore vc is the vena contract coefficient (typically .62), Q is the target flow rate which is 1/10th the plant's flow rate, A is the slider hole area that is being considered and h was the amount of head available.
 $$ Q_{1/4in} = 0.08696 liter / second$$
 This means that out of one orifice approximately .09 L/s can flow from a 1/4" orifice. Dividing the ranges of plant flow rates in the 2 inch HFFV system gives the following:
 $$ Number Holes_{Max}=\frac{6L/s}{Q_{1/4in}}=69$$
@@ -92,21 +93,21 @@ $$ Number Holes_{Min}=\frac{1L/s}{Q_{1/4in}}=11.5$$
 This fulfills our constraint that maximum number of holes has to be below 75. Similar calculations were done for .5" and 1" holes.
 
 $$ Q_{1/2in} = 0.35 liter / second$$
+
 This means that out of one orifice approximately .35 L/s can flow from a 1/2" orifice. Dividing the ranges of plant flow rates in the 4 inch HFFV system gives the following:
 $$ Number Holes_{Max}=\frac{25L/s}{Q_{1/2in}}=72$$
-$$ Number Holes_{Min}=\frac{6L/s}{Q_{1/2in}}=17$$
+$$ Number Holes_{Min}=\frac{L/s}{Q_{1/2in}}=17$$
 
 Thus for the 4 inch HFFV systems 1/2" holes will be used in the slider pipe.
 
 $$ Q_{1in} = 1.391 liter / second$$
 This means that out of one orifice approximately 1.391 L/s can flow from a 1" orifice. Dividing the ranges of plant flow rates in the 8 inch HFFV system gives the following:
-$$ Number Holes_{Max}=\frac{6L/s}{Q_{1/4in}}=72$$
-$$ Number Holes_{Min}=\frac{1L/s}{Q_{1/4in}}=18$$
+$$ Number Holes_{Max}=\frac{100L/s}{Q_{1in}}=72$$
+$$ Number Holes_{Min}=\frac{25L/s}{Q_{1in}}=18$$
 Thus for the 8 inch HFFV systems 1" holes will be used in the slider pipe.
 
-Where pi underscore vc is the vena contract coefficient (typically .62), Q is the target flow rate which is 1/10th the plant's flow rate, A is the slider hole area that is being considered and h was the amount of head available. The hole sizing was determined to be closest to the target flow rate per hole at 1". These calculations were made again in the small scale design file with the following parameters given
+These calculations were made again in the small scale design file with the following parameters given.
 * Available head = 1m - 2m
-* Height of distribution tank - 70 cm
 * Flow Rate = 1 L/s
 * Pipe Diameter - 2"
 The above value for height was used because that was the height of a large capacity bucket found in the lab and flow rate. Pipe diameter was determined to be 2" because that size piping is very available in the lab. Using the above parameters hole size was determined to be 1/4". These calculations can be found in the design file.
