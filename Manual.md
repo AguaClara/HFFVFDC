@@ -7,9 +7,9 @@ Please do not delete my comments from the report. Just address them and next tim
 
 ## Manual
 ###Introduction
-The high flow float valve will control the flow rate of water into the distribution tank. The distribution tank is the storage tank for clean water exiting the treatment plant before it is distributed to the community, and overflows when the tank is full. Overflow happens mainly during off-peak hours from midnight to dawn when demand is low. Avoiding overflow is desirable because the excess treated drinking water is wasted. To avoid the tank overflowing , the float valve will decrease the flow rate as the tank fills up.
+The high flow float valve will control the flow rate of water into the distribution tank. The distribution tank is the storage tank for clean water exiting the treatment plant before it is distributed to the community, and overflows when the tank is full. Overflow happens mainly during off-peak hours from midnight to dawn when demand is low. Avoiding overflow is desirable because the excess treated drinking water is wasted. To avoid the tank overflowing, the float valve will decrease the flow rate as the tank fills up.
 
-The float valve consists of a slider pipe, a tee connected to the distribution tank inlet pipe, a float on top of the slider pipe, and bushings inside the tee that the slider pipe will slide through. The slider pipe has an increasing number of holes from bottom to top. The water entering the distribution tank will go through the tee and through the hole in the slider pipe that are within the tee. The more holes exposed, the higher the flow rate. As the tank fills up, the float will cause the slider pipe to rise, which will decrease the number of holes exposed within the tee. When the tank is full, no holes will be exposed within the tee and the flow will stop.
+The float valve consists of a slider pipe, a tee connected to the distribution tank inlet pipe, a float on top of the slider pipe, and bushings inside the tee that the slider pipe will slide through. The slider pipe has an increasing number of holes from bottom to top. The water entering the distribution tank will go through the tee and through the holes in the slider pipe that are within the tee. The more holes exposed, the higher the flow rate. As the tank fills up, the float will remain on the top of the water and will cause the slider pipe to rise, which will decrease the number of holes exposed within the tee. When the tank is full, no holes will be exposed within the tee and the flow will stop.
 
 <div class="alert alert-block alert-danger">
 In the first sentence, consider lower case "high flow float valve" as it is not a proper noun here. Also consider "The high flow float valve will control" rather than "serve to control." Also what is the "distribution tank," and when does it overflow? Distribution tank to me means the final tank after the full treatment train, but before going out to the community. Explanation in the final three sentences is very good. Not enough connection as to why is it bad is the distribution tank overflows.
@@ -33,7 +33,7 @@ All parts were bought from McMaster Carr.
 * Bandsaw
 * Hackzall
 * Drill Press or Cordless Drill
-* Measuring tools like measuring tape and Calipers
+* Measuring tape and Calipers
 * PVC Primer
 * PVC glue
 * Sandpaper
@@ -46,7 +46,7 @@ addressed - Aly
 
 ###Design Details
 #### Design scale flow rate ranges
-The design of the HFFV was determined to require three different scales for three different ranges of flow rates. These scales were determined by finding the amount of flow that different tee sizes could handle based on a given amount of head using the minor headloss equation. First velocity on the left side was solved for then Q was solved for given the area of a tee. Headloss available was assumed to be 1m.
+The HFFV was designed to accommodate three different scales for three ranges of flow rates. The team determined these designs by using the minor headloss equation to find the maximum flow rate that different tee sizes could handle. First velocity on the left side was solved for then Q was solved for given the area of a tee. Headloss available was assumed to be 1m.
 $$\frac{V^2}{2g}=Head_{Availible}$$
 $$V=\sqrt{2gHead_{Availible}}=3.132 m/s$$
 $$Q=VA_{Tee}$$
