@@ -1,8 +1,11 @@
 #**High Flow Float Valve**
 ###Alycia Storch, Julia Timko, Felix Yang
 
+April 24, 2018
+
 <div class="alert alert-block alert-danger">
 Date?
+addressed - julia
 </div>
 
 <div class="alert alert-block alert-danger">
@@ -23,7 +26,7 @@ How will operators know that the tank is full and won't accept more water? Will 
 
 ###Fabrication Details
 ####Material List
-| Part                    | Quantity/Size | Price at the time |
+| Part                    | Quantity/Size | Price in 2018 |
 |:----------------------- |:-------------:|:-----------------:|
 | 2" PVC Tee              |       1       |       $2.25       |
 | 2" PVC Pipe             |     5 ft      |      $10.56       |
@@ -34,6 +37,7 @@ How will operators know that the tank is full and won't accept more water? Will 
 
 <div class="alert alert-block alert-danger">
 Consider "Price in 2018" rather than "at the time"
+addressed - julia
 </div>
 
 All parts were bought from McMaster Carr.
@@ -145,24 +149,32 @@ Where is the python code for determining hole pattern? Reference it and link to 
 </div>
 
 ####Rate of Leakage
-$$ {Q_{\mathrm{leak}} \over Q_{\mathrm{plant}}} = {{\Delta h \over \Delta t} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
+Since the holes in the tee that the slider pipe goes through are not water tight, there is some leakage through those spaces when the float valve closes. Since the purpose of the float valve is to prevent the distribution tank from overflowing, the team found the ideal flowrate of the leakage such that the last 3% of the height of the tank to fill up during off-peak hours which has a duration of 8 hours from midnight to 8 am.
+
+$$ {Q_{leak}}= {{\Delta h}*{A} \over \Delta t} $$
+where $\Delta h$ is the height the water level should rise while the slider pipe is just leaking, A is the cross-sectional area of the distribution tank, and $\Delta t$ is the time it should take the water level to rise $\Delta h$ while the slider pipe is just leaking.
+$$ {Q_{plant}}= \frac{Height_{tank}}{t} $$
+where $Height_{tank}$ is the height of the distribution tank and $t$ is the amount of time it takes to fill the entire distribution tank. The team wanted to find the leak flowrate as a fraction of the flowrate into the float valve from the plant.
+$${Q_{\mathrm{leak}} \over Q_{\mathrm{plant}}} = {{\Delta h \over \Delta t} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
 $$ Q_{\mathrm{leak}} = Q_{\mathrm{plant}}{{.03Height_{}\over 8hrs} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
 $$Q_{\mathrm{leak}} = 20 L/s*.03 = .6 L/s$$
 $$Q_{\mathrm{leak - Small Scale}} = 1 L/s*.03 = .03 L/s$$
 
-The team derived this ratio aiming for the last 3% of the height of the tank to fill up during off-peak hours which has a duration of 8 hours from midnight to 8 am. The amount of time it takes to fill up the whole height of the tank was used in the bottom fraction. Using this ratio, the team deterimed the target $Q_{leak}$ to be .6 L/s in the full scale design.
+ Using this ratio, the team deterimed the target $Q_{leak}$ to be .6 L/s in the full scale design.
 
 <div class="alert alert-block alert-danger">
 I am confused about the purpose of this section.
 
 I thought the problem was that the tank was overfull?
+-addressed by Aly
 </div>
 
 ####Float size
-The team determined the float size by testing the friction force between the slider pipe and tee. First, the team found the sprink constant $k$ by hanging a weight off the spring and measuring the change in length from it's origination orientation.
+The team determined the float size by testing the friction force between the slider pipe and tee. First, the team found the spring constant $k$ by hanging a weight off the spring and measuring the change in length from it's original orientation.
 
 <div class="alert alert-block alert-danger">
 Revise for spelling
+-addressed by Aly
 </div>
 
 $$ F=k*\Delta(x) $$
@@ -298,21 +310,24 @@ Add in the purpose of this experimental set-up. What are you testing for? What i
 </div>
 
 ####Materials List
-| Part                            | Quantity |       Size        |
-|:------------------------------- |:--------:|:-----------------:|
-| Flexible Tubing                 |   5 ft   |    1" diameter    |
-| Hose clamp                      |    1     |    2" diameter    |
-| Barbed PVC Fitting NPT Male End |    1     |    1" diameter    |
-| PVC Tee                         |    1     |    1" diameter    |
-| PVC Elbow                       |    1     |    1" diameter    |
-| PVC Elbow                       |    1     |    2" diameter    |
-| PVC Bushing                     |    1     | 2" to 1" diameter |
-| PVC Coupling                    |    1     |    2" diameter    |
-| PVC Pipe                        |  3" x 3  |    2" diameter    |
-| PVC Pipe                        |   4 ft   |    1" diameter    |
-| PVC Coupling                    |    1     |    1" diameter    |
-| Fernco Fitting                  |    1     |    2" diameter    |
-| Clear PVC Pipe                  |   2 ft   |    2" diameter    |
+| Part                            | Quantity |       Size        | Price in 2018 |
+|:------------------------------- |:--------:|:-----------------:| ------------- |
+| Flexible Tubing                 |   5 ft   |    1" diameter    | $7.35         |
+| Hose clamp                      |    1     |    2" diameter    | 10 for $7.17  |
+| Barbed PVC Fitting NPT Male End |    1     |    1" diameter    | $1.97         |
+| PVC Tee                         |    1     |    1" diameter    | $0.81         |
+| PVC Elbow                       |    1     |    1" diameter    | $0.61         |
+| PVC Elbow                       |    1     |    2" diameter    | $1.82         |
+| PVC Bushing                     |    1     | 2" to 1" diameter | $1.74         |
+| PVC Coupling                    |    1     |    2" diameter    | $1.09         |
+| PVC Pipe                        |  3" x 3  |    2" diameter    | $16.00        |
+| PVC Pipe                        |   4 ft   |    1" diameter    | $5.40         |
+| PVC Coupling                    |    1     |    1" diameter    | $0.48         |
+| Fernco Fitting                  |    1     |    2" diameter    | $4.71         |
+| Clear PVC Pipe                  |   2 ft   |    2" diameter    | $23.38              |
+
+All parts ordered from McMaster Carr.
+
 
 <div class="alert alert-block alert-danger">
 Just like before can you add source or potential price? (I am more concerned about source)
@@ -325,23 +340,29 @@ In order to check the flow of the water out of the sink, the team had to test th
 
 <div class="alert alert-block alert-danger">
 This trick is often not written about but is used by many teams. Good inclusion and explanation.
+
+thank you!
 </div>
 
 ####Water Route
-The team then took a piece of 1" diameter flexible tubing and used a hose clamp to secure it to the faucet. This flexible tubing led to a barbed fitting on a raised platform on the counter of the lab bench. The team did this in order to ensure more head upon entering the distribution tank. At the top of this platform, the team inserted a 1" tee. The team then connected the clear PVC pipe to the free end of this tee. The tee exposed the water to atmospheric pressure to eliminate pressure head, and the clear PVC pipe prevented the water from spilling out. By adjusting the flow rate of the sink and allowing a given amount of water to enter this clear PVC pipe, the team was able to keep the amount of head entering the system constant.
+The team then took a piece of 1" diameter flexible tubing and used a hose clamp to secure it to the faucet. This flexible tubing connected via a barbed fitting to a 1" diameter pipe on a raised platform. The team raised this portion in order to ensure more head upon entering the distribution tank. At the top of this platform, the team inserted a 1" tee. The team then connected the clear PVC pipe to the free end of this tee. The tee exposed the water to atmospheric pressure to eliminate pressure head, and the clear PVC pipe prevented the water from spilling out. It was important to eliminate pressure head in order to get a consistent measurement of the head and pressure of the water entering the system. As the float began to rise and the holes in the slider pipe closed off, the head began to build up. Although the flow began each trial at a rate of 1 L/s, the team adjusted the flow rate of the sink during the trial to keep a constant head of water entering the system.
 
 <div class="alert alert-block alert-danger">
-Revise second sentence for clarity. What is the importance of a barbed fitting? Why was it neccesary? Is there a photo of this set-up.
+Revise second sentence for clarity. What is the importance of a barbed fitting? Why was it necessary? **Is there a photo of this set-up.**
 
 Why do you need to eliminate pressure head?
 
 Also isn't the flow rate already set to 1 L/s, so why mention adjusting it again here?
+
+addressed except for the photo - julia
 </div>
 
-The tee then led into a 1" elbow that diverted the water down into a 3-foot long 1" pipe. The team expanded this 1" pipe by using a 1" diameter to 2" diameter bushing to connect the water path to the apparatus. The team then used a 2" elbow to get the water to flow horizontally into the float valve tee. Between the elbow and the tee were two small pieces of 2" diameter PVC, which were connected by a Fernco fitting. One end was glued into the elbow, while the other was glued into the tee of the float valve. The team used a Fernco fitting so that the float valve would not be permanently attached to the experimental setup and could be removed if needed. The team positioned the float valve roughly in the center of the tank, both vertically and horizontally. It was centered vertically to allow for the largest range of motion of the slider pipe. It was centered horizontally within the tank to ensure that the float did not hit the sides of the tank.
+The tee then led into a 1" elbow that diverted the water down into a 3' long 1" pipe. The team expanded this 1" pipe by using a 1" diameter to 2" diameter bushing to connect the water path to the apparatus. The team then used a 2" elbow to get the water to flow horizontally into the float valve tee. Between the elbow and the tee were two small pieces of 2" diameter PVC, which were connected by a Fernco fitting. One end was glued into the elbow, while the other was glued into the tee of the float valve. The team used a Fernco fitting so that the float valve would not be permanently attached to the experimental setup and could be removed if needed. The team positioned the float valve roughly in the center of the tank, both vertically and horizontally. It was centered vertically to allow for the largest range of motion of the slider pipe. It was centered horizontally within the tank to ensure that the float did not hit the sides of the tank.
 
 <div class="alert alert-block alert-danger">
 Revise "3-foot long 1" pipe" - you are using foot (spelled out) and " (symbol) which is inconsistent.
+
+addressed - julia
 </div>
 
 <center><img src="https://raw.githubusercontent.com/AguaClara/float_valve/master/Pictures/constant_head_chamber.png" height= 300></center>
