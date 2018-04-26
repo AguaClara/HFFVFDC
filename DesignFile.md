@@ -97,6 +97,8 @@ Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
 =======
 Float_Length(Assembly_Weight, Density, OD_Float, Length_Slider_Pipe, OD_Slider_Pipe, ID_Slider_Pipe)
 >>>>>>> bfbf7bca1c6f85a6bd06a700ee7459b6932b8d56
+#  floatLength = (fricForce/u.gravity)/(density_water(temp) * math.pi * r**2 * (.5))
+#  return floatLength.to(u.m)
 
 # Function to solve for float length assuming negligible friction between slider pipe and tee. Contains equations to solve using the inner and outer diameters of the slider pipe or the weight of the slider pipe.
 import math
