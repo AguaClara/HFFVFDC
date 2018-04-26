@@ -86,6 +86,22 @@ def Float_Length (Total_Weight, dens, OD_F, Length_S, OD_S, ID_S):
   return floatLength.to(u.m)
 Float_Length(Assembly_Weight, Density, OD_Float, Length_Slider_Pipe, OD_Slider_Pipe, ID_Slider_Pipe)
 
+import math
+OD_Slider_Pipe = 1.9 * (u.inch)
+ID_Slider_Pipe = 1.610 * (u.inch)
+OD_Float = 1.9 * (u.inch)
+ID_Float = 1.610 * (u.inch)
+Length_Slider_Pipe = 16 * (u.inch)
+Density_Water = density_water(20)
+Density_PVC= 1.38 * (u.g/u.cm**3)
+Weight_Slider_Pipe= 4.9 * (u.N)
+
+def Float_Length2(dens_water, dens_pvc, OD_F, ID_F, OD_SP, ID_SP, L_SP, weight_SP):
+  floatlength2 = ((8*weight_SP*(1-dens_water/dens_pvc))/(2*(9.81*u.m/u.s**2)math.pi*((ID_F)**2*dens_water-(OD_F)**2*dens_pvc+(ID_F)**2*dens_pvc))).to(u.inch)
+  #(OD_SP)**2-(ID_SP)**2)*L_SP*dens_pvc
+  return(floatlength2)
+Float_Length2(Density_Water, Density_PVC, OD_Float, ID_Float, OD_Slider_Pipe, ID_Slider_Pipe, Length_Slider_Pipe, Weight_Slider_Pipe)
+
 
 
   ##The the float was designed in relation to the frictional force so that when the float is in the plant, it will sit half submerged in the water.
