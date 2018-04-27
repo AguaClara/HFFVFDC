@@ -65,7 +65,7 @@ def Slider_Diam(FlowRate,Headloss_Avail):
   Diameter=((4*FlowRate)/(math.pi*(2*u.gravity*Headloss_Avail)**.5))**.5
   return(Diameter)
 
-<<<<<<< HEAD
+
 # Function to solve for Float length
 # def Float_Length(r, fricForce, temp):
   # floatLength = (fricForce/u.gravity)/(density_water(temp) * math.pi * r**2 * (.5))
@@ -87,16 +87,16 @@ def Slider_Diam(FlowRate,Headloss_Avail):
 #  return floatLength.to(u.m)
 #Float_Length(Assembly_Weight, Density, OD_Float, Length_Slider_Pipe, OD_Slider_Pipe, ID_Slider_Pipe)
 
-=======
+
 # Functino to solve for Float length
-def Float_Length(r, fricForce, temp):
-  floatLength = (fricForce/u.gravity)/(density_water(temp) * math.pi * r**2 * (.5))
-  return floatLength.to(u.m)
-<<<<<<< HEAD
-Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
-=======
-Float_Length(Assembly_Weight, Density, OD_Float, Length_Slider_Pipe, OD_Slider_Pipe, ID_Slider_Pipe)
->>>>>>> bfbf7bca1c6f85a6bd06a700ee7459b6932b8d56
+#def Float_Length(r, fricForce, temp):
+  #floatLength = (fricForce/u.gravity)/(density_water(temp) * math.pi * r**2 * (.5))
+  #return floatLength.to(u.m)
+
+#Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
+
+#Float_Length(Assembly_Weight, Density, OD_Float, Length_Slider_Pipe, OD_Slider_Pipe, ID_Slider_Pipe)
+
 #  floatLength = (fricForce/u.gravity)/(density_water(temp) * math.pi * r**2 * (.5))
 #  return floatLength.to(u.m)
 
@@ -119,7 +119,7 @@ def Float_Length2(dens_water, dens_pvc, OD_F, ID_F, OD_SP, ID_SP, L_SP, weight_S
   return(floatlength_diam, floatlength_weight)
 Float_Length2(Density_Water, Density_PVC, OD_Float, ID_Float, OD_Slider_Pipe, ID_Slider_Pipe, Length_Slider_Pipe, Weight_Slider_Pipe, grav)
 
->>>>>>> d2edb2fdb1757845cdc6ba05989539f2f2f88082
+
 
 
   ##The the float was designed in relation to the frictional force so that when the float is in the plant, it will sit half submerged in the water.
