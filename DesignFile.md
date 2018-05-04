@@ -60,46 +60,22 @@ print(flow_orifice_1*Max_Num_Holes)
 flow_orifice_2= flow_orifice(Slider_Hole_Diam, 2*u.m, RatioVCOrifice)
 print(flow_orifice_2.to(u.L/u.s))
 
-#Function to solve for slider hole diameter
-def Slider_Diam(FlowRate,Headloss_Avail):
-  Diameter=((4*FlowRate)/(math.pi*(2*u.gravity*Headloss_Avail)**.5))**.5
-  return(Diameter)
+def Area_Leak(Q_Leak,Vena_Contracta,Head):
+  Area=Q_Leak/(Vena_Contracta*(2*u.gravity*Head)**.5)
+  return(Area.to(u.m**2))
 
+Area=Area_Leak(.06*u.L/u.s,RatioVCOrifice,1.05*u.m)/2
+print(Area)
+OD_Slider_Pipe=1.9*u.inch
+ID_Bushing=(OD_Slider_Pipe**2+(4*Area/np.pi))**.5
+Leak_Spacing=(ID_Bushing-OD_Slider_Pipe)/2
+print(Leak_Spacing.to(u.cm))
 
-# Function to solve for Float length
-# def Float_Length(r, fricForce, temp):
-  # floatLength = (fricForce/u.gravity)/(density_water(temp) * math.pi * r**2 * (.5))
-  # return floatLength.to(u.m)
-# Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
-
-# Alternate function to solve for float length assuming negligible frictional force
-# In this function "S" is used to denote "Slider Pipe" and "F" is used to denote "Float"
-#import math
-#OD_Slider_Pipe = 1.9 * (u.inch)
-#ID_Slider_Pipe = 1.610 * (u.inch)
-#OD_Float = 2.375 * (u.inch)
-#Length_Slider_Pipe = 16 * (u.inch)
-#Assembly_Weight = .5 * (u.kg)
-#Density = density_water(20)
-#def Float_Length (Total_Weight, dens, OD_F, Length_S, OD_S, ID_S):
-  # floatLength = (2)* (4 * Total_Weight - (dens * math.pi)*(Length_S * (OD_S**2 - ID_S**2) + ((.25 * u.inch) * OD_F**2)))/ (OD_F**2 * dens * math.pi)
-#  floatLength = ( 8 * Total_Weight / (OD_F**2 * dens * math.pi)) - (2 * Length_S * (OD_S**2 - ID_S**2)/ OD_F**2) - (1/2 * u.inch)
-#  return floatLength.to(u.m)
-#Float_Length(Assembly_Weight, Density, OD_Float, Length_Slider_Pipe, OD_Slider_Pipe, ID_Slider_Pipe)
-
-
-# Functino to solve for Float length
-#def Float_Length(r, fricForce, temp):
-  #floatLength = (fricForce/u.gravity)/(density_water(temp) * math.pi * r**2 * (.5))
-  #return floatLength.to(u.m)
-
-#Float_Length(.5*u.inch, 17.67*u.N, Temp_Plant)
-
-#Float_Length(Assembly_Weight, Density, OD_Float, Length_Slider_Pipe, OD_Slider_Pipe, ID_Slider_Pipe)
-
-#  floatLength = (fricForce/u.gravity)/(density_water(temp) * math.pi * r**2 * (.5))
-#  return floatLength.to(u.m)
-
+def Q_Leak(Head,Vena_Contracta,Area_Gap):
+  Q=((2*u.gravity*Head)**.5)*Vena_Contracta*Area_Gap
+  return(Q.to(u.L/u.s))
+Leak_Total=(2*Q_Leak(1.05*u.m,RatioVCOrifice,Area)).to(u.L/u.hr)
+print(Leak_Total*8*u.hr)
 # Function to solve for float length assuming negligible friction between slider pipe and tee. Contains equations to solve using the inner and outer diameters of the slider pipe or the weight of the slider pipe.
 import math
 OD_Slider_Pipe = 1.9 * (u.inch)

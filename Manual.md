@@ -1,11 +1,8 @@
 #**High Flow Float Valve**
 ###Alycia Storch, Julia Timko, Felix Yang
 
-April 24, 2018
-
 <div class="alert alert-block alert-danger">
 Date?
-addressed - julia
 </div>
 
 <div class="alert alert-block alert-danger">
@@ -16,15 +13,12 @@ Please do not delete my comments from the report. Just address them and next tim
 ###Introduction
 The high flow float valve will control the flow rate of water into the distribution tank. The distribution tank is the storage tank for clean water exiting the treatment plant before it is distributed to the community, and overflows when the tank is full. Overflow happens mainly during off-peak hours from midnight to dawn when demand is low. Avoiding overflow is desirable because the excess treated drinking water is wasted. To avoid the tank overflowing, the float valve will decrease the flow rate as the tank fills up.
 
-That excess flow will instead back up the pipe system and begin to raise the elevation of water in the entrance tank within the plant. As soon as the operator begins to see that the water level is raising in the entrance tank, action can be taken to reduce flow coming into the plant.
-
 The float valve consists of a slider pipe, a tee connected to the distribution tank inlet pipe, a float on top of the slider pipe, and bushings inside the tee that the slider pipe will slide through. The slider pipe has an increasing number of holes from bottom to top. The water entering the distribution tank will go through the tee and through the holes in the slider pipe that are within the tee. The more holes exposed, the higher the flow rate. As the tank fills up, the float will remain on the top of the water and will cause the slider pipe to rise, which will decrease the number of holes exposed within the tee. When the tank is full, no holes will be exposed within the tee and the flow will stop.
 
 <div class="alert alert-block alert-danger">
 So if it stops water from overflowing into the distribution tank, where does that excess water go?
 
 How will operators know that the tank is full and won't accept more water? Will there be a sign to decrease flow at the start of the treatment train? Will water overflow in the plant?
-addresed - felix
 </div>
 
 ###Fabrication Details
@@ -40,7 +34,7 @@ addresed - felix
 
 <div class="alert alert-block alert-danger">
 Consider "Price in 2018" rather than "at the time"
-addressed - julia
+addressed - felix
 </div>
 
 All parts were bought from McMaster Carr.
@@ -55,13 +49,12 @@ All parts were bought from McMaster Carr.
 
 ###Design Details
 #### Design Scale Flow Rate Ranges
-The HFFV was designed to accommodate three different scales for three ranges of flow rates. The team determined these designs by using the minor headloss equation to find the maximum flow rate that different tee sizes could handle. First, the team solved for velocity given the available head. Then, the team found the flow rate Q as a result of the given area of the tee. The available headloss was assumed to be 1m because that was the amount of head available for the plant that the HFFV team was tasked to create a design.
+The HFFV was designed to accommodate three different scales for three ranges of flow rates. The team determined these designs by using the minor headloss equation to find the maximum flow rate that different tee sizes could handle. First, the team solved for velocity given the available head. Then, the team found the flow rate Q as a result of the given area of the tee. The available headloss available was assumed to be 1m.
 
 <div class="alert alert-block alert-danger">
 Define acronym HFFV when you first introduce the high flow float valve (First sentence)
 
 Why was headloss assumed to be 1m?
-Both addressed
 </div>
 
 $$\frac{V^2}{2g}=Head_{Availible}$$
@@ -86,9 +79,6 @@ $$ActiveLength=\frac{Height_{tank}-TopExtraMaterial-BottomExtraMaterial}{2} +{He
 where $Height_{tank}$ is the height of the distribution tank, $TopExtraMaterial$ is the length from the top plugs to the top of the float, and $BottomExtraMaterial$ is the length from the bottom plugs to the bottom of the float. This is the active length because the slider pipe should be able to span the length from a distance of $BottomExtraMaterial$ from the bottom of the tank to a distance of $TopExtraMaterial$ from the top of the tank. Half the height of the tee is added because there must always be pipe within the tee, so the length of the tee is part of the pipe length when the valve is both open and closed.
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/diagram%20of%20float%20attached%20to%20pipe.jpg?raw=true"  height = 300></center>
-<p>
-    <em><center>This diagram shows the geometries present at the top of the slider pipe where the notch connects to the float. </center></em>
-</p>
 
 The value of TopExtraMaterial is
 $$TopExtraMaterial= OuterDiameter_{float}\cdot (1+\sqrt{2})+PlugClearance$$
@@ -98,9 +88,6 @@ The value of $BottomExtraMaterial$ is the distance from the bottom plugs to the 
 
 #####Total Length
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/diagram%20of%20full%20pipe.jpg?raw=true"  height = 300></center>
-<p>
-    <em><center>This is a diagram of the full length of the slider pipe assembly.  </center></em>
-</p>
 
 The total slider pipe length is
 $$PipeLength= ActiveLength+BottomExtraMaterial+PlugClearance+\frac{OuterDiameter_{slider pipe}}{2}
@@ -140,19 +127,16 @@ $$ Number Holes_{Max}=\frac{100L/s}{Q_{1in}}=72$$
 $$ Number Holes_{Min}=\frac{25L/s}{Q_{1in}}=18$$
 Thus for the 8 inch HFFV systems 1" holes will be used in the slider pipe.
 
-These calculations were made again in the [small scale design file](https://github.com/AguaClara/float_valve/blob/master/Smol_Scale_Design.md) with the following parameters given.
+These calculations were made again in the small scale design file with the following parameters given.
 * Available head: 1m - 2m
-* Distribution tank height: 75 cm
 * Flow Rate: 1 L/s
 * Pipe Diameter: 2"
-The above value for distribution tank height was used because that was the height of a large capacity bucket found in the lab and flow rate. The team picked 2" piping because that size is commonly available in the lab. Using the above parameters, the team determined the appropriate hole size to be 1/4". These calculations can be found in the design file.
+The above value for height was used because that was the height of a large capacity bucket found in the lab and flow rate. The team picked 2" piping because that size is commonly available in the lab. Using the above parameters, the team determined the appropriate hole size to be 1/4". These calculations can be found in the design file.
 
 <div class="alert alert-block alert-danger">
 Can you link to your small scale design file? (Also I see that it is labeled "Smol scale design" which is fine until the final submission)
 
-The paragraph "The above value for heiht was used" is unclear because I don't know what height you are talking about. Revise for clarity
-
-Addressed - felix
+The paragraph "The above value for heiht was used" is unclear because I don't know what height you are talking about. Revise for clarity.
 </div>
 
 The next step was to determine the spacing and pattern of the holes on the slider pipe. To determine the hole pattern, the team used python to calculate the flow rate through the holes given the amount of head and flow rate available in the lab. The team found that the flow rate through one 1/4" hole given 1m of head is approximately 1/10th of the total flow rate into the float valve. Since the float valve should have full flow when the tee is at the highest level, the team created a pattern that had 10 holes exposed at this level. The team also decided to have 3 rows of holes exposed in the tee at one time to allow for a gradual increase in flow and to also best fit the height of the slider pipe. The team found the spacing between each row by dividing the exposed space within the tee by the number of rows exposed at one time. This way, once one row leaves the tee, a new row enters.
@@ -162,6 +146,14 @@ Where is the python code for determining hole pattern? Reference it and link to 
 </div>
 
 ####Rate of Leakage
+<<<<<<< HEAD
+$$ {Q_{\mathrm{leak}} \over Q_{\mathrm{plant}}} = {{\Delta h \over \Delta t} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
+$$ Q_{\mathrm{leak}} = Q_{\mathrm{plant}}{{.03Height_{}\over 8hrs} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
+$$Q_{\mathrm{leak}} = 20 L/s*.03 = .6 L/s$$
+$$Q_{\mathrm{leak - Small Scale}} = 1 L/s*.03 = .03 L/s$$
+
+The team derived this ratio aiming for the last 3% of the height of the tank to fill up during off-peak hours which has a duration of 8 hours from midnight to 8 am. The amount of time it takes to fill up the whole height of the tank was used in the bottom fraction. Using this ratio, the team deterimed the target $Q_{leak}$ to be .6 L/s in the full scale design.
+=======
 Since the entrance and exit points in the tee that the slider pipe goes through are not water tight, there is some leakage through those spaces when the float valve closes. This leakage is impossible to eliminate if the slider pipe is to slide freely. Since the purpose of the float valve is to prevent the distribution tank from overflowing, the team needed to ensure that the leak rate would not overfill the tank during the 8 off-peak hours from midnight to 8am. Because the leak rate is solely dependent on the amount of head available and the gap through which the water is leaking, the team was not able to change the amount of $Q_{leak}$. However, the layout of the holes in the slider pipe are dependent on the rate of leakage and have to be positioned precisely. The slider pipe should turn off the flow when the water level is at a height that would allow the leaking slot to fill the rest of the distribution tank in the given 8 hours. 
 
 The team calculated the relationship between the area of the slot through which the water was leaking and the flow rate of the water going through using the following equation.
@@ -181,15 +173,18 @@ $$W_{gap} = {A_{slot} \over \pi \cdot OD_{Slider Pipe}} PUT \ A \ REAL \ VALUE $
 Assuming this gap width for all future float valves, the flow rate of leakage can be estimated given the circumference of the slider pipe and the height of head available.
 
 $$Q_{leak} = \sqrt{2gh_L} \cdot C_{Slider Pipe} \cdot W_{gap} \cdot \Pi_{vc}$$
+>>>>>>> bfbb9d61c5ca075500b5256c45ab341835bef67e
 
 <div class="alert alert-block alert-danger">
 I am confused about the purpose of this section.
 
 I thought the problem was that the tank was overfull?
--addressed by Aly
 </div>
 
 ####Float size
+<<<<<<< HEAD
+The team determined the float size by testing the friction force between the slider pipe and tee. First, the team found the sprink constant $k$ by hanging a weight off the spring and measuring the change in length from it's origination orientation.
+=======
 To determine the length of the float, the team assumed there is negligible friction force between the slider pipe and the tee since the slider pipe can slide through the tee easily. The team also decided to aim for the water level to be at half the height of the float. This meant that the buoyant force has to support the weight of the top half of the float, the apparent weight in water of the bottom half of the float, and the apparent weight in water of the slider pipe. The team used the following equation to find the apparent weights in water:
 $$ApparentWeight_{object}=Weight_{object}-\rho_{water}\cdot Volume_{object} \cdot g$$
 where $\rho_{water}$ is the density of water and $g$ is acceleration due to gravity.
@@ -215,10 +210,10 @@ $$L_{Float}= \frac{4\cdot \pi\cdot (OD_{SliderPipe}^2-ID_{SliderPipe}^2)\cdot L_
 With an earlier model of the Float Valve, the tee was not frictionless so the team determined the float size by testing the friction force between the slider pipe and tee. Normally, there are calculations that can be used to find the friction between two smooth pipes. However, because the bushings needed to be sanded down, they were not completely smooth and the equation would not be accurate for this setup. The team used a spring available in the lab to test and estimate the force of friction exerted by the slider pipe assembly.
 
 First, the team found the spring constant $k$ of the spring by hanging a weight off the spring and measuring the change in length from it's original orientation.
+>>>>>>> bfbb9d61c5ca075500b5256c45ab341835bef67e
 
 <div class="alert alert-block alert-danger">
 Revise for spelling
--addressed by Aly
 </div>
 
 $$ F=k\cdot \Delta(x) $$
@@ -230,20 +225,17 @@ Then the spring was held in one end of the pipe and pulled, and the change in di
 $$ F=k\cdot \Delta(x)= 229.8N/m \cdot .03313m= 17.67 N $$
 $$ \mathrm{Mass}_{\mathrm{Float}}=\frac{F}{9.81 m/s^2} = 1.76 kg$$
 
-**The buoyant force has to overcome the friction force in order for the float to move up and down smoothly. The team found the volume of the float by dividing the mass of the float by density of water, then dividing that volume by the cross-sectional area of the desired pipe to get length.
+The buoyant force has to overcome the friction force in order for the float to move up and down smoothly. The team found the volume of the float by dividing the mass of the float by density of water, then dividing that volume by the cross-sectional area of the desired pipe to get length.
 
 <div class="alert alert-block alert-danger">
 What is the friction force here? It seems like you may be confusing spring force with friction force.
 
 You can estimate forces of friction between two pvc pipes sliding against each other if you know the material property.
-
-^^That's true for smooth pipes, however we decided to calculate the friction via a spring scale because the material properties of the bushings changed because we sanded them down. We knew that the sanding we did would not be smooth or completely precise because it was done by hand, so we wanted to get a more accurate measurement of the frictional force. I'll add that reasoning in so that it is more clear to readers. -julia
 </div>
 
 $$\mathrm{Volume}_{\mathrm{Float}}=\frac{\mathrm{Mass}_{\mathrm{Float}}}{\rho_{\mathrm{water}}}=\frac{1.76kg}{1000kg/m^3}=.00176m^3   $$
 $$L_{\mathrm{Float}}= \mathrm{Volume}_{\mathrm{Float}}/\mathrm{Area}_{\mathrm{Float}}=\frac{.00176m^3}{3.142 in^2}=35.05$$
-From here, the length of 36" was used, because 35" was the bare minimum to overcome the friction force.**
-
+From here, the length of 36" was used, because 35" was the bare minimum to overcome the friction force.
 ###Procedure
 
 The High Flow Float Valve team assembled a 2" float valve in order to test the model's functionality and ease of fabrication. In the future, there will be 3 different size HFFV models, (2 in, 4in, and 8in) each requiring the same fabrication methods, but at larger scales. For now, the team fabricated the smallest scale HFFV, which has a 2" diameter tee and 1.5" diameter slider pipe. The procedure involved the construction of three distinct parts: the slider pipe, the tee, and the float. HFFV only fabricated and tested the small scale design as the original intention of the team was only to test the feasibility of fabricating such a device.
@@ -253,9 +245,6 @@ The High Flow Float Valve team assembled a 2" float valve in order to test the m
 The slider pipe requires a notch at the top of the pipe to fit a float, holes in the active length portion of the pipe (the range of the slider pipe where it can be exposed to the tee) to allow water to pass, and holes for a hose clamp to secure the float and for plugs to constrain the active length. The team started fabrication by cutting a piece of 1.5" diameter pipe to 41cm using the table clamp and the reciprocating saw. This length was calculated using the equation in the section above.
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/active%20length.jpg?raw=true"  height = 300></center>
-<p>
-    <em><center>The photo on the left shows the pipe in the closed position while the photo on the right shows the pipe in the open position. The length of pipe that the tee is able to move through is called the active length. </center></em>
-</p>
 
 <div class="alert alert-block alert-danger">
 Please use figure labeling and captions
@@ -264,9 +253,6 @@ Please use figure labeling and captions
 The team then used the bandsaw and the angle alignment tool to produce two cuts in the top of the pipe to form a notch as shown below.  This notch was used to secure the float to the pipe with a hose clamp later. The angles used to cut were 45 degrees. However, it was not necessary that this measurement be extremely precise, because the notch simply serves as a holding space for the float.
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/TopOfSliderPipe.png?raw=true"  height = 300></center>
-<p>
-    <em><center>Picture of the top of the slider pipe with the notch cut into it to hold the float in place.</center></em>
-</p>
 
 
 The team then used a template created from the Fusion design to accurately drill the holes in the slider pipe. The team printed the template and punctured small holes through the centers of each hole on the paper. The team then laid this template around the slider pipe and drew marks on the slider pipe through the small holes to indicate where to drill. The team aligned the template so that the distance from the bottom hole to the top of the plugs was the height necessary according to the equation below:
@@ -284,47 +270,31 @@ $$H_{\mathrm{FirstHole}} = 5 {7 \over 16} \mathrm{in}$$
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/HolePattern2.png?raw=true" height=300></center>
 
-<p>
-    <em><center>CAD drawing of the hole pattern on the slider pipe. </center></em>
-</p>
-
-The team then cut holes according to the markings on the pipe using the drill press fitted with a 1/4" drill bit as determined by the calculations in the Design Details section.
+The team then cut holes according to the markings on the pipe using the drill press fitted with a 1/4" drill bit as determined by the calculations in the "Design Details" section.
 
 <div class="alert alert-block alert-danger">
 Don't put quotes around Design Details
-addressed - felix
 </div>
 
 <center><img src= " https://github.com/AguaClara/float_valve/blob/master/Pictures/Marking%20pipe%20for%20holes.JPG?raw=true" height = 300> <img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Drilling%20holes.JPG?raw=true" height=300></center>
 
-<p>
-    <em><center>Marking drilling locations on the pipe and using the drill press to cut those holes. </center> </em>
-</p>
 
 ####Tee
 
 Next, the team cut each of the PVC bushings to 1" in height using the band saw. These were cut because it made more space available in the tee for exposure to holes.
 
 <center><img src="https://raw.githubusercontent.com/AguaClara/float_valve/master/Pictures/bushings_before_cut%20copy.jpg" height=300><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Bushing%20about%20to%20be%20cut.jpg?raw=true"  height = 300> </center>
-<p>
-    <em><center> Bushings are shown on the left with marks drawn on them as a guide for bandsaw cuts.</center> </em>
-</p>
+<center> Bushings are shown on the left with marks drawn on them as a guide for bandsaw cuts.</center>
 
 \
 The team then created a handmade sanding tool. This tool was made from an arbitrarily long 1" PVC pipe with a thick piece of sandpaper PVC-glued around its circumference.
 
  <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Sander.JPG?raw=true" height=300></center>
- <p>
-     <em><center>The team used a handmade sanding tool to sand down the inside of the bushings. It consisted of pipe with a piece of sandpaper glued around it. </center></em>
- </p>
 
 \
 The team then used this tool, as well as a handheld file, to sand down the inside of the bushings so that the 1.5" pipe could slide easily through.
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/SandingPipe.png?raw=true" height=300> <img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/SliderPipeNoHoles.JPG?raw=true" height = 300></center>
-<p>
-    <em><center> The team spent ten minutes sanding down the bushings to their desired width. On the right is a photo of the pipe sitting in the sanded tee.  </center></em>
-</p>
 
 ####Float
 Originally, the team incorrectly calculated the dimensions for a smaller sized float. The friction force that the smaller size float supported was 13.25 N while the measured friction force was 17.67 N. The first set of instructions were kept so that, given a better sanded tee with a smaller friction force, a procedure for fabrication is available.
@@ -337,11 +307,10 @@ This is a great add-on. Consider putting in the equations for friction force in 
 
 To create the 1" float, the team cut 1" PVC pipe into 3, 13" pieces using the bandsaw and hackzall and glued a strip of PVC sheet that was cut using the bandsaw to either end of all three pipes, with 1" arbitrary spacing between each pipe. The team used this design because, after calculating the required length of the float had it been just one pipe, it was clear that it would be too long for proper function both in the tank the team is using for testing and in the distribution tank itself. By using three pipes instead of one, the team was able to decrease the overall length of the float by three, which better accommodates the testing tank.
 
-The team originally found that a float of just one 1" diameter pipe would have to be 35.05" long. To get the length for the three-pipe float the team simply divided by three to get an approximate length of 12" and decided to round up to 13" to account for any errors made in finding the required buoyant force. The team chose to overestimate the length instead of underestimate to make sure the buoyant force of the float would be large enough to support the weight of the float valve.
-<div class="alert alert-block alert-danger">
-Hmm this last sentence is worded a little strangely. I understand that you mean to say rounding up if more conservative because the float is more likely to float, but it is a little vague and wishy washy
+The team originally found that a float of just one 1" diameter pipe would have to be 35.05" long. To get the length for the three-pipe float the team simply divided by three to get an approximate length of 12" and decided to round up to 13" to account for any errors made in finding the required buoyant force. Since a larger float provides the potential for more buoyant force, but will still only provide what is needed, it was not an issue to round up.
 
-addressed - julia
+<div class="alert alert-block alert-danger">
+Hmm this last sentence is worded a little strangley. I understand that you mean to say rounding up if more conservative because the float is more likely to float, but it is a little vague and wishy washy
 </div>
 
 The spacing between the pipes was required because the center float pipe was hose clamped to the top of the slider pipe and part of the notch at the top of the slider pipe would block the other two pipes had there not been space between them. In the 2" float spacing between pipes is not required as seen in the pictures.
@@ -350,17 +319,12 @@ The spacing between the pipes was required because the center float pipe was hos
 Pictures add to understanding, but from the text I do not understand why the spacing is not needed? How is the float attached differently and why couldn't you do that for the 1" float?
 </div>
 
-<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/1%20inch%20float%20vs%202%20inch%20float.jpg?raw=true" ></center>
-<p>
-    <em><center>The picture on the left shows the original 1" diameter float setup. In the middle and on the right is the float using 2" diameter PVC pipe.  </center></em>
-</p>
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/1%20inch%20float%20vs%202%20inch%20float.jpg?raw=true" height=300></center>
 
-#####Correctly-Sized Float
+#####Correctly sized Float
 
 <div class="alert alert-block alert-danger">
 Use consistent capitalization
-
-Addressed - julia
 </div>
 
 To create the 2" float, a similar procedure was used to cut them to the same length, requiring the team to cut 2" PVC pipe into 3, 13" pieces using a bandsaw and hackzall. However, because of this, the larger size spacing between the float was not required, because the lip was no longer in the way for the 2" size. For the 2" caps, the team used a 2 1/2" hole saw in the drill press to cut six circular pieces out of PVC sheet. These pieces were glued to both ends of each pipe to seal them for use as floats.
@@ -372,96 +336,69 @@ I think this is the answer to my question posed above, but I am still a bit conf
 ####Final assembly
 After putting the float, slider pipe, and tee together, the team completed the experimental setup. Below is a picture of the complete assembly.
 <center><img src="https://raw.githubusercontent.com/AguaClara/float_valve/master/Pictures/complete.jpg" height= 300></center>
-<p>
-    <em><center> This is the full assembly sitting outside of the testing tank.   </center></em>
-</p>
 
 <div class="alert alert-block alert-danger">
 I realized about halfway through, that I wasn't sure how this will work as in I'm having trouble understanding how it will sit in the distribution tank and how the different holes will be covered/uncovered. Is it possible to add in a schematic on how it will sit in the distribution tank and how the water level will affect the flow? (This should be a big focus on the revision)
-
-\
-I think that we should take screenshots of the CAD (one when the pipe is sitting at the bottom of the tank and one when it is supported by water) and put them next to each other in the manual. This way people will be able to see the different conditions that the pipe could be in and how the amount of exposed holes depends on that. -julia
 </div>
 
 ###Experimental Setup
-Our experimental setup consisted of the water flow setup and the slider pipe assembly. It was important to realistically replicate the setup of a plant distribution tank and water route in order to test the slider pipe assembly that was built. The team was mostly testing for functionality of the float valve and adjusted the designs based on what they gathered from the trials ran. The team was specifically testing to find the leak rate of the apparatus and to see if the float was large enough to support the weight of the slider pipe.
+Our experimental setup consisted of the water flow setup and the slider pipe assembly.
 
 <div class="alert alert-block alert-danger">
 Add in the purpose of this experimental set-up. What are you testing for? What is the model a model of? i.e. simulating a distribution tank.
-
-addressed - julia
 </div>
 
 ####Materials List
-| Part                            | Quantity |       Size        | Price in 2018 |
-|:------------------------------- |:--------:|:-----------------:| ------------- |
-| Flexible Tubing                 |   5 ft   |    1" diameter    | $7.35         |
-| Hose clamp                      |    1     |    2" diameter    | 10 for $7.17  |
-| Barbed PVC Fitting NPT Male End |    1     |    1" diameter    | $1.97         |
-| PVC Tee                         |    1     |    1" diameter    | $0.81         |
-| PVC Elbow                       |    1     |    1" diameter    | $0.61         |
-| PVC Elbow                       |    1     |    2" diameter    | $1.82         |
-| PVC Bushing                     |    1     | 2" to 1" diameter | $1.74         |
-| PVC Coupling                    |    1     |    2" diameter    | $1.09         |
-| PVC Pipe                        |  3" x 3  |    2" diameter    | $16.00        |
-| PVC Pipe                        |   4 ft   |    1" diameter    | $5.40         |
-| PVC Coupling                    |    1     |    1" diameter    | $0.48         |
-| Fernco Fitting                  |    1     |    2" diameter    | $4.71         |
-| Clear PVC Pipe                  |   2 ft   |    2" diameter    | $23.38              |
-
-All parts ordered from McMaster Carr.
-
+| Part                            | Quantity |       Size        |
+|:------------------------------- |:--------:|:-----------------:|
+| Flexible Tubing                 |   5 ft   |    1" diameter    |
+| Hose clamp                      |    1     |    2" diameter    |
+| Barbed PVC Fitting NPT Male End |    1     |    1" diameter    |
+| PVC Tee                         |    1     |    1" diameter    |
+| PVC Elbow                       |    1     |    1" diameter    |
+| PVC Elbow                       |    1     |    2" diameter    |
+| PVC Bushing                     |    1     | 2" to 1" diameter |
+| PVC Coupling                    |    1     |    2" diameter    |
+| PVC Pipe                        |  3" x 3  |    2" diameter    |
+| PVC Pipe                        |   4 ft   |    1" diameter    |
+| PVC Coupling                    |    1     |    1" diameter    |
+| Fernco Fitting                  |    1     |    2" diameter    |
+| Clear PVC Pipe                  |   2 ft   |    2" diameter    |
 
 <div class="alert alert-block alert-danger">
 Just like before can you add source or potential price? (I am more concerned about source)
-
-addressed - julia
 </div>
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/setup2.png?raw=true" height= 300></center>
-<p>
-    <em><center> The experimental setup required a flow of water from the sink faucet that travelled past a PVC tee and into the distribution tank.  </center></em>
-</p>
 
 ####Water Flow
 In order to check the flow of the water out of the sink, the team had to test the time it took for a flow to fill a bucket. The bucket was marked with the level of 3 liters, so the team found the right position of the faucet knob that would fill up to the 3 liter mark in 3 seconds, hereby ensuring a flow rate of 1L/s.
 
 <div class="alert alert-block alert-danger">
 This trick is often not written about but is used by many teams. Good inclusion and explanation.
-
-thank you!
 </div>
 
 ####Water Route
-The team then took a piece of 1" diameter flexible tubing and used a hose clamp to secure it to the faucet. This flexible tubing connected via a barbed fitting to a 1" diameter pipe on a raised platform. The team raised this portion in order to ensure more head upon entering the distribution tank. At the top of this platform, the team inserted a 1" tee. The team then connected the clear PVC pipe to the free end of this tee. The tee exposed the water to atmospheric pressure to eliminate pressure head, and the clear PVC pipe prevented the water from spilling out. It was important to eliminate pressure head in order to get a consistent measurement of the head and pressure of the water entering the system. As the float began to rise and the holes in the slider pipe closed off, the head began to build up. Although the flow began each trial at a rate of 1 L/s, the team adjusted the flow rate of the sink during the trial to keep a constant head of water entering the system.
+The team then took a piece of 1" diameter flexible tubing and used a hose clamp to secure it to the faucet. This flexible tubing led to a barbed fitting on a raised platform on the counter of the lab bench. The team did this in order to ensure more head upon entering the distribution tank. At the top of this platform, the team inserted a 1" tee. The team then connected the clear PVC pipe to the free end of this tee. The tee exposed the water to atmospheric pressure to eliminate pressure head, and the clear PVC pipe prevented the water from spilling out. By adjusting the flow rate of the sink and allowing a given amount of water to enter this clear PVC pipe, the team was able to keep the amount of head entering the system constant.
 
 <div class="alert alert-block alert-danger">
-Revise second sentence for clarity. What is the importance of a barbed fitting? Why was it necessary? **Is there a photo of this set-up.**
+Revise second sentence for clarity. What is the importance of a barbed fitting? Why was it neccesary? Is there a photo of this set-up.
 
 Why do you need to eliminate pressure head?
 
 Also isn't the flow rate already set to 1 L/s, so why mention adjusting it again here?
-
-addressed except for the photo - julia
 </div>
 
-The tee then led into a 1" elbow that diverted the water down into a 3' long 1" pipe. The team expanded this 1" pipe by using a 1" diameter to 2" diameter bushing to connect the water path to the apparatus. The team then used a 2" elbow to get the water to flow horizontally into the float valve tee. Between the elbow and the tee were two small pieces of 2" diameter PVC, which were connected by a Fernco fitting. One end was glued into the elbow, while the other was glued into the tee of the float valve. The team used a Fernco fitting so that the float valve would not be permanently attached to the experimental setup and could be removed if needed. The team positioned the float valve roughly in the center of the tank, both vertically and horizontally. It was centered vertically to allow for the largest range of motion of the slider pipe. It was centered horizontally within the tank to ensure that the float did not hit the sides of the tank.
+The tee then led into a 1" elbow that diverted the water down into a 3-foot long 1" pipe. The team expanded this 1" pipe by using a 1" diameter to 2" diameter bushing to connect the water path to the apparatus. The team then used a 2" elbow to get the water to flow horizontally into the float valve tee. Between the elbow and the tee were two small pieces of 2" diameter PVC, which were connected by a Fernco fitting. One end was glued into the elbow, while the other was glued into the tee of the float valve. The team used a Fernco fitting so that the float valve would not be permanently attached to the experimental setup and could be removed if needed. The team positioned the float valve roughly in the center of the tank, both vertically and horizontally. It was centered vertically to allow for the largest range of motion of the slider pipe. It was centered horizontally within the tank to ensure that the float did not hit the sides of the tank.
 
 <div class="alert alert-block alert-danger">
 Revise "3-foot long 1" pipe" - you are using foot (spelled out) and " (symbol) which is inconsistent.
-
-addressed - julia
 </div>
 
-<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/constant_head_chamber.png?raw=true" height= 300></center>
-<p>
-    <em><center> This photo shows the top of the experimental apparatus and shows the flow of the water through the pipes. The water comes from the faucet and into the top pipe where it either continues to enter the slider pipe assembly or builds up pressure in the head chamber. </center></em>
-</p>
+<center><img src="https://raw.githubusercontent.com/AguaClara/float_valve/master/Pictures/constant_head_chamber.png" height= 300></center>
 
 <div class="alert alert-block alert-danger">
 Can you show water flow in this picture? I am getting a little confused since the previous couple of paragraphs are so dense. Would benefit from more pictures in this section.
-
-addressed - julia
 
 Can you add a little bit next time about next steps. There really isn't a conclusion here. No wrapping everything together.
 </div>
