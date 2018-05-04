@@ -146,15 +146,16 @@ Where is the python code for determining hole pattern? Reference it and link to 
 </div>
 
 ####Rate of Leakage
-<<<<<<< HEAD
+
 $$ {Q_{\mathrm{leak}} \over Q_{\mathrm{plant}}} = {{\Delta h \over \Delta t} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
 $$ Q_{\mathrm{leak}} = Q_{\mathrm{plant}}{{.03Height_{}\over 8hrs} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
 $$Q_{\mathrm{leak}} = 20 L/s*.03 = .6 L/s$$
 $$Q_{\mathrm{leak - Small Scale}} = 1 L/s*.03 = .03 L/s$$
 
 The team derived this ratio aiming for the last 3% of the height of the tank to fill up during off-peak hours which has a duration of 8 hours from midnight to 8 am. The amount of time it takes to fill up the whole height of the tank was used in the bottom fraction. Using this ratio, the team deterimed the target $Q_{leak}$ to be .6 L/s in the full scale design.
-=======
-Since the entrance and exit points in the tee that the slider pipe goes through are not water tight, there is some leakage through those spaces when the float valve closes. This leakage is impossible to eliminate if the slider pipe is to slide freely. Since the purpose of the float valve is to prevent the distribution tank from overflowing, the team needed to ensure that the leak rate would not overfill the tank during the 8 off-peak hours from midnight to 8am. Because the leak rate is solely dependent on the amount of head available and the gap through which the water is leaking, the team was not able to change the amount of $Q_{leak}$. However, the layout of the holes in the slider pipe are dependent on the rate of leakage and have to be positioned precisely. The slider pipe should turn off the flow when the water level is at a height that would allow the leaking slot to fill the rest of the distribution tank in the given 8 hours. 
+
+
+Since the entrance and exit points in the tee that the slider pipe goes through are not water tight, there is some leakage through those spaces when the float valve closes. This leakage is impossible to eliminate if the slider pipe is to slide freely. Since the purpose of the float valve is to prevent the distribution tank from overflowing, the team needed to ensure that the leak rate would not overfill the tank during the 8 off-peak hours from midnight to 8am. Because the leak rate is solely dependent on the amount of head available and the gap through which the water is leaking, the team was not able to change the amount of $Q_{leak}$. However, the layout of the holes in the slider pipe are dependent on the rate of leakage and have to be positioned precisely. The slider pipe should turn off the flow when the water level is at a height that would allow the leaking slot to fill the rest of the distribution tank in the given 8 hours.
 
 The team calculated the relationship between the area of the slot through which the water was leaking and the flow rate of the water going through using the following equation.
 
@@ -173,7 +174,6 @@ $$W_{gap} = {A_{slot} \over \pi \cdot OD_{Slider Pipe}} PUT \ A \ REAL \ VALUE $
 Assuming this gap width for all future float valves, the flow rate of leakage can be estimated given the circumference of the slider pipe and the height of head available.
 
 $$Q_{leak} = \sqrt{2gh_L} \cdot C_{Slider Pipe} \cdot W_{gap} \cdot \Pi_{vc}$$
->>>>>>> bfbb9d61c5ca075500b5256c45ab341835bef67e
 
 <div class="alert alert-block alert-danger">
 I am confused about the purpose of this section.
@@ -182,9 +182,9 @@ I thought the problem was that the tank was overfull?
 </div>
 
 ####Float size
-<<<<<<< HEAD
+
 The team determined the float size by testing the friction force between the slider pipe and tee. First, the team found the sprink constant $k$ by hanging a weight off the spring and measuring the change in length from it's origination orientation.
-=======
+
 To determine the length of the float, the team assumed there is negligible friction force between the slider pipe and the tee since the slider pipe can slide through the tee easily. The team also decided to aim for the water level to be at half the height of the float. This meant that the buoyant force has to support the weight of the top half of the float, the apparent weight in water of the bottom half of the float, and the apparent weight in water of the slider pipe. The team used the following equation to find the apparent weights in water:
 $$ApparentWeight_{object}=Weight_{object}-\rho_{water}\cdot Volume_{object} \cdot g$$
 where $\rho_{water}$ is the density of water and $g$ is acceleration due to gravity.
@@ -210,7 +210,7 @@ $$L_{Float}= \frac{4\cdot \pi\cdot (OD_{SliderPipe}^2-ID_{SliderPipe}^2)\cdot L_
 With an earlier model of the Float Valve, the tee was not frictionless so the team determined the float size by testing the friction force between the slider pipe and tee. Normally, there are calculations that can be used to find the friction between two smooth pipes. However, because the bushings needed to be sanded down, they were not completely smooth and the equation would not be accurate for this setup. The team used a spring available in the lab to test and estimate the force of friction exerted by the slider pipe assembly.
 
 First, the team found the spring constant $k$ of the spring by hanging a weight off the spring and measuring the change in length from it's original orientation.
->>>>>>> bfbb9d61c5ca075500b5256c45ab341835bef67e
+
 
 <div class="alert alert-block alert-danger">
 Revise for spelling
