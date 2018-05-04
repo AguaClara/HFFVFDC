@@ -62,6 +62,7 @@ $$V=\sqrt{2gHead_{Availible}}=3.132 m/s$$
 $$Q=VA_{Tee}$$
 $$Q_{2 in}=VA_{2in}=3.132m/s\cdot .02m^2=6.34 L/s\approx6L/s$$
 $$Q_{4 in}=VA_{4in}=3.132m/s\cdot .08m^2=25.4 L/s\approx25L/s$$
+$$Q_{8 in}=VA_{8in}=3.132m/s\cdot .32m^2=101.6 L/s\approx100L/s$$
 
 Using these max flow rates, the team determined the ranges for three different sizes of pipe: 1L/s to 6 L/s, 6L/s to 25L/s, and 25L/s to 100 L/s. If additional head were available, the ranges for each of the scales would be larger due to the higher velocity of water running through the tee.
 
