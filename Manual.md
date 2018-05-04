@@ -60,9 +60,8 @@ Why was headloss assumed to be 1m?
 $$\frac{V^2}{2g}=Head_{Availible}$$
 $$V=\sqrt{2gHead_{Availible}}=3.132 m/s$$
 $$Q=VA_{Tee}$$
-$$Q_{2 in}=VA_{2in}=3.132m/s*.02m^2=6.34 L/s\approx6L/s$$
-$$Q_{4 in}=VA_{4in}=3.132m/s*.08m^2=25.4 L/s\approx25L/s$$
-$$Q_{8 in}=VA_{8in}=3.132m/s*.32m^2=101.6 L/s\approx100L/s$$
+$$Q_{2 in}=VA_{2in}=3.132m/s\cdot .02m^2=6.34 L/s\approx6L/s$$
+$$Q_{4 in}=VA_{4in}=3.132m/s\cdot .08m^2=25.4 L/s\approx25L/s$$
 
 Using these max flow rates, the team determined the ranges for three different sizes of pipe: 1L/s to 6 L/s, 6L/s to 25L/s, and 25L/s to 100 L/s. If additional head were available, the ranges for each of the scales would be larger due to the higher velocity of water running through the tee.
 
@@ -81,7 +80,7 @@ where $Height_{tank}$ is the height of the distribution tank, $TopExtraMaterial$
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/diagram%20of%20float%20attached%20to%20pipe.jpg?raw=true"  height = 300></center>
 
 The value of TopExtraMaterial is
-$$TopExtraMaterial= OuterDiameter_{float}*(1+\sqrt{2})+PlugClearance$$
+$$TopExtraMaterial= OuterDiameter_{float}\cdot (1+\sqrt{2})+PlugClearance$$
 where $PlugClearance$ is the amount of space left between the center of the plug and the edge of the pipe. The team decided to leave half an inch of space between the bottom of the bottom plugs and the bottom of the slider pipe, as well as the top of the top plug and the top of the slider pipe directly above the plugs. With 0.5" diameter plugs, this gives a $PlugClearance$ of 0.75". To find $TopExtraMaterial$, the distance from the top plugs to the top of the float is needed. From the top plugs to the bottom of the notch in the top of the slider pipe is the $PlugClearance$. Using the fact that the angle of the notch is 45º, from the bottom of the notch to the center of the float is $\sqrt{2}\frac{OuterDiameter_{float}}{2}$ and from the center of the float to the top of the float is $\frac{OuterDiameter_{float}}{2}$.
 
 The value of $BottomExtraMaterial$ is the distance from the bottom plugs to the bottom of the slider pipe which is equal to $PlugClearance$.
@@ -104,7 +103,7 @@ The team was constrained by a couple of parameters including available head, hei
 
 As the HFFV scales up, hole diameter size increases. These sizes were determined by testing how much flow would come out of an orifice and capping the maximum number of holes exposed to the tee at 75 holes. The team capped this as the maximum number of holes, because having too many holes would make fabrication difficult and would risk not having enough space in the tee to fit all holes. The team used the flow orifice equation shown below.
 
-$$ Q=\pi*A*\sqrt{2gh}=\frac{\pi_{vc} d^2\pi\sqrt{2gh}}{4}$$
+$$ Q=\pi\cdot A\cdot \sqrt{2gh}=\frac{\pi_{vc} d^2\pi\sqrt{2gh}}{4}$$
 
 where $\pi_{vc}$ is the vena contract coefficient (typically .62), $Q$ is the target flow rate which is $1\over 10$th the plant's flow rate, $A$ is the slider hole area that is being considered and $h$ is the amount of head available.
 $$ Q_{1/4in} = 0.08696 liter / second$$
@@ -146,12 +145,34 @@ Where is the python code for determining hole pattern? Reference it and link to 
 </div>
 
 ####Rate of Leakage
+<<<<<<< HEAD
 $$ {Q_{\mathrm{leak}} \over Q_{\mathrm{plant}}} = {{\Delta h \over \Delta t} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
 $$ Q_{\mathrm{leak}} = Q_{\mathrm{plant}}{{.03Height_{}\over 8hrs} \over {\mathrm{Height}_{\mathrm{tank}} \over 8 \mathrm{hrs}}}$$
 $$Q_{\mathrm{leak}} = 20 L/s*.03 = .6 L/s$$
 $$Q_{\mathrm{leak - Small Scale}} = 1 L/s*.03 = .03 L/s$$
 
 The team derived this ratio aiming for the last 3% of the height of the tank to fill up during off-peak hours which has a duration of 8 hours from midnight to 8 am. The amount of time it takes to fill up the whole height of the tank was used in the bottom fraction. Using this ratio, the team deterimed the target $Q_{leak}$ to be .6 L/s in the full scale design.
+=======
+Since the entrance and exit points in the tee that the slider pipe goes through are not water tight, there is some leakage through those spaces when the float valve closes. This leakage is impossible to eliminate if the slider pipe is to slide freely. Since the purpose of the float valve is to prevent the distribution tank from overflowing, the team needed to ensure that the leak rate would not overfill the tank during the 8 off-peak hours from midnight to 8am. Because the leak rate is solely dependent on the amount of head available and the gap through which the water is leaking, the team was not able to change the amount of $Q_{leak}$. However, the layout of the holes in the slider pipe are dependent on the rate of leakage and have to be positioned precisely. The slider pipe should turn off the flow when the water level is at a height that would allow the leaking slot to fill the rest of the distribution tank in the given 8 hours. 
+
+The team calculated the relationship between the area of the slot through which the water was leaking and the flow rate of the water going through using the following equation.
+
+$$Q_{leak} = V \cdot A_{vc}$$
+$$A_{vc} = A_{slot} \cdot \Pi _{vc}$$
+$$Q_{leak} = \sqrt{2gh_L} \cdot A_{slot} \cdot \Pi_{vc}$$
+$$A_{slot} = {Q_{leak} \over \sqrt{2gh_L} \cdot \Pi_{vc}}$$
+
+$V$ is the velocity of the water, $A_{VC}$ is the area of the vena contracta, or the slot through which the water is leaking, $h_L$ is the height of the head, and $\Pi_{VC}$ is the vena contracta coefficient, which was estimated as 0.62. Given this formula and an experimental measurement of the leak rate, the team found the area of the slot for the specific experimental apparatus. By dividing this area by the outer circumference of the slider pipe, the team found the width of the small gap between the slider pipe and the bushings. The team assumed this width to be the same for all future slider pipe assemblies as this is the gap that provides enough space for the slider pipe to move freely.
+
+$$A_{slot} = C_{Slider Pipe} \cdot W_{gap}$$
+$$C_{Slider Pipe} = 2 \cdot \pi \cdot \Bigg({OD_{Slider Pipe} \over 2} \Bigg) = \pi \cdot OD_{Slider Pipe}$$
+$$W_{gap} = {A_{slot} \over \pi \cdot OD_{Slider Pipe}}$$
+$$W_{gap} = {A_{slot} \over \pi \cdot OD_{Slider Pipe}} PUT \ A \ REAL \ VALUE $$
+
+Assuming this gap width for all future float valves, the flow rate of leakage can be estimated given the circumference of the slider pipe and the height of head available.
+
+$$Q_{leak} = \sqrt{2gh_L} \cdot C_{Slider Pipe} \cdot W_{gap} \cdot \Pi_{vc}$$
+>>>>>>> bfbb9d61c5ca075500b5256c45ab341835bef67e
 
 <div class="alert alert-block alert-danger">
 I am confused about the purpose of this section.
@@ -160,19 +181,47 @@ I thought the problem was that the tank was overfull?
 </div>
 
 ####Float size
+<<<<<<< HEAD
 The team determined the float size by testing the friction force between the slider pipe and tee. First, the team found the sprink constant $k$ by hanging a weight off the spring and measuring the change in length from it's origination orientation.
+=======
+To determine the length of the float, the team assumed there is negligible friction force between the slider pipe and the tee since the slider pipe can slide through the tee easily. The team also decided to aim for the water level to be at half the height of the float. This meant that the buoyant force has to support the weight of the top half of the float, the apparent weight in water of the bottom half of the float, and the apparent weight in water of the slider pipe. The team used the following equation to find the apparent weights in water:
+$$ApparentWeight_{object}=Weight_{object}-\rho_{water}\cdot Volume_{object} \cdot g$$
+where $\rho_{water}$ is the density of water and $g$ is acceleration due to gravity.
+The team used these equations to solve for the length of the float:
+$$BuoyantForce=\frac{1}{2}\cdot \pi \cdot (\frac{ID_{float}}{2})^2 \cdot L_{Float} \cdot g$$
+
+$$BuoyantForce=\frac{1}{2}Weight_{Float}+\frac{1}{2}ApparentWeight_{Float}+ApparentWeight_{SliderPipe}
+$$
+$$\frac{1}{2}Weight_{Float}=\frac{1}{2}\pi[(\frac{OD_{Float}}{2})^2-(\frac{ID_{Float}}{2})^2] \cdot L_{Float}\cdot \rho_{PVC}\cdot g$$
+$$\frac{1}{2}ApparentWeight_{Float}= \frac{1}{2}\cdot Weight_{Float}-\frac{1}{2}Volume_{Float}\cdot \rho_{water}\cdot g $$
+$$\frac{1}{2}Volume_{Float}=\frac{1}{2}\cdot (\frac{ID_{Float}}{2})^2\cdot \pi\cdot L_{Float}\cdot \rho_{water}\cdot g$$
+$$ApparentWeight_{SliderPipe}= Weight_{SliderPipe}-Volume_{SliderPipe}\cdot \rho_{water}\cdot g$$
+$$Volume_{SliderPipe}= \frac{Weight_{SliderPipe}}{\rho_{PVC}\cdot g}$$
+$$ApparentWeight_{SliderPipe}=Weight_{SliderPipe}\cdot (1-\frac{\rho_{water}}{\rho_{PVC}}) $$
+
+After combining these equations and solving for $L_{Float}$, the team got the following equation:
+$$L_{Float}= \frac{4\cdot Weight_{SliderPipe}\cdot (1-\frac{\rho_{water}}{\rho_{water}})}{g\cdot \pi(ID_{Float}^2\cdot \rho_{water}-OD_{Float}^2\cdot \rho_{PVC}+ID_{Float}^2\cdot \rho_{PVC})} $$
+In the team's case, the slider pipe was made first so the team could easily weigh it and plug the weight into the above equation. When this is not the case, the weight can be approximated by the weight of a PVC pipe of the same diameter and length with the following equation:
+$$Weight_{SliderPipe}= \pi\cdot (OD_{SliderPipe}^2-ID_{SliderPipe}^2)\cdot L_{SliderPipe}\cdot \rho_{PVC}\cdot g $$
+Plugging this into the equation for $L_{Float}$ gives:
+$$L_{Float}= \frac{4\cdot \pi\cdot (OD_{SliderPipe}^2-ID_{SliderPipe}^2)\cdot L_{SliderPipe}\cdot \rho_{PVC}\cdot g\cdot (1-\frac{\rho_{water}}{\rho_{water}})}{g\cdot \pi(ID_{Float}^2\cdot \rho_{water}-OD_{Float}^2\cdot \rho_{PVC}+ID_{Float}^2\cdot \rho_{PVC}))} $$
+
+With an earlier model of the Float Valve, the tee was not frictionless so the team determined the float size by testing the friction force between the slider pipe and tee. Normally, there are calculations that can be used to find the friction between two smooth pipes. However, because the bushings needed to be sanded down, they were not completely smooth and the equation would not be accurate for this setup. The team used a spring available in the lab to test and estimate the force of friction exerted by the slider pipe assembly.
+
+First, the team found the spring constant $k$ of the spring by hanging a weight off the spring and measuring the change in length from it's original orientation.
+>>>>>>> bfbb9d61c5ca075500b5256c45ab341835bef67e
 
 <div class="alert alert-block alert-danger">
 Revise for spelling
 </div>
 
-$$ F=k*\Delta(x) $$
+$$ F=k\cdot \Delta(x) $$
 $$k= \frac{F}{\Delta(x)} $$
 $$ k =229.8 N/m $$
 
 Then the spring was held in one end of the pipe and pulled, and the change in distance of the spring was measured. Finally, the team measured the friction force by multiplying the $k$ determined in the previous step and the change in distance recorded. The team converted this force to the mass of the float by dividing by the force of gravity.
 
-$$ F=k*\Delta(x)= 229.8N/m * .03313m= 17.67 N $$
+$$ F=k\cdot \Delta(x)= 229.8N/m \cdot .03313m= 17.67 N $$
 $$ \mathrm{Mass}_{\mathrm{Float}}=\frac{F}{9.81 m/s^2} = 1.76 kg$$
 
 The buoyant force has to overcome the friction force in order for the float to move up and down smoothly. The team found the volume of the float by dividing the mass of the float by density of water, then dividing that volume by the cross-sectional area of the desired pipe to get length.

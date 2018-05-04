@@ -168,4 +168,27 @@ def Tee_Length(Tee_Diam):
   Slider_Pipe_Length(1*u.m,1.5*u.inch,2*u.inch)
   HFFV(25*u.L/u.s,1*u.m,1*u.m)
 
+def Hole_Pattern_Small_Scale (FlowRate,Head):
+    if (FlowRate>=(1*u.L/u.s)) and (FlowRate<=(6*u.L/u.s)):
+      Hole_Diam=.25*u.inch
+    elif (FlowRate>=(6*u.L/u.s)) and (FlowRate<=(25*u.L/u.s)):
+      Hole_Diam=.5*u.inch
+    elif (FlowRate>=(25*u.L/u.s)) and (FlowRate<=(100*u.L/u.s)):
+      Hole_Diam=1*u.inch
+    Flow=flow_orifice(.25*u.inch, Head, .62)
+    Num_Of_Holes_Exposed = int(round((FlowRate/Flow.to(u.L/u.s)),0))
+    Num_Of_Rows_Exposed = int(math.floor(math.sqrt(Num_Of_Holes_Exposed)))
+    Remainder_Holes = (Num_Of_Holes_Exposed - (Num_Of_Rows_Exposed)**2)
+    Pattern_Array = [Num_Of_Rows_Exposed for i in range (Num_Of_Rows_Exposed)]
+    for x in range (0, Remainder_Holes):
+      Place = x % Num_Of_Rows_Exposed
+      Pattern_Array[Place] = Pattern_Array[Place] + 1
+    print (Pattern_Array)
+    print (Num_Of_Holes_Exposed)
+    return
+
+Hole_Pattern_Small_Scale(3*u.L/u.s,1*u.m)
+
+
+
 ```
