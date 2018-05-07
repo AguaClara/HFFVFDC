@@ -154,16 +154,35 @@ def HFFV(FlowRate,Head,Height_Distribution_Tank): ##Given flowrate, head, and he
   #SP_Length=Active_Length+Top_Extra_Material+Bot_Extra_Material+Slider_Pipe_Diam/2
   #return(SP_Length)
 
-def Slider_Pipe_Length2(Height_Distribution_Tank,Slider_Pipe_Diam):
+##Active Length function that returns the active length to be used in the following two functions
+def Active_Length(Height_Distribution_Tank,Slider_Pipe_Diam):
   Plug_Diam=.5*u.inch ##Standard plug diam is half inch diameter
   Bot_Extra_Material=Plug_Diam/2+.5*u.inch
   Top_Extra_Material=Slider_Pipe_Diam*(1+2**(.5))+Plug_Diam/2+.5*u.inch
   Bushing_Height = 1*u.inch
-  Active_Length=(Height_Distribution_Tank - Bot_Extra_Material - Top_Extra_Material)*(2/3) - (1/3)*(Bushing_Height)
-  SP_Length=Active_Length+Top_Extra_Material+Bot_Extra_Material+Bushing_Height-(Slider_Pipe_Diam*2**(.5))
-  return (SP_Length)
+  Act_Length=(Height_Distribution_Tank - Bot_Extra_Material - Top_Extra_Material - 2*Bushing_Height)*(1/3)
+  return (Act_Length)
+Active_Length(2*u.m, 1.5*u.inch)
 
-Slider_Pipe_Length2(2*u.m, 1.5*u.inch)
+
+##Calculates the necessary length of the slider pipe
+def Slider_Pipe_Length(Act_Length, Slider_Pipe_Diam):
+  Plug_Diam=.5*u.inch ##Standard plug diam is half inch diameter
+  Bot_Extra_Material=Plug_Diam/2+.5*u.inch
+  Top_Extra_Material=Slider_Pipe_Diam*(1+2**(.5))+Plug_Diam/2+.5*u.inch
+  Bushing_Height = 1*u.inch
+  SP_Length= Act_Length*(2) +Top_Extra_Material+Bot_Extra_Material + 2*Bushing_Height -(Slider_Pipe_Diam*2**(.5))
+  return (SP_Length)
+Slider_Pipe_Length(Active_Length(2*u.m, 1.5*u.inch), 1.5*u.inch)
+
+
+##Calculates the total height of the tee
+def Total_Tee_Height(Act_Length):
+  Bushing_Height = 1*u.inch
+  Tee_Height= Act_Length + 2 * Bushing_Height
+  return (Tee_Height)
+Total_Tee_Height(Active_Length(2*u.m, 1.5*u.inch))
+
 
 def Tee_Length(Tee_Diam):
   if Tee_Diam==2*u.inch:
@@ -179,26 +198,38 @@ def Tee_Length(Tee_Diam):
   Slider_Pipe_Length(1*u.m,1.5*u.inch,2*u.inch)
   HFFV(25*u.L/u.s,1*u.m,1*u.m)
 
-def Hole_Pattern_Small_Scale (FlowRate,Head):
+
+#I designed a hole pattern dependent on the ratio of the hole size to the active length. The idea is that there will be a row in an interval of the Hole_Diam*4. I kept the old code in case we want to scrap this. - julia
+def Hole_Pattern_Small_Scale (FlowRate,Head,Height_Distribution_Tank,Slider_Pipe_Diam):
     if (FlowRate>=(1*u.L/u.s)) and (FlowRate<=(6*u.L/u.s)):
       Hole_Diam=.25*u.inch
     elif (FlowRate>=(6*u.L/u.s)) and (FlowRate<=(25*u.L/u.s)):
       Hole_Diam=.5*u.inch
     elif (FlowRate>=(25*u.L/u.s)) and (FlowRate<=(100*u.L/u.s)):
       Hole_Diam=1*u.inch
-    Flow=flow_orifice(.25*u.inch, Head, .62)
+    Flow=flow_orifice(Hole_Diam, Head, .62) ##I changed this from "25*u.L/u.S" to "Hole_Diam" cause I think you forgot to implement variable "Hole_Diam", lmk if I was wrong - julia
     Num_Of_Holes_Exposed = int(round((FlowRate/Flow.to(u.L/u.s)),0))
-    Num_Of_Rows_Exposed = int(math.floor(math.sqrt(Num_Of_Holes_Exposed)))
-    Remainder_Holes = (Num_Of_Holes_Exposed - (Num_Of_Rows_Exposed)**2)
-    Pattern_Array = [Num_Of_Rows_Exposed for i in range (Num_Of_Rows_Exposed)]
+    Num_Of_Rows_Exposed = int(math.floor(Active_Length(Height_Distribution_Tank,Slider_Pipe_Diam)/(Hole_Diam * 4)))
+    Num_Per_Row = math.floor(Num_Of_Holes_Exposed / Num_Of_Rows_Exposed)
+    Remainder_Holes = Num_Of_Holes_Exposed % Num_Of_Rows_Exposed
+    Pattern_Array = [Num_Per_Row for i in range (Num_Of_Rows_Exposed)]
     for x in range (0, Remainder_Holes):
-      Place = x % Num_Of_Rows_Exposed
-      Pattern_Array[Place] = Pattern_Array[Place] + 1
+      Pattern_Array[x] = Pattern_Array[x] + 1
     print (Pattern_Array)
     print (Num_Of_Holes_Exposed)
     return
 
-Hole_Pattern_Small_Scale(3*u.L/u.s,1*u.m)
+    #int(math.floor(math.sqrt(Num_Of_Holes_Exposed)))
+    #Remainder_Holes = (Num_Of_Holes_Exposed - (Num_Of_Rows_Exposed)**2)
+    #Pattern_Array = [Num_Of_Rows_Exposed for i in range (Num_Of_Rows_Exposed)]
+    #for x in range (0, Remainder_Holes):
+      #Place = x % Num_Of_Rows_Exposed
+      #Pattern_Array[Place] = Pattern_Array[Place] + 1
+    #print (Pattern_Array)
+    #print (Num_Of_Holes_Exposed)
+    #return
+
+Hole_Pattern_Small_Scale(3*u.L/u.s,1*u.m, 2*u.m, 1.5*u.inch)
 
 
 
