@@ -145,14 +145,25 @@ def HFFV(FlowRate,Head,Height_Distribution_Tank): ##Given flowrate, head, and he
 
   return
 
-def Slider_Pipe_Length(Height_Distribution_Tank,Slider_Pipe_Diam,Tee_Diam):
-  Tee_Height=Tee_Length(Tee_Diam)
+#def Slider_Pipe_Length(Height_Distribution_Tank,Slider_Pipe_Diam,Tee_Diam):
+  #Tee_Height=Tee_Length(Tee_Diam)
+  #Plug_Diam=.5*u.inch ##Standard plug diam is half inch diameter
+  #Bot_Extra_Material=Plug_Diam/2+.5*u.inch
+  #Top_Extra_Material=Slider_Pipe_Diam*(1+2**(.5))+Plug_Diam/2+.5*u.inch
+  #Active_Length=(Height_Distribution_Tank-Bot_Extra_Material-Top_Extra_Material-Tee_Height/2)+Tee_Height
+  #SP_Length=Active_Length+Top_Extra_Material+Bot_Extra_Material+Slider_Pipe_Diam/2
+  #return(SP_Length)
+
+def Slider_Pipe_Length2(Height_Distribution_Tank,Slider_Pipe_Diam):
   Plug_Diam=.5*u.inch ##Standard plug diam is half inch diameter
   Bot_Extra_Material=Plug_Diam/2+.5*u.inch
   Top_Extra_Material=Slider_Pipe_Diam*(1+2**(.5))+Plug_Diam/2+.5*u.inch
-  Active_Length=(Height_Distribution_Tank-Bot_Extra_Material-Top_Extra_Material-Tee_Height/2)+Tee_Height
-  SP_Length=Active_Length+Top_Extra_Material+Bot_Extra_Material+Slider_Pipe_Diam/2
-  return(SP_Length)
+  Bushing_Height = 1*u.inch
+  Active_Length=(Height_Distribution_Tank - Bot_Extra_Material - Top_Extra_Material)*(2/3) - (1/3)*(Bushing_Height)
+  SP_Length=Active_Length+Top_Extra_Material+Bot_Extra_Material+Bushing_Height-(Slider_Pipe_Diam*2**(.5))
+  return (SP_Length)
+
+Slider_Pipe_Length2(2*u.m, 1.5*u.inch)
 
 def Tee_Length(Tee_Diam):
   if Tee_Diam==2*u.inch:
