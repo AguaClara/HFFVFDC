@@ -76,6 +76,30 @@ def Slider_Pipe_Length(Active_Length, Slider_Pipe_Diam):
   return (SP_Length)
 Slider_Pipe_Length(Active_Length(2*u.m, 1.5*u.inch), 1.5*u.inch)
 
+##Calculates the pipe between tee and bushings
+def Pipe_Tee_To_Bushing_Length(Height_Distribution_Tank,Slider_Pipe_Diam):
+  if Slider_Pipe_Diam == 1.5*u.inch:
+    Height_Tee=5.25*u.inch
+    Height_Coupling=(2+27/32)*u.inch
+    Height_Coupling_In=1.375*u.inch
+
+  if Slider_Pipe_Diam == 3*u.inch:
+    Height_Tee=8.675*u.inch
+    Height_Coupling=(4+(7/32))*u.inch
+    Height_Coupling_In=1.5*u.inch
+
+  if Slider_Pipe_Diam == 6*u.inch:
+    Height_Tee=18*u.inch
+    Height_Coupling=7.5*u.inch ##guess
+    Height_Coupling_In=1.5*u.inch
+
+  Height_Lip=1/8*u.inch
+  Height_Active=Active_Length(Height_Distribution_Tank,Slider_Pipe_Diam)
+  H_Bushing=1*u.inch
+  Length=(Height_Tee+2*Height_Coupling-2*Height_Coupling_In+2*Height_Lip-H_Active-2*H_Bushing)/2
+  return(Length)
+
+
 
 ##Calculates the total height of the tee
 def Total_Tee_Height(Active_Length):
