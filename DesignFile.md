@@ -17,6 +17,7 @@ OD_Slider_Pipe=1.9*u.inch
 ID_Bushing=(OD_Slider_Pipe**2+(4*Area/np.pi))**.5
 Leak_Spacing=(ID_Bushing-OD_Slider_Pipe)/2
 print(Leak_Spacing.to(u.cm))
+def Slider_Pipe_Leak_Gap(ID_Bushing,OD_Slider_Pipe)
 
 def Q_Leak(Head,Vena_Contracta,Area_Gap):
   Q=((2*u.gravity*Head)**.5)*Vena_Contracta*Area_Gap
@@ -72,7 +73,7 @@ def Slider_Pipe_Length(Active_Length, Slider_Pipe_Diam):
   Bot_Extra_Material=Plug_Diam/2+.5*u.inch
   Top_Extra_Material=(Slider_Pipe_Diam*(1+2**(.5)))/2+Plug_Diam/2+.5*u.inch
   Bushing_Height = 1*u.inch
-  SP_Length = (Act_Length*(2) +Top_Extra_Material+Bot_Extra_Material + 2*Bushing_Height - (Slider_Pipe_Diam*2**(.5))/2).to(u.inch)
+  SP_Length = (Active_Length*(2) +Top_Extra_Material+Bot_Extra_Material + 2*Bushing_Height - (Slider_Pipe_Diam*2**(.5))/2).to(u.inch)
   return (SP_Length)
 Slider_Pipe_Length(Active_Length(2*u.m, 1.5*u.inch), 1.5*u.inch)
 
@@ -143,7 +144,7 @@ def Hole_Pattern_Small_Scale (FlowRate,Head,Height_Distribution_Tank,Slider_Pipe
       for x in range (0, Remainder_Holes):
         Pattern_Array[x] = Pattern_Array[x] + 1
     else:
-      Hole_Spacing = (Active_Length(Height_Distribution_Tank,Slider_Pipe_Diam)/Num_Of_Holes_Exposed).to(u.inch)
+      Row_Spacing = (Active_Length(Height_Distribution_Tank,Slider_Pipe_Diam)/Num_Of_Holes_Exposed).to(u.inch)
       Pattern_Array = [1 for i in range (Num_Of_Holes_Exposed)]
     print ('The hole pattern is ' + str(Pattern_Array))
     print ('The space between rows is ' + str(Row_Spacing))
@@ -174,14 +175,14 @@ def HFFV(FlowRate,Head,Height_Distribution_Tank): ##Given flowrate, head, and he
     Hole_Diam=1*u.inch
 
   Flow_orifice= flow_orifice(Hole_Diam, Head, RatioVCOrifice)
-  Number_Holes=round((FlowRate/Flow_orifice.to(u.L/u.s)),1)
+  Number_Holes=math.floor(FlowRate/Flow_orifice.to(u.L/u.s))
   SP_Length=Slider_Pipe_Length(Active_Length(Height_Distribution_Tank,Slider_Pipe_Diam), Slider_Pipe_Diam)
   print('Slider pipe diameter is '+str(Slider_Pipe_Diam))
   print('Slider pipe length is '+str(SP_Length))
   print('Tee diameter is ' +str(Tee_Diam))
   print ('The total tee height is ' + str(Total_Tee_Height(Active_Length(Height_Distribution_Tank,Slider_Pipe_Diam))))
   print('Hole Diameter is ' +str(Hole_Diam))
-  print('Number of holes required is' +str(Number_Holes))
+  print('Number of holes required is ' +str(Number_Holes))
   Hole_Pattern_Small_Scale(FlowRate,Head,Height_Distribution_Tank,Slider_Pipe_Diam)
 
 

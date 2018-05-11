@@ -1,0 +1,98 @@
+```python
+from aide_design.play import*
+from aide_design.physchem import*
+import math
+def HFFV(FlowRate,Head,Height_Distribution_Tank): ##Given flowrate, head, and height of distribution tank this will tell you the parameters to use for your HFFV system but doesn't include float size and slider pipe length.
+  RatioVCOrifice=.62
+  if (FlowRate>=(1*u.L/u.s)) and (FlowRate<=(6*u.L/u.s)):
+    Slider_Pipe_Diam=1.5*u.inch
+    Tee_Diam=2*u.inch
+    Hole_Diam=.25*u.inch
+    Flow_orifice= flow_orifice(Hole_Diam, Head, RatioVCOrifice)
+    Number_Holes=round((FlowRate/Flow_orifice.to(u.L/u.s)),1)
+    SP_Length=Slider_Pipe_Length(Height_Distribution_Tank,Slider_Pipe_Diam,Tee_Diam)
+    print('Slider pipe diameter is '+str(Slider_Pipe_Diam))
+    print('Slider pipe length is '+str(SP_Length))
+    print('Tee diameter is ' +str(Tee_Diam))
+    print('Hole Diameter is ' +str(Hole_Diam))
+    print('Holes required for max flow '+str(Number_Holes))
+
+  elif (FlowRate>=(6*u.L/u.s)) and (FlowRate<=(25*u.L/u.s)):
+    Slider_Pipe_Diam=3*u.inch
+    Tee_Diam=4*u.inch
+    Hole_Diam=.5*u.inch
+    Flow_orifice= flow_orifice(Hole_Diam, Head, RatioVCOrifice)
+    Number_Holes=round((FlowRate/Flow_orifice.to(u.L/u.s)),1)
+    SP_Length=Slider_Pipe_Length(Height_Distribution_Tank,Slider_Pipe_Diam,Tee_Diam)
+    print('Slider pipe diameter is '+str(Slider_Pipe_Diam))
+    print('Slider pipe length is '+str(SP_Length))
+    print('Tee diameter is ' +str(Tee_Diam))
+    print('Hole Diameter is ' +str(Hole_Diam))
+    print('Holes required for max flow '+str(Number_Holes))
+  elif (FlowRate>=(25*u.L/u.s)) and (FlowRate<=(100*u.L/u.s)):
+    Slider_Pipe_Diam=6*u.inch
+    Tee_Diam=8*u.inch
+    Hole_Diam=1*u.inch
+    Flow_orifice= flow_orifice(Hole_Diam, Head, RatioVCOrifice)
+    Number_Holes=round((FlowRate/Flow_orifice.to(u.L/u.s)),1)
+    SP_Length=Slider_Pipe_Length(Height_Distribution_Tank,Slider_Pipe_Diam,Tee_Diam)
+    print('Slider pipe diameter is '+str(Slider_Pipe_Diam))
+    print('Slider pipe length is '+str(SP_Length))
+    print('Tee diameter is ' +str(Tee_Diam))
+    print('Hole Diameter is ' +str(Hole_Diam))
+    print('Holes required for max flow '+str(Number_Holes))
+
+  return
+
+def Slider_Pipe_Length(Height_Distribution_Tank,Slider_Pipe_Diam,Tee_Diam):
+  Tee_Height=Tee_Length(Tee_Diam)
+  Plug_Diam=.5*u.inch ##Standard plug diam is half inch diameter
+  Bot_Extra_Material=Plug_Diam/2+.5*u.inch
+  Top_Extra_Material=Slider_Pipe_Diam*(1+2**(.5))+Plug_Diam/2+.5*u.inch
+  Active_Length=(Height_Distribution_Tank-Bot_Extra_Material-Top_Extra_Material-Tee_Height/2)+Tee_Height
+  SP_Length=Active_Length+Top_Extra_Material+Bot_Extra_Material+Slider_Pipe_Diam/2
+  return(SP_Length)
+
+def Tee_Length(Tee_Diam):
+  if Tee_Diam==2*u.inch:
+    Length=5.25*u.inch
+    return(Length)
+  elif Tee_Diam==4*u.inch:
+    Length=8.675*u.inch
+    return(Length)
+  elif Tee_Diam==8*u.inch:
+    Length=18*u.inch
+    return(Length)
+  Tee_Length(2*u.inch)
+  Slider_Pipe_Length(1*u.m,1.5*u.inch,2*u.inch)
+  HFFV(25*u.L/u.s,1*u.m,1*u.m)
+
+def Hole_Pattern_Small_Scale (FlowRate,Head):
+    if (FlowRate>=(1*u.L/u.s)) and (FlowRate<=(6*u.L/u.s)):
+      Hole_Diam=.25*u.inch
+    elif (FlowRate>=(6*u.L/u.s)) and (FlowRate<=(25*u.L/u.s)):
+      Hole_Diam=.5*u.inch
+    elif (FlowRate>=(25*u.L/u.s)) and (FlowRate<=(100*u.L/u.s)):
+      Hole_Diam=1*u.inch
+    Flow=flow_orifice(Hole_Diam, Head, .62)
+    Num_Of_Holes_Exposed = int(round((FlowRate/Flow.to(u.L/u.s)),0))
+    if Num_Of_Holes_Exposed <49:
+      Num_Of_Rows_Exposed = int(math.floor(math.sqrt(Num_Of_Holes_Exposed)))
+      Remainder_Holes = (Num_Of_Holes_Exposed - (Num_Of_Rows_Exposed)**2)
+      Pattern_Array = [Num_Of_Rows_Exposed for i in range (Num_Of_Rows_Exposed)]
+      for x in range (0, Remainder_Holes):
+          Place = x % Num_Of_Rows_Exposed
+          Pattern_Array[Place] = Pattern_Array[Place] + 3
+          Pattern_Array[Place+1] = Pattern_Array[Place+1] + 2
+          Pattern_Array[Place+2] = Pattern_Array[Place+2] + 1
+    else:
+      Num_Of_Rows_Exposed = 6
+      Remainder_Holes = (Num_Of_Holes_Exposed - (Num_Of_Rows_Exposed)**2)
+      Pattern_Array = [Num_Of_Rows_Exposed for i in range (Num_Of_Rows_Exposed)]
+      for x in range (0, Remainder_Holes):
+          Place = x % Num_Of_Rows_Exposed
+          Pattern_Array[Place] = Pattern_Array[Place] + 1
+    print (Pattern_Array)
+    print (Num_Of_Holes_Exposed)
+    return
+```
