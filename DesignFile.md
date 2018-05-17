@@ -59,7 +59,7 @@ Float_Length_Weight(Density_Water, Density_PVC, OD_Float, ID_Float, Weight_Slide
 def Active_Length(Height_Distribution_Tank,Slider_Pipe_Diam):
   Plug_Diam=.5*u.inch ##Standard plug diam is half inch diameter
   Bot_Extra_Material=Plug_Diam/2+.5*u.inch
-  Top_Extra_Material=Slider_Pipe_Diam*(1+2**(.5))+Plug_Diam/2+.5*u.inch
+  Top_Extra_Material=(Slider_Pipe_Diam/2*(1+2**(.5)))+Plug_Diam/2+.5*u.inch
   Bushing_Height = 1*u.inch
   Act_Length=((Height_Distribution_Tank - Bot_Extra_Material - Top_Extra_Material - 2*Bushing_Height)*(1/3)).to(u.inch)
   return (Act_Length)
@@ -71,7 +71,7 @@ Active_Length(2.5*u.m, 6*u.inch)
 def Slider_Pipe_Length(Active_Length, Slider_Pipe_Diam):
   Plug_Diam=.5*u.inch ##Standard plug diam is half inch diameter
   Bot_Extra_Material=Plug_Diam/2+.5*u.inch
-  Top_Extra_Material=(Slider_Pipe_Diam*(1+2**(.5)))/2+Plug_Diam/2+.5*u.inch
+  Top_Extra_Material=(Slider_Pipe_Diam/2*(1+2**(.5)))+Plug_Diam/2+.5*u.inch
   Bushing_Height = 1*u.inch
   SP_Length = (Active_Length*(2) +Top_Extra_Material+Bot_Extra_Material + 2*Bushing_Height - (Slider_Pipe_Diam*2**(.5))/2).to(u.inch)
   return (SP_Length)
