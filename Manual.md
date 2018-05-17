@@ -353,7 +353,7 @@ Just like before can you add source or potential price? (I am more concerned abo
 addressed - julia
 </div>
 
-<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/setup2.png?raw=true" height= 300></center>
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/setup2.png?raw=true" height= 600></center>
 <p>
     <em><center> The experimental setup required a flow of water from the sink faucet that travelled past a PVC tee and into the distribution tank.  </center></em>
 </p>
@@ -414,37 +414,7 @@ The last experimental finding was in regards to the amount of head entering the 
 ####Introduction
 The experimental portion of our research this semester was in an effort to test fabrication methods and functionality of the overall design. Because of this, the most significant findings are in the more generalized calculations below. The designs in this section have been revised since the team's original conception of the float valve to be more universal and easy to construct. Although the team tried to take into account all important parameters, there are a few more design considerations that have to be addressed. Those will be discussed in the Future Work section.
 
-####Flow Rates (see below)
-
-
-####Pipe Sizing( see below)
-
-
-####Rate of Leakage
-
-
-####Active Length
-
-
-
-####Slider Pipe Length
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+The main difference between the experimental design and the reimagined design, is that in the new design the slider pipe no longer runs through the tee exposing new holes. All holes through which water can flow are exposed within the tee at the beginning and leave the tee in order to decrease the flow. This changes the pattern of holes on the slider pipe, as well as the overall lengths of the tee and the slider pipe. These changes will be discussed below.
 
 #### Design Scale Flow Rate Ranges
 The original flow rate that HFFV was tasked to design for was 20 L/s but after doing calculations the team determined how to scale up and down the HFFV system based on the design flow rate.
@@ -478,30 +448,114 @@ The pipe sizing that will be associated with each of these ranges will be the fo
 
 **25L/s to 100 L/s** : 8 inch tee and 6 inch slider pipe and float
 
-###Rate of Leakage
+####Active Length
+The active length is a variable that the team used to represent the length of pipe exposed in the tee at a given time. This length is space available to fill with holes. Because all possibly exposed holes will begin inside of the pipe, half of the slider pipe will be  covered in holes and the other half will be solid. This length is the active length. The active length is roughly 1/3 the overall height of the distribution tank.
+
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/New%20DIstribution%20Tank.png?raw=true" height= 800></center>
+<p>
+    <em><center> This diagram shows the new distribution tank setup.   </center></em>
+</p>
+
+The reason why the active length is not exactly 1/3 the height of the distribution tank, is because there are limitations to the height that the slider pipe can travel. Because the slider pipe has the float on top, plugs on the bottom, and bushings within the tee, there is dead material on the top and bottom that restricts it's travel. Because of this, the active length is 1/3 the height once those lengths of extra material are subtracted.
+
+$$ ActiveLength = {Height_{Distribution \ Tank} - ExtraBottomMaterial - ExtraTopMaterial - 2 \cdot Bushing Height\over 3}
+$$
+
+
+The $ExtraBottomMaterial$, $ExtraTopMaterial$, and $BushingHeight$ are all determined by the size of the slider pipe being used. This means that the active length can be calculated given just the distribution tank height and the diameter of the slider pipe.
+
+
+####Slider Pipe Length
+Once the active length of the tank has been determined, the length of the slider pipe can be found. The length of the slider pipe is roughly twice the active length. The top half of the slider pipe is the area where holes can be drilled, and the bottom half is solid. As the slider pipe moves up, less holes are exposed.
+
+
+
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/New%20Slider%20Pipe.png?raw=true" height= 800></center>
+<p>
+    <em><center> This diagram shows the new layout of the slider pipe.  </center></em>
+</p>
+
+The actual length of the slider pipe is slightly longer than twice the active length in order to account for the extra material on the top and bottom. The height of the float is subtracted in this equation in order to calculate the length of the slider pipe without the float attached.
+
+
+$$ SliderPipeLength = 2 \cdot ActiveLength + ExtraBottomMaterial + ExtraTopMaterial + 2 \cdot Bushing Height - FloatHeight
+$$
+
+As demonstrated before the $ActiveLength$ depends on the height of the distribution tank and slider pipe diameter while the $ExtraBottomMaterial$, $ExtraTopMaterial$, $BushingHeight$, and $FloatHeight$ only depend on the slider pipe diameter. This means the slider pipe length can be calculated with just distribution tank height and the slider pipe diameter.
+
+####Hole Sizing
+
+As the HFFV scales up, hole diameter size increases in order to accommodate the extra flow. These sizes were determined by testing how much flow would come out of an orifice and capping the maximum number of holes exposed to the tee at 75 holes. The team capped this as the maximum number of holes because too avoid having too many holes, which would make fabrication difficult and compromise the structural integrity of the slider pipe.  The team used the flow orifice equation shown below.
+
+$$ Q=\pi\cdot A\cdot \sqrt{2gh}=\frac{\pi_{vc} d^2\pi\sqrt{2gh}}{4}$$
+
+where $\pi_{vc}$ is the vena contract coefficient (typically .62), $Q$ is the target flow rate which is $1\over 10$th the plant's flow rate, $A$ is the slider hole area that is being considered and $h$ is the amount of head available.
+
+$$ Q_{1/4in} = 0.08696 liter / second$$
+
+This means that out of one 1/4"orifice, approximately .09 L/s can flow. Dividing the ranges of plant flow rates in the 2 inch HFFV system gives the following:
+
+$$ Number Holes_{Max}=\frac{6L/s}{Q_{1/4in}}=69$$
+$$ Number Holes_{Min}=\frac{1L/s}{Q_{1/4in}}=11.5$$
+
+This fulfills our constraint that maximum number of holes has to be below 75. Therefore, size .25" holes are appropriate for the 2 inch diameter tee HFFV system. Similar calculations were done for .5" and 1" holes.
+
+$$ Q_{1/2in} = 0.35 L/s$$
+
+This means that out of one 1/2" orifice approximately .35 L/s can flow. Dividing the ranges of plant flow rates in the 4 inch HFFV system gives the following:
+$$ Number Holes_{Max}=\frac{25L/s}{Q_{1/2in}}=72$$
+$$ Number Holes_{Min}=\frac{6L/s}{Q_{1/2in}}=17$$
+
+Thus, for the 4 inch HFFV systems, 1/2" holes will be used in the slider pipe.
+
+$$ Q_{1in} = 1.391 L/s$$
+This means that out of one 1" orifice, approximately 1.391 L/s can flow. Dividing the ranges of plant flow rates in the 8 inch HFFV system gives the following:
+$$ Number Holes_{Max}=\frac{100L/s}{Q_{1in}}=72$$
+$$ Number Holes_{Min}=\frac{25L/s}{Q_{1in}}=18$$
+Thus for the 8 inch HFFV systems 1" holes will be used in the slider pipe.
+
+####Hole Pattern
+The hole pattern in the generalized approach is designed with the idea of simplicity in mind. Only the top half of the slider pipe will have holes, which is the active length. The tee will be the same length as the active length so that when the slider pipe is completely down all the holes are exposed and as the slider pipe moves up, holes leave the tee but no new holes enter. This allows for a more linear decrease in flow as the slider pipe rises with the water level.
+
+To get the hole pattern for a given flow rate, the number of holes necessary for full flow out of the slider pipe is needed. This is found by dividing the flow  rate coming into the slider pipe by the flow rate out of one hole.
+$$Q_{OneHole}= \pi_{vc}\cdot A_{hole}\cdot \sqrt {2gh}$$
+$$NumberHoles= Q_{Plant}/Q_{OneHole} $$
+
+The team decided to standardize the spacing between each row of holes to be four times the diameter of the holes. The number of rows is then found by dividing the active length by the row spacing and rounding down to the nearest integer. The approximate number of holes per row is then found by dividing the number of holes by number of rows and rounding down to the nearest integer. The remaining holes that were left out because of rounding down are then distributed into the rows one hole and one row at a time, starting with the top row, until there are no more extra holes remaining.
+$$Spacing_{Row}=4\cdot D_{Hole}$$
+$$NumberRows= floor(ActiveLength/Spacing_{Row})$$
+$$HolesPerRow= floor(NumberHoles/NumberRows)$$
+$$RemainingHoles=NumberHoles- NumberHolesPerRow\cdot NumberRows$$
+
+If the flow rate is small enough that the number of holes needed is less than the number of rows, then the row spacing is no longer four times the hole diameter. Instead, the active length is divided by the number of holes and this is the new row spacing and there is one hole per row so that the holes span the entire active length.
+$$Spacing_{Row}= Length_{Active}/NumberHoles $$
+####Rate of Leakage
 
 Since the entrance and exit points in the tee that the slider pipe goes through are not water tight, there is some leakage through those spaces when the float valve closes. This leakage is impossible to eliminate if the slider pipe is to slide freely. Since the purpose of the float valve is to prevent the distribution tank from overflowing, the team needed to ensure that the leak rate would not overfill the tank during the 8 off-peak hours from midnight to 8am. Because the leak rate is solely dependent on the amount of head available and the gap through which the water is leaking, the team was not able to change the amount of $Q_{leak}$. However, the layout of the holes in the slider pipe are dependent on the rate of leakage and have to be positioned precisely. The slider pipe should turn off the flow when the water level is at a height that would allow the leaking slot to fill the rest of the distribution tank in the given 8 hours.
 
 The team calculated the relationship between the area of the slot through which the water was leaking and the flow rate of the water going through using the following equation.
 
 $$Q_{leak} = V \cdot A_{vc}$$
-$$A_{vc} = A_{slot} \cdot \Pi _{vc}$$
-$$Q_{leak} = \sqrt{2gh_L} \cdot A_{slot} \cdot \Pi_{vc}$$
-$$A_{slot} = {Q_{leak} \over \sqrt{2gh_L} \cdot \Pi_{vc}}$$
+$$A_{vc} = A_{slot} \cdot \pi _{vc}$$
+$$Q_{leak} = \sqrt{2gh_L} \cdot A_{slot} \cdot \pi_{vc}$$
+$$A_{slot} = {Q_{leak} \over \sqrt{2gh_L} \cdot 2 \cdot \pi_{vc}}$$
 
-$V$ is the velocity of the water, $A_{VC}$ is the area of the vena contracta, or the slot through which the water is leaking, $h_L$ is the height of the head, and $\Pi_{VC}$ is the vena contracta coefficient, which was estimated as 0.62. Given this formula and an experimental measurement of the leak rate, the team found the area of the slot for the specific experimental apparatus.
+$V$ is the velocity of the water, $A_{VC}$ is the area of the vena contracta, or the slot through which the water is leaking, $h_L$ is the height of the head, and $\pi_{VC}$ is the vena contracta coefficient, which was estimated as 0.62. Given this formula and an experimental measurement of the leak rate, the team found the area of the slot for the specific experimental apparatus. However a more general solution was sought to estimate leak rates based on design parameters rather than estimate the area of the slot based on experimental data.
 
-This area and width of the gap is dependent on the pipe sizing of the inner diameter of the bushing ,$ID_{B}$, and outer diameter of the slider pipe, ${OD_{Slider Pipe}}$. Depending on the magnitude of the difference between these two measurements the area, $A_{slot}$, and width, $W_{gap}$, will be greater or smaller. The major problem with generalizing the leak rate is that it is hard to standardize how large this gap will be. This is because the method that is used to sand the bushing is not exact, so the $ID_{B}$ has to be determined using the equations below.
+The area and width of the gap is dependent on the pipe sizing of the inner diameter of the bushing ,$ID_{B}$, and outer diameter of the slider pipe, ${OD_{Slider Pipe}}$. Depending on the magnitude of the difference between these two measurements the area, $A_{slot}$, and width, $W_{gap}$, will be greater or smaller. The major problem with generalizing the leak rate is that it is hard to standardize how large this gap will be. This is because the method that is used to sand the bushing is not exact, so the $ID_{B}$ has to be determined using the equations below. Slider pipe outer diameter was determined using Mcmaster measurements.
 
 $$A_{slot} = {\pi \over 4} \cdot (ID_{B}^2 - OD_{Slider_Pipe}^2)$$
 $${4 \cdot A_{slot} \over \pi} = ID_{B}^2 - OD_{Slider_Pipe}^2  $$
 $$ID_{B}= \sqrt {{4 \cdot A_{slot} \over \pi}+OD_{Slider_Pipe}^2 }$$
-$$W_{gap} = ID_{B} - OD_{Slider_Pipe} $$
-$$W_{gap} = {A_{slot} \over \pi \cdot OD_{Slider Pipe}} = .007 cm $$
+$$ID_{B} = 4.84 cm $$
+$$W_{gap} = {ID_{B} - OD_{Slider_Pipe} \over 2}$$
+$$W_{gap} = {4.84-4.826 \over 2} = .007 cm $$
 
-Assuming this gap width for all future float valves, the flow rate of leakage can be estimated given the circumference of the slider pipe and the height of head available.
+Assuming that this gap width for all future float valves stays constant, the flow rate of leakage can be estimated given the amount of head available, the inner diameter of the sanded bushing, and the outer diameter of the slider pipe.
 
-$$Q_{leak} = \sqrt{2gh_L} \cdot C_{Slider Pipe} \cdot W_{gap} \cdot \Pi_{vc}$$
+$$Q_{leak} = 2 \cdot{ \sqrt{2gh_L} \cdot {\pi \over 4} \cdot (ID_{B}^2 - OD_{Slider_Pipe}^2) \cdot W_{gap} \cdot \pi_{vc}}$$
+
+The coefficient 2 is in front because there are two locations where there are leaks: at the top and bottom of the tee.
 
 <div class="alert alert-block alert-danger">
 I am confused about the purpose of this section.
@@ -510,42 +564,11 @@ I thought the problem was that the tank was overfull?
 -addressed by Aly
 </div>
 
-####Hole Size
 
-* Available Head: 1m - 2m
-* Height of distribution tank: 1.83 m or 6 ft
-* Flow rate: 20 L/s
+###Future Focuses
+Pressure Breaks
 
-As the HFFV scales up, hole diameter size increases. These sizes were determined by testing how much flow would come out of an orifice and capping the maximum number of holes exposed to the tee at 75 holes. The team capped this as the maximum number of holes, because having too many holes would make fabrication difficult and would risk not having enough space in the tee to fit all holes. The team used the flow orifice equation shown below.
+Securing to the side of the tank to make sure that the HFFV is vertical to the ground
 
-$$ Q=\pi\cdot A\cdot \sqrt{2gh}=\frac{\pi_{vc} d^2\pi\sqrt{2gh}}{4}$$
 
-where $\pi_{vc}$ is the vena contract coefficient (typically .62), $Q$ is the target flow rate which is $1\over 10$th the plant's flow rate, $A$ is the slider hole area that is being considered and $h$ is the amount of head available.
-$$ Q_{1/4in} = 0.08696 liter / second$$
-This means that out of one 1/4"orifice, approximately .09 L/s can flow. Dividing the ranges of plant flow rates in the 2 inch HFFV system gives the following:
-$$ Number Holes_{Max}=\frac{6L/s}{Q_{1/4in}}=69$$
-$$ Number Holes_{Min}=\frac{1L/s}{Q_{1/4in}}=11.5$$
-This fulfills our constraint that maximum number of holes has to be below 75. Similar calculations were done for .5" and 1" holes.
-
-$$ Q_{1/2in} = 0.35 L/s$$
-
-This means that out of one 1/2" orifice approximately .35 L/s can flow. Dividing the ranges of plant flow rates in the 4 inch HFFV system gives the following:
-$$ Number Holes_{Max}=\frac{25L/s}{Q_{1/2in}}=72$$
-$$ Number Holes_{Min}=\frac{L/s}{Q_{1/2in}}=17$$
-
-Thus, for the 4 inch HFFV systems, 1/2" holes will be used in the slider pipe.
-
-$$ Q_{1in} = 1.391 liter / second$$
-This means that out of one 1" orifice, approximately 1.391 L/s can flow. Dividing the ranges of plant flow rates in the 8 inch HFFV system gives the following:
-$$ Number Holes_{Max}=\frac{100L/s}{Q_{1in}}=72$$
-$$ Number Holes_{Min}=\frac{25L/s}{Q_{1in}}=18$$
-Thus for the 8 inch HFFV systems 1" holes will be used in the slider pipe.
-
-####Hole Pattern
-The hole pattern in the generalized approach is one that is designed with the idea of simplicity in mind. Only the top half of the slider pipe will have holes, which is the active length. The tee will be the same length as the active length so that when the slider pipe is completely down all the holes are exposed and as the slider pipe moves up, holes leave the tee but no new holes enter. This allows for a more linear decrease in flow out of the slider pipe.
-
-To get the hole pattern for a given flow rate, the number of holes necessary for full flow out of the slider pipe is needed. This is found by dividing the flow rate into the slider pipe by the flow rate out of one hole.
-$$FlowRate_{OneHole}= \pi_{vc}\cdot A_{hole}\cdot \sqrt {2gh}$$
-$$NumberHoles= FlowRateIn/FlowRate_{OneHole} $$
-
-The team decided to standardize the spacing between each row of holes to be four times the diameter of the holes. The number of rows is then found by dividing the active length by the row spacing and rounding down to the nearest integer. The approximate number of holes per row is then found by dividing the number of holes by number of rows and rounding down to the nearest integer. The remaining holes that were left out because of rounding down $(NumberHoles- NumberHolesPerRow\cdot NumberRows)$, are then distributed into the rows
+###Conclusion
