@@ -412,6 +412,8 @@ The last experimental finding was in regards to the amount of head entering the 
 
 ###Generalized Approach
 ####Introduction
+The experimental portion of our research this semester was
+
 ####Flow Rates
 ####Pipe Sizing
 ####Rate of Leakage
