@@ -13,6 +13,11 @@ The float valve consists of a slider pipe, a tee connected to the distribution t
 
 The High Flow Float Valve (HFFV) team was in charge of designing a generalized model for float valves in future plants. Initially, the team built a standard 2 inch diameter float valve to test in the lab. As the semester progressed, the team used this sample float valve to test the functionality of the design and develop a more standardized method of HFFV creation. The arbitrary decisions regarding measurements made at the beginning of the semester were necessary to develop the coded design functions that the team wrote at the end of the semester.
 
+<center><img src="https://raw.githubusercontent.com/AguaClara/float_valve/master/Pictures/schematic.png"></center>
+<p>
+    <em><center>This is a schematic diagram of the extreme positions of the float valve in the distribution tank.  </center></em>
+</p>
+
 ###Fabrication Details
 ####Material List
 | Part                    | Quantity/Size | Price in 2018 |
@@ -229,21 +234,9 @@ After putting the float, slider pipe, and tee together, the team completed the e
     <em><center> This is the full assembly sitting outside of the testing tank.   </center></em>
 </p>
 
-<div class="alert alert-block alert-danger">
-I realized about halfway through, that I wasn't sure how this will work as in I'm having trouble understanding how it will sit in the distribution tank and how the different holes will be covered/uncovered. Is it possible to add in a schematic on how it will sit in the distribution tank and how the water level will affect the flow? (This should be a big focus on the revision)
-
-\
-I think that we should take screenshots of the CAD (one when the pipe is sitting at the bottom of the tank and one when it is supported by water) and put them next to each other in the manual. This way people will be able to see the different conditions that the pipe could be in and how the amount of exposed holes depends on that. -julia
-</div>
 
 ###Experimental Setup
 Our experimental setup consisted of the water flow setup and the slider pipe assembly. It was important to realistically replicate the setup of a plant distribution tank and water route in order to test the slider pipe assembly that was built. The team was mostly testing for functionality of the float valve and adjusted the designs based on what they gathered from the trials ran. The team was specifically testing to find the leak rate of the apparatus and to see if the float was large enough to support the weight of the slider pipe.
-
-<div class="alert alert-block alert-danger">
-Add in the purpose of this experimental set-up. What are you testing for? What is the model a model of? i.e. simulating a distribution tank.
-
-addressed - julia
-</div>
 
 ####Materials List
 | Part                            | Quantity |       Size        | Price in 2018 |
@@ -264,13 +257,6 @@ addressed - julia
 
 All parts ordered from McMaster Carr.
 
-
-<div class="alert alert-block alert-danger">
-Just like before can you add source or potential price? (I am more concerned about source)
-
-addressed - julia
-</div>
-
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/setup2.png?raw=true" height= 600></center>
 <p>
     <em><center> The experimental setup required a flow of water from the sink faucet that travelled past a PVC tee and into the distribution tank.  </center></em>
@@ -279,45 +265,19 @@ addressed - julia
 ####Water Flow
 In order to check the flow of the water out of the sink, the team had to test the time it took for a flow to fill a bucket. The bucket was marked with the level of 3 liters, so the team found the right position of the faucet knob that would fill up to the 3 liter mark in 3 seconds, hereby ensuring a flow rate of 1L/s.
 
-<div class="alert alert-block alert-danger">
-This trick is often not written about but is used by many teams. Good inclusion and explanation.
-
-thank you!
-</div>
 
 ####Water Route
 The team then took a piece of 1" diameter flexible tubing and used a hose clamp to secure it to the faucet. This flexible tubing connected via a barbed fitting to a 1" diameter pipe on a raised platform. The team raised this portion in order to ensure more head upon entering the distribution tank. At the top of this platform, the team inserted a 1" tee. The team then connected the clear PVC pipe to the free end of this tee. The tee exposed the water to atmospheric pressure to eliminate pressure head, and the clear PVC pipe prevented the water from spilling out. It was important to eliminate pressure head in order to get a consistent measurement of the head and pressure of the water entering the system. As the float began to rise and the holes in the slider pipe closed off, the head began to build up. Although the flow began each trial at a rate of 1 L/s, the team adjusted the flow rate of the sink during the trial to keep a constant head of water entering the system.
 
-<div class="alert alert-block alert-danger">
-Revise second sentence for clarity. What is the importance of a barbed fitting? Why was it necessary? **Is there a photo of this set-up.**
-
-Why do you need to eliminate pressure head?
-
-Also isn't the flow rate already set to 1 L/s, so why mention adjusting it again here?
-
-addressed except for the photo - julia
-</div>
 
 The tee then led into a 1" elbow that diverted the water down into a 3' long 1" pipe. The team expanded this 1" pipe by using a 1" diameter to 2" diameter bushing to connect the water path to the apparatus. The team then used a 2" elbow to get the water to flow horizontally into the float valve tee. Between the elbow and the tee were two small pieces of 2" diameter PVC, which were connected by a Fernco fitting. One end was glued into the elbow, while the other was glued into the tee of the float valve. The team used a Fernco fitting so that the float valve would not be permanently attached to the experimental setup and could be removed if needed. The team positioned the float valve roughly in the center of the tank, both vertically and horizontally. It was centered vertically to allow for the largest range of motion of the slider pipe. It was centered horizontally within the tank to ensure that the float did not hit the sides of the tank.
 
-<div class="alert alert-block alert-danger">
-Revise "3-foot long 1" pipe" - you are using foot (spelled out) and " (symbol) which is inconsistent.
-
-addressed - julia
-</div>
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/constant_head_chamber.png?raw=true" height= 300></center>
 <p>
     <em><center> This photo shows the top of the experimental apparatus and shows the flow of the water through the pipes. The water comes from the faucet and into the top pipe where it either continues to enter the slider pipe assembly or builds up pressure in the head chamber. </center></em>
 </p>
 
-<div class="alert alert-block alert-danger">
-Can you show water flow in this picture? I am getting a little confused since the previous couple of paragraphs are so dense. Would benefit from more pictures in this section.
-
-addressed - julia
-
-Can you add a little bit next time about next steps. There really isn't a conclusion here. No wrapping everything together.
-</div>
 
 ###Experimental Results
 After running trials with the fabricated float valve, the HFFV team found that, given enough sanding, the valve moved as it should. However, three main things were taken into further consideration. These were the float size, the leak rate, and the amount of head.
@@ -339,12 +299,6 @@ The original flow rate that HFFV was tasked to design for was 20 L/s but after d
 
 The HFFV was designed to accommodate three different scales for three ranges of flow rates. The team determined these designs by using the minor headloss equation to find the maximum flow rate that different tee sizes could handle. First, the team solved for velocity given the available head. Then, the team found the flow rate Q as a result of the given area of the tee. The available headloss was assumed to be 1m because that was the amount of head available for the 20 L/s plant that the HFFV team assigned to create a design for.
 
-<div class="alert alert-block alert-danger">
-Define acronym HFFV when you first introduce the high flow float valve (First sentence)
-
-Why was headloss assumed to be 1m?
-Both addressed
-</div>
 
 $$\frac{V^2}{2g}=Head_{Availible}$$
 $$V=\sqrt{2gHead_{Availible}}=3.132 m/s$$
