@@ -290,7 +290,7 @@ addressed - felix
     <em><center>The picture on the left shows the original 1" diameter float setup. In the middle and on the right is the float using 2" diameter PVC pipe.  </center></em>
 </p>
 
-#####Correctly-Sized Float
+#####Correctly-Sized Float for Bushings with Friction
 
 <div class="alert alert-block alert-danger">
 Use consistent capitalization
@@ -412,15 +412,27 @@ The last experimental finding was in regards to the amount of head entering the 
 
 ###Generalized Approach
 ####Introduction
-The experimental portion of our research this semester was
+The experimental portion of our research this semester was in an effort to test fabrication methods and functionality of the overall design. Because of this, the most significant findings are in the more generalized calculations below. The designs in this section have been revised since the team's original conception of the float valve to be more universal and easy to construct. Although the team tried to take into account all important parameters, there are a few more design considerations that have to be addressed. Those will be discussed in the Future Work section.
 
-####Flow Rates
-####Pipe Sizing
+####Flow Rates (see below)
+
+
+####Pipe Sizing( see below)
+
+
 ####Rate of Leakage
+
+
 ####Active Length
+
+
+
 ####Slider Pipe Length
-####Hole Pattern
-####Float Size
+
+
+
+
+
 
 
 
@@ -435,7 +447,9 @@ The experimental portion of our research this semester was
 
 
 #### Design Scale Flow Rate Ranges
-The HFFV was designed to accommodate three different scales for three ranges of flow rates. The team determined these designs by using the minor headloss equation to find the maximum flow rate that different tee sizes could handle. First, the team solved for velocity given the available head. Then, the team found the flow rate Q as a result of the given area of the tee. The available headloss was assumed to be 1m because that was the amount of head available for the plant that the HFFV team was tasked to create a design.
+The original flow rate that HFFV was tasked to design for was 20 L/s but after doing calculations the team determined how to scale up and down the HFFV system based on the design flow rate.
+
+The HFFV was designed to accommodate three different scales for three ranges of flow rates. The team determined these designs by using the minor headloss equation to find the maximum flow rate that different tee sizes could handle. First, the team solved for velocity given the available head. Then, the team found the flow rate Q as a result of the given area of the tee. The available headloss was assumed to be 1m because that was the amount of head available for the 20 L/s plant that the HFFV team assigned to create a design for.
 
 <div class="alert alert-block alert-danger">
 Define acronym HFFV when you first introduce the high flow float valve (First sentence)
@@ -451,7 +465,18 @@ $$Q_{2 in}=VA_{2in}=3.132m/s\cdot .02m^2=6.34 L/s\approx6L/s$$
 $$Q_{4 in}=VA_{4in}=3.132m/s\cdot .08m^2=25.4 L/s\approx25L/s$$
 $$Q_{8 in}=VA_{8in}=3.132m/s\cdot .32m^2=101.6 L/s\approx100L/s$$
 
+
+####Pipe sizing
+
 Using these max flow rates, the team determined the ranges for three different sizes of pipe: 1L/s to 6 L/s, 6L/s to 25L/s, and 25L/s to 100 L/s. If additional head were available, the ranges for each of the scales would be larger due to the higher velocity of water running through the tee.
+
+The pipe sizing that will be associated with each of these ranges will be the following.
+
+**1L/s to 6 L/s** : 2 inch tee and 1.5 inch slider pipe and float
+
+**6L/s to 25L/s** : 4 inch tee and 3 inch slider pipe and float
+
+**25L/s to 100 L/s** : 8 inch tee and 6 inch slider pipe and float
 
 ###Rate of Leakage
 
@@ -464,12 +489,15 @@ $$A_{vc} = A_{slot} \cdot \Pi _{vc}$$
 $$Q_{leak} = \sqrt{2gh_L} \cdot A_{slot} \cdot \Pi_{vc}$$
 $$A_{slot} = {Q_{leak} \over \sqrt{2gh_L} \cdot \Pi_{vc}}$$
 
-$V$ is the velocity of the water, $A_{VC}$ is the area of the vena contracta, or the slot through which the water is leaking, $h_L$ is the height of the head, and $\Pi_{VC}$ is the vena contracta coefficient, which was estimated as 0.62. Given this formula and an experimental measurement of the leak rate, the team found the area of the slot for the specific experimental apparatus. By dividing this area by the outer circumference of the slider pipe, the team found the width of the small gap between the slider pipe and the bushings. The team assumed this width to be the same for all future slider pipe assemblies as this is the gap that provides enough space for the slider pipe to move freely.
+$V$ is the velocity of the water, $A_{VC}$ is the area of the vena contracta, or the slot through which the water is leaking, $h_L$ is the height of the head, and $\Pi_{VC}$ is the vena contracta coefficient, which was estimated as 0.62. Given this formula and an experimental measurement of the leak rate, the team found the area of the slot for the specific experimental apparatus.
 
-$$A_{slot} = C_{Slider Pipe} \cdot W_{gap}$$
-$$C_{Slider Pipe} = 2 \cdot \pi \cdot \Bigg({OD_{Slider Pipe} \over 2} \Bigg) = \pi \cdot OD_{Slider Pipe}$$
-$$W_{gap} = {A_{slot} \over \pi \cdot OD_{Slider Pipe}}$$
-$$W_{gap} = {A_{slot} \over \pi \cdot OD_{Slider Pipe}} PUT \ A \ REAL \ VALUE $$
+This area and width of the gap is dependent on the pipe sizing of the inner diameter of the bushing ,$ID_{B}$, and outer diameter of the slider pipe, ${OD_{Slider Pipe}}$. Depending on the magnitude of the difference between these two measurements the area, $A_{slot}$, and width, $W_{gap}$, will be greater or smaller. The major problem with generalizing the leak rate is that it is hard to standardize how large this gap will be. This is because the method that is used to sand the bushing is not exact, so the $ID_{B}$ has to be determined using the equations below.
+
+$$A_{slot} = {\pi \over 4} \cdot (ID_{B}^2 - OD_{Slider_Pipe}^2)$$
+$${4 \cdot A_{slot} \over \pi} = ID_{B}^2 - OD_{Slider_Pipe}^2  $$
+$$ID_{B}= \sqrt {{4 \cdot A_{slot} \over \pi}+OD_{Slider_Pipe}^2 }$$
+$$W_{gap} = ID_{B} - OD_{Slider_Pipe} $$
+$$W_{gap} = {A_{slot} \over \pi \cdot OD_{Slider Pipe}} = .007 cm $$
 
 Assuming this gap width for all future float valves, the flow rate of leakage can be estimated given the circumference of the slider pipe and the height of head available.
 
@@ -482,7 +510,7 @@ I thought the problem was that the tank was overfull?
 -addressed by Aly
 </div>
 
-**AMOUNT OF HOLES**
+####Hole Size
 
 * Available Head: 1m - 2m
 * Height of distribution tank: 1.83 m or 6 ft
@@ -512,3 +540,12 @@ This means that out of one 1" orifice, approximately 1.391 L/s can flow. Dividin
 $$ Number Holes_{Max}=\frac{100L/s}{Q_{1in}}=72$$
 $$ Number Holes_{Min}=\frac{25L/s}{Q_{1in}}=18$$
 Thus for the 8 inch HFFV systems 1" holes will be used in the slider pipe.
+
+####Hole Pattern
+The hole pattern in the generalized approach is one that is designed with the idea of simplicity in mind. Only the top half of the slider pipe will have holes, which is the active length. The tee will be the same length as the active length so that when the slider pipe is completely down all the holes are exposed and as the slider pipe moves up, holes leave the tee but no new holes enter. This allows for a more linear decrease in flow out of the slider pipe.
+
+To get the hole pattern for a given flow rate, the number of holes necessary for full flow out of the slider pipe is needed. This is found by dividing the flow rate into the slider pipe by the flow rate out of one hole.
+$$FlowRate_{OneHole}= \pi_{vc}\cdot A_{hole}\cdot \sqrt {2gh}$$
+$$NumberHoles= FlowRateIn/FlowRate_{OneHole} $$
+
+The team decided to standardize the spacing between each row of holes to be four times the diameter of the holes. The number of rows is then found by dividing the active length by the row spacing and rounding down to the nearest integer. The approximate number of holes per row is then found by dividing the number of holes by number of rows and rounding down to the nearest integer. The remaining holes that were left out because of rounding down $(NumberHoles- NumberHolesPerRow\cdot NumberRows)$, are then distributed into the rows
