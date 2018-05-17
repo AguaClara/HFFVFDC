@@ -97,7 +97,7 @@ To determine the length of the float, the team assumed there is negligible frict
 $$ApparentWeight_{object}=Weight_{object}-\rho_{water}\cdot Volume_{object} \cdot g$$
 where $\rho_{water}$ is the density of water and $g$ is acceleration due to gravity.
 The team used these equations to solve for the length of the float:
-$$BuoyantForce=\frac{1}{2}\cdot \pi \cdot (\frac{ID_{float}}{2})^2 \cdot L_{Float} \cdot g$$
+$$BuoyantForce=\frac{1}{2}\cdot \pi \cdot (\frac{ID_{float}}{2})^2 \cdot L_{Float} \cdot \rho_{water} \cdot g$$
 
 $$BuoyantForce=\frac{1}{2}Weight_{Float}+\frac{1}{2}ApparentWeight_{Float}+ApparentWeight_{SliderPipe}
 $$
