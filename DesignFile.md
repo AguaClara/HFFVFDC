@@ -15,14 +15,14 @@ Area=Area_Leak(.06*u.L/u.s,RatioVCOrifice,1.05*u.m)/2
 print(Area)
 OD_Slider_Pipe=1.9*u.inch
 ID_Bushing=(OD_Slider_Pipe**2+(4*Area/np.pi))**.5
-Leak_Spacing=(ID_Bushing-OD_Slider_Pipe)/2
-print(Leak_Spacing.to(u.cm))
-def Slider_Pipe_Leak_Gap(ID_Bushing,OD_Slider_Pipe)
-
+def Slider_Pipe_Leak_Width(ID_Bushing,OD_Slider_Pipe):
+  Leak_Spacing=(ID_Bushing-OD_Slider_Pipe)/2
+  return(Leak_Spacing)
+Slider_Pipe_Leak_Width(ID_Bushing,OD_Slider_Pipe).to(u.cm)
 def Q_Leak(Head,Vena_Contracta,Area_Gap):
-  Q=((2*u.gravity*Head)**.5)*Vena_Contracta*Area_Gap
+  Q=2*((2*u.gravity*Head)**.5)*Vena_Contracta*Area_Gap
   return(Q.to(u.L/u.s))
-Leak_Total=(2*Q_Leak(1.05*u.m,RatioVCOrifice,Area)).to(u.L/u.hr)
+Leak_Total=(Q_Leak(1.05*u.m,RatioVCOrifice,Area)).to(u.L/u.hr)
 print(Leak_Total*8*u.hr)
 
 
