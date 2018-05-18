@@ -40,10 +40,10 @@ All parts were bought from McMaster Carr.
 * Sandpaper
 
 ###Design Details
-A lot of the fabrication decisions made this semester with the High Flow Float Valve (HFFV) were done on assumptions that had no clear cut math behind them. After successfully fabricating an HFFV system, the team developed a more generalized and systematic approach for designing HFFVs at different scales by creating model design functions. This more methodical approach is found in the Generalized Approach section.
+A lot of the fabrication decisions were done on assumptions that had no clear mathematical calculations behind them. After successfully fabricating an HFFV system, the team developed a more generalized and systematic approach for designing HFFVs at different scales by creating model design functions. This more methodical approach is found in the Generalized Approach section.
 
 ####Slider Pipe Length
-The slider pipe length was designed with the intention of being able to operate between half capacity and full capacity of the distribution tank. This assumption led the team to fabricate a slider pipe that was approximately half the height of the distribution tank used in the experiment. This doesn't take into account additions into the pipe including plugs that constrain movement of the pipe, and the float.
+The slider pipe length was designed with the intention of being able to operate between half capacity and full capacity of the distribution tank. This assumption led the team to fabricate a slider pipe that was approximately half the height of the distribution tank used in the experiment. This desired length of half the distribution tank height doesn't take into account the length that has to be added to the pipe including plugs that constrain movement of the pipe, and the float.
 
 #####Total Length
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/diagram%20of%20full%20pipe.jpg?raw=true"  height = 400></center>
@@ -51,7 +51,7 @@ The slider pipe length was designed with the intention of being able to operate 
     <em><center>This is a diagram of the full length of the slider pipe assembly.  </center></em>
 </p>
 
-The total slider pipe length is determined by
+<center>The total slider pipe length is determined by
 
 $$PipeLength= Length_{Active}+2PlugClearance+\frac{OD_{slider pipe}}{2}
 $$
@@ -128,11 +128,11 @@ Then the spring was held in one end of the pipe and pulled, and the change in di
 $$ F=k\cdot \Delta(x)= 229.8N/m \cdot .03313m= 17.67 N $$
 $$ \mathrm{Mass}_{\mathrm{Float}}=\frac{F}{9.81 m/s^2} = 1.76 kg$$
 
-**The buoyant force has to overcome the friction force in order for the float to move up and down smoothly. The team found the volume of the float by dividing the mass of the float by density of water, then dividing that volume by the cross-sectional area of the desired pipe to get length.
+The buoyant force has to overcome the friction force in order for the float to move up and down smoothly. The team found the volume of the float by dividing the mass of the float by density of water, then dividing that volume by the cross-sectional area of the desired pipe to get length.
 
 $$\mathrm{Volume}_{\mathrm{Float}}=\frac{\mathrm{Mass}_{\mathrm{Float}}}{\rho_{\mathrm{water}}}=\frac{1.76kg}{1000kg/m^3}=.00176m^3   $$
 $$L_{\mathrm{Float}}= \mathrm{Volume}_{\mathrm{Float}}/\mathrm{Area}_{\mathrm{Float}}=\frac{.00176m^3}{3.142 in^2}=35.05$$
-From here, the length of 36" was used, because 35" was the bare minimum to overcome the friction force.**
+From here, the length of 36" was used, because 35" was the bare minimum to overcome the friction force.
 
 ###Procedure
 
@@ -182,7 +182,7 @@ The team then cut holes according to the markings on the pipe using the drill pr
 
 ####Tee
 
-Next, the team cut each of the PVC bushings to 1" in height using the band saw. These were cut because it made more space available in the tee for exposure to holes.
+Next, the team cut each of the PVC bushings to 1" in height using the band saw. These were cut because it allowed for more space available in the tee to be exposed to holes.
 
 <center><img src="https://raw.githubusercontent.com/AguaClara/float_valve/master/Pictures/bushings_before_cut%20copy.jpg" height=300><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Bushing%20about%20to%20be%20cut.jpg?raw=true"  height = 300> </center>
 <p>
@@ -198,7 +198,7 @@ The team then created a handmade sanding tool. This tool was made from an arbitr
  </p>
 
 \
-The team then used this tool, as well as a handheld file, to sand down the inside of the bushings so that the 1.5" pipe could slide easily through. The initial fabrication of the bushings had enough friction force to hold the tee up like shown in the picture below. However, it was then sanded to the point that the tee could fall freely. This was done so that during operation the slider pipe would be able to slide vertically in accordance with the water level.
+The team then used the tool shown above, as well as a handheld file, to sand down the inside of the bushings so that the 1.5" pipe could slide easily through. The initial fabrication of the bushings had enough friction force to hold the tee up like shown in the picture below. However, it was then sanded to the point that the tee could fall freely. This was done so that during operation the slider pipe would be able to slide vertically in accordance with the water level.
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/SandingPipe.png?raw=true" height=300> <img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/SliderPipeNoHoles.JPG?raw=true" height = 300></center>
 <p>
@@ -236,7 +236,7 @@ After putting the float, slider pipe, and tee together, the team completed the e
 
 
 ###Experimental Setup
-Our experimental setup consisted of the water flow setup and the slider pipe assembly. It was important to realistically replicate the setup of a plant distribution tank and water route in order to test the slider pipe assembly that was built. The team was mostly testing for functionality of the float valve and adjusted the designs based on what they gathered from the trials ran. The team was specifically testing to find the leak rate of the apparatus and to see if the float was large enough to support the weight of the slider pipe.
+Our experimental setup consisted of the sink apparatus and the slider pipe assembly. It was important to realistically replicate the setup of a plant distribution tank and water route in order to test the slider pipe assembly that was built. The team was principally testing to evaluate functionality of the float valve and adjusted the designs based on what they gathered from the trials ran. Additionally, testing was done to find the leak rate of the apparatus and to see if the float was large enough to support the weight of the slider pipe.
 
 ####Materials List
 | Part                            | Quantity |       Size        | Price in 2018 |
@@ -263,14 +263,14 @@ All parts ordered from McMaster Carr.
 </p>
 
 ####Water Flow
-In order to check the flow of the water out of the sink, the team had to test the time it took for a flow to fill a bucket. The bucket was marked with the level of 3 liters, so the team found the right position of the faucet knob that would fill up to the 3 liter mark in 3 seconds, hereby ensuring a flow rate of 1L/s.
+In order to determine the flowrate of the water out of the sink, the team had to test the time it took for a flow to fill a bucket. The bucket was marked with the level of 3 liters, so the team found the right position of the faucet knob that would fill up to the 3 liter mark in 3 seconds, hereby ensuring a flow rate of 1L/s.
 
 
 ####Water Route
-The team then took a piece of 1" diameter flexible tubing and used a hose clamp to secure it to the faucet. This flexible tubing connected via a barbed fitting to a 1" diameter pipe on a raised platform. The team raised this portion in order to ensure more head upon entering the distribution tank. At the top of this platform, the team inserted a 1" tee. The team then connected the clear PVC pipe to the free end of this tee. The tee exposed the water to atmospheric pressure to eliminate pressure head, and the clear PVC pipe prevented the water from spilling out. It was important to eliminate pressure head in order to get a consistent measurement of the head and pressure of the water entering the system. As the float began to rise and the holes in the slider pipe closed off, the head began to build up. Although the flow began each trial at a rate of 1 L/s, the team adjusted the flow rate of the sink during the trial to keep a constant head of water entering the system.
+The team then took a piece of 1" diameter flexible tubing and used a hose clamp to secure it to the faucet. This flexible tubing connected via a barbed fitting to a 1" diameter pipe on a raised platform. The team raised this portion in order to deliver more head upon entering the distribution tank. At the top of this platform, the team inserted a 1" tee. The team then connected the clear PVC pipe to the free end of this tee. The tee exposed the water to atmospheric pressure to eliminate pressure head, and the clear PVC pipe was attached to prevented the water from spilling out. It was important to eliminate pressure head in order to get a consistent measurement of the head and pressure of the water entering the system. As the float began to rise and the holes in the slider pipe closed off, the head that was needed to push water through the HFFV began to build up. Although the flow began each trial at a rate of 1 L/s, the team adjusted the flow rate of the sink during the trial to keep a constant head of water entering the system.
 
 
-The tee then led into a 1" elbow that diverted the water down into a 3' long 1" pipe. The team expanded this 1" pipe by using a 1" diameter to 2" diameter bushing to connect the water path to the apparatus. The team then used a 2" elbow to get the water to flow horizontally into the float valve tee. Between the elbow and the tee were two small pieces of 2" diameter PVC, which were connected by a Fernco fitting. One end was glued into the elbow, while the other was glued into the tee of the float valve. The team used a Fernco fitting so that the float valve would not be permanently attached to the experimental setup and could be removed if needed. The team positioned the float valve roughly in the center of the tank, both vertically and horizontally. It was centered vertically to allow for the largest range of motion of the slider pipe. It was centered horizontally within the tank to ensure that the float did not hit the sides of the tank.
+The tee then led into a 1" elbow that diverted the water down into a 3' long 1" pipe. The team expanded this 1" pipe by using a 1" diameter to 2" diameter bushing. Then a 2" elbow was used to get the water to flow horizontally into the float valve tee. Between the elbow and the tee were two small pieces of 2" diameter PVC, which were connected by a Fernco fitting. One end was glued into the elbow, while the other was glued into the tee of the float valve. The team used a Fernco fitting so that the float valve would not be permanently attached to the experimental setup and could be removed if needed. The team positioned the float valve roughly in the center of the tank, both vertically and horizontally. It was centered vertically to allow for the largest range of motion of the slider pipe. It was centered horizontally within the tank to ensure that the float did not hit the sides of the tank.
 
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/constant_head_chamber.png?raw=true" height= 300></center>
@@ -280,9 +280,9 @@ The tee then led into a 1" elbow that diverted the water down into a 3' long 1" 
 
 
 ###Experimental Results
-After running trials with the fabricated float valve, the HFFV team found that, given enough sanding, the valve moved as it should. However, three main things were taken into further consideration. These were the float size, the leak rate, and the amount of head.
+After running trials with the fabricated float valve, the HFFV team found that, given enough sanding, the valve moved freely in the vertical plane. However, three main things were taken into further consideration. These were the float size, the leak rate, and the amount of head.
 
-In regards to float size, the team had to try multiple iterations until finding a float size that worked. Ultimately, the team a function returning the length of the necessary float size and was able to fabricate a working float based on this calculation. This was covered in the Design Details section and is further explained in the Generalized Approach section.
+In regards to float size, the team had to try multiple iterations until finding a float size that worked. Ultimately, the team coded a function returning the length of the necessary float size and was able to fabricate a working float based on this calculation, which was covered in the Design Details section.
 
 As mentioned before, the leak rate was a value that the team could only measure experimentally. The team found the leak rate for the system built in the lab and later generalized that leak rate to future float valves. The leak rate for the sample fabricated system was determined by running the system with the valve in its closed position. The flow rate out of the faucet was adjusted in order to keep the water in the head chamber at a constant height. This meant that pressure going into the system was kept constant, meaning that the flow rate out of the faucet was equal to the leak rate of the float valve. The team calculated this flow rate as $.06 \mathrm {L / s}$. The generalized equation and the process the team went through to develop that equation can be found in the Generalized Approach section.
 
