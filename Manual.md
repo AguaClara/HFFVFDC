@@ -86,6 +86,9 @@ $$ RowSpacing = {3.6875 \mathrm{in} \over 3 }= 1.229 \mathrm{in}$$
 Using this row spacing, the team found it possible to fit seven rows on the slider pipe of the tee. By decreasing the number of holes every other row, the team created this hole patten in a fusion file:
 
 <center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/HolePattern2.png?raw=true" height=300></center>
+<p>
+    <em><center>This is a CAD drawing of the hole pattern for the slider pipe.  </center></em>
+</p>
 
 ####Rate of Leakage
 Rate of leakage is the flow rate of the HFFV into the distribution tank once it shuts off completely, exposing no holes to the tee. It is a parameter that is dependent on the area between the outer diameter of the slider pipe and the inner diameter of the bushing that surrounds it. It is determined by how much the bushings are sanded, something that the team was attempting to standardize. However, because of the initial condition for the HFFV be almost frictionless so that it could freely move vertically, the team had to determine the rate of leakage experimentally.
@@ -336,6 +339,17 @@ $$
 
 The $ExtraBottomMaterial$, $ExtraTopMaterial$, and $Height_{Bushing}$ are all determined by the size of the slider pipe being used. This means that the active length can be calculated given just the distribution tank height and the diameter of the slider pipe.
 
+####Tee
+The largest difference between the original design and the new, generalized design, is the fabrication of the tee. The idea behind the new design, is that the overall tee length will be a set height, dependent on the active length parameter.
+
+The new tee consists of the regular, store-bought tee, connected to two extensions. Each of these extensions is made of the size piping that connects to the tee. The team found that 1.5 inch diameter PVC pipe can easily slide within a 2 inch diameter pipe, so the size of these extensions will not be a problem. Each of those pipes are then connected to a coupling, in which a 2 inch diameter to 1.5 inch diameter bushing is inserted. These bushings would be sanded down just like before, to allow the slider pipe to slide through.
+
+<center><img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/Aly'sTeeDiagram.png?raw=true" height= 500> <img src="https://github.com/AguaClara/float_valve/blob/master/Pictures/NewFusionAssembly.png?raw=true" height= 500></center>
+<p>
+    <em><center>The image on the left shows a basic diagram of the design for the new tee, while the image on the right shows the CAD of the new design.  </center></em>
+</p>
+
+This new tee design requires more serious fabrication, however it significantly reduces the complexity of the overall apparatus. This technique would have to be fabricated and tested experimentally before implementing in real plants.
 
 ####Slider Pipe Length
 Once the active length of the tank has been determined, the length of the slider pipe can be found. The length of the slider pipe is roughly twice the active length. The top half of the slider pipe is the area where holes can be drilled, and the bottom half is solid. As the slider pipe moves up, less holes are exposed.
