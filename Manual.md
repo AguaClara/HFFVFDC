@@ -5,13 +5,13 @@ May 11, 2018
 
 ## Manual
 ###Introduction
-The high flow float valve will control the flow rate of water into the distribution tank. The distribution tank is the storage tank for clean water exiting the treatment plant before it is distributed to the community, and overflows when the tank is full. Overflow happens mainly during off-peak hours from midnight to dawn when demand is low. Avoiding overflow is desirable because the excess treated drinking water is wasted. To avoid the tank overflowing, the float valve will decrease the flow rate as the tank fills up.
+The high flow float valve is designed to control the flow rate of water into the distribution tank. The distribution tank is the storage tank that contains clean water exiting the treatment plant before it is distributed to the community, and overflows when the tank is full. Overflow happens mainly during off-peak hours from midnight to dawn when demand is low. Avoiding overflow is desirable because any excess treated drinking water is wasted. To avoid this waste, the float valve will decrease the flow rate as the tank fills up.
 
-That excess flow will instead back up the pipe system and begin to raise the elevation of water in the entrance tank within the plant. As soon as the operator begins to see that the water level is rising in the entrance tank, action can be taken to reduce flow coming into the plant.
+That excess flow will instead back up the pipe system and begin to raise the elevation of water in the entrance tank within the plant. As soon as the plant operator sees that the water level is rising in the entrance tank, action can be taken to reduce flow coming into the plant.
 
-The float valve consists of a slider pipe, a tee connected to the distribution tank inlet pipe, a float on top of the slider pipe, and bushings inside the tee that the slider pipe will slide through. The water entering the distribution tank will go through the tee and through the holes in the slider pipe that are within the tee. The more holes exposed, the higher the flow rate. As the tank fills up, the float will remain on the top of the water and will cause the slider pipe to rise, which will decrease the number of holes exposed within the tee. When the tank is full, no holes will be exposed within the tee and the flow will stop.
+The float valve consists of a slider pipe, a float on top of the slider pipe, a tee connected to the distribution tank inlet pipe, and bushings inside the tee that the slider pipe will slide through. The water entering the distribution tank will go through the tee and through the holes in the slider pipe that are within the tee. The more holes exposed, the higher the flow rate. As the tank fills up, the float will remain on the top of the water and will cause the slider pipe to rise, which will decrease the number of holes exposed within the tee. When the tank is full, no holes will be exposed within the tee and the flow will only be due to the leaking present within the float valve.
 
-The High Flow Float Valve (HFFV) team was in charge of designing a generalized model for float valves in future plants. Initially, the team built a standard 2 inch diameter float valve to test in the lab. As the semester progressed, the team used this sample float valve to test the functionality of the design and develop a more standardized method of HFFV creation. The arbitrary decisions regarding measurements made at the beginning of the semester were necessary to develop the coded design functions that the team wrote at the end of the semester.
+The High Flow Float Valve (HFFV) team was in charge of designing a generalized model for float valves in future plants. Initially, the team built a standard 2 inch diameter float valve to test in the lab. As the semester progressed, the team used this sample float valve to test the functionality of the design and develop a more standardized method of HFFV creation. The arbitrary decisions regarding measurements made at the beginning of the semester were necessary to develop and code design functions that the team wrote at the end of the semester.
 
 <center><img src="https://raw.githubusercontent.com/AguaClara/float_valve/master/Pictures/schematic.png"></center>
 <p>
@@ -425,7 +425,7 @@ $$W_{gap} = {4.84-4.826 \over 2} = .007 cm $$
 
 Assuming that this gap width for all future float valves stays constant, the flow rate of leakage can be estimated given the amount of head available, the inner diameter of the sanded bushing, and the outer diameter of the slider pipe.
 
-$$Q_{leak} = 2 \cdot{ \sqrt{2gh_L} \cdot {\pi \over 4} \cdot (ID_{B}^2 - OD_{Slider_Pipe}^2) \cdot W_{gap} \cdot \pi_{vc}}$$
+$$Q_{leak} = 2 \cdot{ \sqrt{2gh_L} \cdot {\pi \over 4} \cdot (ID_{B}^2 - OD_{Slider_Pipe}^2) \cdot \pi_{vc}}$$
 
 The coefficient 2 is in front because there are two locations where there are leaks: at the top and bottom of the tee.
 
