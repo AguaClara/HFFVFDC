@@ -51,7 +51,7 @@ The slider pipe length was designed with the intention of being able to operate 
     <em><center>This is a diagram of the full length of the slider pipe assembly.  </center></em>
 </p>
 
-<center>The total slider pipe length is determined by
+The total slider pipe length is determined by
 
 $$PipeLength= Length_{Active}+2PlugClearance+\frac{OD_{slider pipe}}{2}
 $$
