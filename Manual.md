@@ -290,9 +290,9 @@ The last experimental finding was in regards to the amount of head entering the 
 
 ###Generalized Approach
 ####Introduction
-The experimental portion of our research this semester was in an effort to test fabrication methods and functionality of the overall design. Because of this, the most significant findings are in the more generalized calculations below. The designs in this section have been revised since the team's original conception of the float valve to be more universal and easy to construct. Although the team tried to take into account all important parameters, there are a few more design considerations that have to be addressed. Those will be discussed in the Future Work section.
+The experimental portion of our research this semester was in an effort to test fabrication methods and functionality of the overall design. Because of this, the most significant findings are in the more generalized calculations found below. The designs in this section have been revised since the team's original conception of the float valve to be more universal and easy to construct. Although the team tried to take into account all important parameters, there are a few more design considerations that have to be addressed. Those will be discussed in the Future Work section.
 
-The main difference between the experimental design and the reimagined design, is that in the new design the slider pipe no longer runs through the tee exposing new holes. All holes through which water can flow are exposed within the tee at the beginning and leave the tee in order to decrease the flow. This changes the pattern of holes on the slider pipe, as well as the overall lengths of the tee and the slider pipe. These changes will be discussed below.
+The main difference between the experimental design and the reimagined design, is that in the new design the slider pipe no longer runs through the tee exposing new holes. All holes through where water can flow are exposed within the tee at the beginning and leave the tee in order to decrease the flow. This changes the pattern of holes on the slider pipe, as well as the overall lengths of the tee and the slider pipe. These changes will be discussed below.
 
 #### Design Scale Flow Rate Ranges
 The original flow rate that HFFV was tasked to design for was 20 L/s but after doing calculations the team determined how to scale up and down the HFFV system based on the design flow rate.
@@ -330,11 +330,11 @@ The active length is a variable that the team used to represent the length of pi
 
 The reason why the active length is not exactly 1/3 the height of the distribution tank, is because there are limitations to the height that the slider pipe can travel. Because the slider pipe has the float on top, plugs on the bottom, and bushings within the tee, there is dead material on the top and bottom that restricts it's travel. Because of this, the active length is 1/3 the height once those lengths of extra material are subtracted.
 
-$$ ActiveLength = {Height_{Distribution \ Tank} - ExtraBottomMaterial - ExtraTopMaterial - 2 \cdot Bushing Height\over 3}
+$$ ActiveLength = {Height_{Distribution \ Tank} - ExtraBottomMaterial - ExtraTopMaterial - 2 \cdot Height_{Bushing}\over 3}
 $$
 
 
-The $ExtraBottomMaterial$, $ExtraTopMaterial$, and $BushingHeight$ are all determined by the size of the slider pipe being used. This means that the active length can be calculated given just the distribution tank height and the diameter of the slider pipe.
+The $ExtraBottomMaterial$, $ExtraTopMaterial$, and $Height_{Bushing}$ are all determined by the size of the slider pipe being used. This means that the active length can be calculated given just the distribution tank height and the diameter of the slider pipe.
 
 
 ####Slider Pipe Length
@@ -350,10 +350,10 @@ Once the active length of the tank has been determined, the length of the slider
 The actual length of the slider pipe is slightly longer than twice the active length in order to account for the extra material on the top and bottom. The height of the float is subtracted in this equation in order to calculate the length of the slider pipe without the float attached.
 
 
-$$ SliderPipeLength = 2 \cdot ActiveLength + ExtraBottomMaterial + ExtraTopMaterial + 2 \cdot Bushing Height - FloatHeight
+$$ SliderPipeLength = 2 \cdot Length_{Active} + ExtraBottomMaterial + ExtraTopMaterial + 2 \cdot Height_{Bushing} - FloatHeight
 $$
 
-As demonstrated before the $ActiveLength$ depends on the height of the distribution tank and slider pipe diameter while the $ExtraBottomMaterial$, $ExtraTopMaterial$, $BushingHeight$, and $FloatHeight$ only depend on the slider pipe diameter. This means the slider pipe length can be calculated with just distribution tank height and the slider pipe diameter.
+As demonstrated before the $Length_{Active}$ depends on the height of the distribution tank and slider pipe diameter while the $ExtraBottomMaterial$, $ExtraTopMaterial$, $Height_{Bushing}$, and $Height_{Float}$ only depend on the slider pipe diameter. This means the slider pipe length can be calculated with just distribution tank height and the slider pipe diameter.
 
 ####Hole Sizing
 
@@ -395,7 +395,7 @@ $$NumberHoles= Q_{Plant}/Q_{OneHole} $$
 
 The team decided to standardize the spacing between each row of holes to be four times the diameter of the holes. The number of rows is then found by dividing the active length by the row spacing and rounding down to the nearest integer. The approximate number of holes per row is then found by dividing the number of holes by number of rows and rounding down to the nearest integer. The remaining holes that were left out because of rounding down are then distributed into the rows one hole and one row at a time, starting with the top row, until there are no more extra holes remaining.
 $$Spacing_{Row}=4\cdot D_{Hole}$$
-$$NumberRows= floor(ActiveLength/Spacing_{Row})$$
+$$NumberRows= floor(Length_{Active}/Spacing_{Row})$$
 $$HolesPerRow= floor(NumberHoles/NumberRows)$$
 $$RemainingHoles=NumberHoles- NumberHolesPerRow\cdot NumberRows$$
 
@@ -434,15 +434,15 @@ The coefficient 2 is in front because there are two locations where there are le
 The team identified a few areas that would need future work in order to complete the High Flow Float Valve system. The first factor the team wanted to address, was that during the experimental process, the team had a difficult time ensuring that the float valve was exactly vertical to the ground. The float valve tended to bend and sag a little bit, meaning that the slider pipe was not vertical. This caused more friction within the tee and made it harder for the slider pipe to slide smoothly upward as the water level rose. In order to solve this problem in an accurately-sized plant, the team suggests that several brackets be used to hold the inlet tube securely to the wall of the distribution tank. This should prevent the slider pipe assembly from sagging downward.
 
 
-The team was working on generalizing a hole pattern for the original design of the float valve when the second design came to fruition. Since there are pros and cons to both designs, finishing generalizing the hole pattern and writing code that gives the hole pattern based on flow rate, head, and the height of the distribution tank would be the next step for the original design.
+The team was working on generalizing a hole pattern for the original design of the float valve when the second design came to fruition. Since there are pros and cons to both designs, finishing the generalization the hole pattern and writing code that gives the hole pattern based on flow rate, head, and the height of the distribution tank would be the next step for the original design.
 
 Since the team started working on the second design near the end of the semester, it was never actually fabricated or tested. This should be the next step for this design. The elongated tee is a component that is especially important to fabricate and test since it is fairly unique from the original design and requires multiple parts. Additionally, experimental results that were used in the design such as the rate of leakage are all from experimenting with the original design so it is important to see if these things change with the second design.
 
 
 
-Further down in the design process, the team suggests that the float valve design be expanded to include pressure breaks. Currently, the design will not work as seamlessly as intended if there is too much head entering the system. If pressure breaks with individual, smaller float valves were installed periodically along the path to the distribution tank, then the overflow signal would pass up the path and alert the plant operator. This design would most likely vary based on the plant, but would be one step in taking the float valve design to the next stage of the design process.
+Further down in the design process, the team suggests that the float valve design be expanded to include pressure breaks. Currently, the design will not work as seamlessly as intended if the water enters the distribution tank with too much head. If pressure breaks with individual, smaller float valves were installed periodically along the path to the distribution tank, then the overflow signal would pass up the path and alert the plant operator. This design would most likely vary based on the plant, but would be one step in taking the float valve design to the next stage of the design process.
 
 ###Conclusion
-The High Flow Float Valve team was assigned with the task of designing a float valve that would alter the flow rate of the filtered water into the distribution tank as the tank filled. A float valve is a necessary upgrade to AguaClara plants, because there is currently a lot of clean water being wasted when distribution tanks overflow. After building a small-scaled experimental float valve, the HFFV team was able to better design a general float valve model for future distribution tanks. This design relies solely on the flow rate of the plant, the head upon entering the distribution tank, and the height of the distribution tank. The team based this design off of the small-scale HFFV built in the lab. However, a full-scale float valve would have to be built to test the team's findings.
+The High Flow Float Valve team was assigned with the task of designing a float valve that would alter the flow rate of the filtered water into the distribution tank as the tank filled. A float valve is a necessary upgrade to AguaClara plants, because there is currently a lot of clean water being wasted when distribution tanks overflow. After building a small-scaled experimental float valve, the HFFV team confirmed that the design and fabrication for a general float valve model is viable for future distribution tanks. This design relies solely on the flow rate of the plant, the head upon entering the distribution tank, and the height of the distribution tank. The team based this design off of the small-scale HFFV built in the lab. However, a full-scale float valve would have to be built to evaluate the team's findings in the field.
 
 The team has been in close contact with AguaClara engineers in Honduras during this design process. The findings from this report will be shared with the AguaClara engineers so the float valve design can be tested and hopefully implemented in AguaClara plants.
