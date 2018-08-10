@@ -1,5 +1,8 @@
 # HFFVFDC-
 High Flow Float Valve
+
+## Note: This subteam was ended after the Spring 2018 semester.  This repo was archived 8/10/18.
+
 Description - High Flow Float Valve is a fabrication team that will fabricate a float valve to alleviate distribution tank overflow during off-peak hours.
 
 Felix Yang - fyy2
